@@ -4,7 +4,7 @@ A free, five-day, hands-on introduction to cybersecurity for middle and high sch
 
 
 ## Who this is for
-- Students ages roughly 11 to 18, complete beginners welcome.
+- Middle and high school students, complete beginners welcome.
 - Teachers, club leaders, parents, and volunteers running a camp or after-school program.
 
 ## How the week flows
