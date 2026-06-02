@@ -400,41 +400,6 @@ S({sec:'Day 1',time:'11:00 - 12:00',kick:'Worked example',title:'Modeling the me
 <div>${def('Patch','Security update','A fix released by a vendor to close a known hole. Most big breaches exploit a hole that already had a patch nobody installed.')}
 ${why('This labeling habit is the single most useful skill from Day 1. You will reuse it on every news story and your group project.')}</div></div>`});
 
-S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - Ethics',title:'The hacker spectrum: hat colors',html:`
-<div class="grid g3">
-<div class="card" style="border-top:3px solid #dc2626"><h3 style="margin-top:0;color:#b91c1c">Black Hat</h3><p class="small">Breaks in without permission for profit or harm. A criminal.</p></div>
-<div class="card" style="border-top:3px solid #16a34a"><h3 style="margin-top:0;color:#15803d">White Hat</h3><p class="small">Ethical hacker / penetration tester. Same skills, but authorized, and helping.</p></div>
-<div class="card" style="border-top:3px solid #d97706"><h3 style="margin-top:0;color:#b45309">Gray Hat</h3><p class="small">Breaks in without permission but without malice. Still illegal.</p></div></div>
-<div class="grid g2" style="margin-top:6px">
-<div>${def('Script Kiddie','informal','Someone who runs pre-made hacking tools without understanding them. Limited skill, but can still cause real damage.')}</div>
-<div>${def('Hacktivism','hacking + activism','Hacking to push a political or social cause. The group Anonymous is the best-known example.')}</div></div>`});
-
-S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The line you never cross',title:'Ethical hacking means WRITTEN PERMISSION',html:`
-<p class="lead">The only thing separating a white hat from a criminal is three words. An ethical hacker always:</p>
-<div class="grid g2"><ul>
-<li>Gets explicit <b>written authorization</b> first</li>
-<li>Agrees a clear <b>scope</b> - what may and may not be touched</li>
-<li><b>Reports</b> every vulnerability found</li></ul><ul>
-<li>Never keeps, sells, or misuses any data seen</li>
-<li>Follows <b>responsible disclosure</b> (tell the owner, give time to fix)</li></ul></div>
-${def('Penetration Test','pen test','An authorized, simulated attack on a system to find weaknesses before criminals do.')}
-${why('You will run real scanning and cracking tools this week. Knowing this rule is what makes that learning legal and safe.')}`});
-
-S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The law',title:'The CFAA: why permission is not optional',html:`
-${def('CFAA','Computer Fraud and Abuse Act','The main US federal law on hacking. Accessing a computer system <b>without authorization</b> is a federal crime - even if you only looked, even if you reported it afterward.')}
-<div class="news"><b>The trap to avoid:</b> finding a flaw on a real website and "just checking" if it works can be a crime if you had no permission. Report it instead - do not test it.</div>
-${card(`<h3 style="margin-top:0">Red Team, Blue Team, Purple Team</h3><p class="small"><b>Red</b> = authorized attackers who simulate the bad guys. <b>Blue</b> = defenders who detect and respond. <b>Purple</b> = both working together to improve. Many companies run these exercises.`)}`});
-
-S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The mental model',title:'Vulnerability, Threat, Control: one picture to remember',html:`
-<div class="flex" style="gap:22px;align-items:center">
-<div style="flex:none;width:470px">${SVG.vtc}</div>
-<div class="col">
-<p>A <b>vulnerability</b> is a weakness. A <b>threat</b> is what exploits it. A <b>control</b> is what stops it.</p>
-<p class="small muted">A door with a weak lock can be kicked in by a burglar; a deadbolt prevents it. The exact same logic runs every cybersecurity decision.</p>
-${kc('A school leaves a server with a default password (admin/admin). A hacker logs in and steals data. Name the vulnerability, threat, and one control.','<b>Vulnerability:</b> the default password. <b>Threat:</b> the hacker guessing it. <b>Control:</b> set a strong unique password, and add MFA.')}
-</div></div>`});
-
-/* Day 1 Python code lab */
 S({t:'divider',sec:'Day 1',html:`<div class="badge" style="border-color:#16a34a;color:#15803d">DAY 1 - CODE LAB - PYTHON MODULE 0</div>
 <h1 style="margin-top:12px">Your first <span style="color:#16a34a">Python</span></h1>
 <p class="lead">Security professionals automate everything. You only need a little Python to write your own tools. Open Colab and type along - do not just read.</p>
@@ -496,16 +461,41 @@ S({sec:'Day 1',time:'11:00 - 12:00',kick:'Code Lab 0.8 - Your challenge',title:'
 <div>${kc('What score does "Summer2026" get, and why?','<b>3.</b> It has lowercase, uppercase, and digits (+1 each), but it is only 10 characters (no length bonus, which needs 12+) and has no symbol. Lesson: length is the biggest win.')}
 ${note('Stretch goal: also reject any password found in a common-password list. That is the difference between a toy and a real check.')}</div></div>`});
 
-S({sec:'Day 1',time:'2:45 - 4:00',kick:'Group Project - Session 1 of 4',title:'Start your team project (1 hr 15 min)',html:`
-<div class="grid g2a">
-<div>${card(`<h3 style="margin-top:0">Today’s tasks</h3><ol class="small">
-<li>Form your team of 2 to 3 and swap contact info.</li>
-<li>Claim a topic (first come, first served - each team is different). Full list on Day 5.</li>
-<li>Find 2 to 3 reliable sources (news, CISA.gov, academic).</li>
-<li>Write a one-paragraph description: what is your topic and why does it matter?</li></ol>`)}</div>
-<div>${note('<b>Remember the split:</b> this afternoon block is the slow-build project, not a same-day lab. You will add to it for four afternoons and present Friday.')}
-${card('<h3 style="margin-top:0">Pick from (preview)</h3><p class="small">Change Healthcare ransomware - MGM social engineering - AI-powered attacks - Cyber safety for teens - Salt Typhoon nation-state hack - the password crisis.</p>')}</div></div>`});
+S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - Ethics',title:'The hacker spectrum: hat colors',html:`
+<div class="grid g3">
+<div class="card" style="border-top:3px solid #dc2626"><h3 style="margin-top:0;color:#b91c1c">Black Hat</h3><p class="small">Breaks in without permission for profit or harm. A criminal.</p></div>
+<div class="card" style="border-top:3px solid #16a34a"><h3 style="margin-top:0;color:#15803d">White Hat</h3><p class="small">Ethical hacker / penetration tester. Same skills, but authorized, and helping.</p></div>
+<div class="card" style="border-top:3px solid #d97706"><h3 style="margin-top:0;color:#b45309">Gray Hat</h3><p class="small">Breaks in without permission but without malice. Still illegal.</p></div></div>
+<div class="grid g2" style="margin-top:6px">
+<div>${def('Script Kiddie','informal','Someone who runs pre-made hacking tools without understanding them. Limited skill, but can still cause real damage.')}</div>
+<div>${def('Hacktivism','hacking + activism','Hacking to push a political or social cause. The group Anonymous is the best-known example.')}</div></div>`});
 
+S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The line you never cross',title:'Ethical hacking means WRITTEN PERMISSION',html:`
+<p class="lead">The only thing separating a white hat from a criminal is three words. An ethical hacker always:</p>
+<div class="grid g2"><ul>
+<li>Gets explicit <b>written authorization</b> first</li>
+<li>Agrees a clear <b>scope</b> - what may and may not be touched</li>
+<li><b>Reports</b> every vulnerability found</li></ul><ul>
+<li>Never keeps, sells, or misuses any data seen</li>
+<li>Follows <b>responsible disclosure</b> (tell the owner, give time to fix)</li></ul></div>
+${def('Penetration Test','pen test','An authorized, simulated attack on a system to find weaknesses before criminals do.')}
+${why('You will run real scanning and cracking tools this week. Knowing this rule is what makes that learning legal and safe.')}`});
+
+S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The law',title:'The CFAA: why permission is not optional',html:`
+${def('CFAA','Computer Fraud and Abuse Act','The main US federal law on hacking. Accessing a computer system <b>without authorization</b> is a federal crime - even if you only looked, even if you reported it afterward.')}
+<div class="news"><b>The trap to avoid:</b> finding a flaw on a real website and "just checking" if it works can be a crime if you had no permission. Report it instead - do not test it.</div>
+${card(`<h3 style="margin-top:0">Red Team, Blue Team, Purple Team</h3><p class="small"><b>Red</b> = authorized attackers who simulate the bad guys. <b>Blue</b> = defenders who detect and respond. <b>Purple</b> = both working together to improve. Many companies run these exercises.`)}`});
+
+S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - The mental model',title:'Vulnerability, Threat, Control: one picture to remember',html:`
+<div class="flex" style="gap:22px;align-items:center">
+<div style="flex:none;width:470px">${SVG.vtc}</div>
+<div class="col">
+<p>A <b>vulnerability</b> is a weakness. A <b>threat</b> is what exploits it. A <b>control</b> is what stops it.</p>
+<p class="small muted">A door with a weak lock can be kicked in by a burglar; a deadbolt prevents it. The exact same logic runs every cybersecurity decision.</p>
+${kc('A school leaves a server with a default password (admin/admin). A hacker logs in and steals data. Name the vulnerability, threat, and one control.','<b>Vulnerability:</b> the default password. <b>Threat:</b> the hacker guessing it. <b>Control:</b> set a strong unique password, and add MFA.')}
+</div></div>`});
+
+/* Day 1 Python code lab */
 S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - Context',title:'A timeline of breaches you should know',html:`
 <div class="tl">
 <div class="ev"><span class="t">2013</span><div><b>Target:</b> 40 million card numbers stolen through an HVAC vendor’s access. Lesson: your suppliers are part of your attack surface.</div></div>
@@ -515,6 +505,16 @@ S({sec:'Day 1',time:'1:00 - 2:30',kick:'Lesson Block 2 - Context',title:'A timel
 <div class="ev"><span class="t">2024</span><div><b>Change Healthcare, AT&T, National Public Data:</b> ransomware and stolen credentials at massive scale.</div></div>
 </div>
 ${why('Patterns repeat: unpatched systems, stolen credentials, and trusted third parties. Spotting the pattern is how you predict and prevent the next one.')}`});
+
+S({sec:'Day 1',time:'2:45 - 4:00',kick:'Group Project - Session 1 of 4',title:'Start your team project (1 hr 15 min)',html:`
+<div class="grid g2a">
+<div>${card(`<h3 style="margin-top:0">Today’s tasks</h3><ol class="small">
+<li>Form your team of 2 to 3 and swap contact info.</li>
+<li>Claim a topic (first come, first served - each team is different). Full list on Day 5.</li>
+<li>Find 2 to 3 reliable sources (news, CISA.gov, academic).</li>
+<li>Write a one-paragraph description: what is your topic and why does it matter?</li></ol>`)}</div>
+<div>${note('<b>Remember the split:</b> this afternoon block is the slow-build project, not a same-day lab. You will add to it for four afternoons and present Friday.')}
+${card('<h3 style="margin-top:0">Pick from (preview)</h3><p class="small">Change Healthcare ransomware - MGM social engineering - AI-powered attacks - Cyber safety for teens - Salt Typhoon nation-state hack - the password crisis.</p>')}</div></div>`});
 
 S({sec:'Day 1',time:'4:00 - 4:15',kick:'Wrap-Up',title:'Day 1 takeaways, and what is next',html:`
 <div class="grid g2">
@@ -583,35 +583,6 @@ ${lab('Sort the inbox','You receive a packet of 10 emails. Some are real, some a
 plat('web','open the 10-email packet')+plat('range','submit answers in the Day 2 lab'))}
 ${note('Supplementary handout: the phishing red flags from this section are covered in the Day 2 guide (<code>Day2/Day2.md</code>).')}`});
 
-S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Payloads',title:'Know your malware',html:`
-${def('Malware','Malicious Software','Any software built to damage, disrupt, steal, or gain unauthorized access.')}
-<table>
-<tr><th>Type</th><th>What it does</th><th>Real example</th></tr>
-<tr><td><b>Virus</b></td><td>Attaches to a program; spreads when shared</td><td>Needs a host to copy itself</td></tr>
-<tr><td><b>Worm</b></td><td>Self-spreads across networks, no host needed</td><td>WannaCry hit 200,000 machines in 4 days (2017)</td></tr>
-<tr><td><b>Trojan</b></td><td>Disguised as legitimate software</td><td>A "free game" that is really malware</td></tr>
-<tr><td><b>Ransomware</b></td><td>Encrypts your files, demands payment</td><td>Change Healthcare, 22 million dollar ransom</td></tr>
-<tr><td><b>Spyware</b></td><td>Secretly watches and reports activity</td><td>Keyloggers record every keystroke</td></tr>
-<tr><td><b>Rootkit</b></td><td>Hides itself deep in the system</td><td>Can survive a normal antivirus scan</td></tr>
-<tr><td><b>Botnet</b></td><td>An army of infected "zombie" PCs</td><td>Mirai used 600,000 devices (2016)</td></tr>
-</table>`});
-
-S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Reconnaissance',title:'OSINT: how attackers research you',html:`
-<div class="grid g2">
-<div>${def('OSINT','Open Source Intelligence','Information gathered from public sources: Google, social media, school sites, job posts, public records. Completely legal - and used by both attackers and defenders.')}
-${why('Everything you post in public is raw material for a personalized attack. Knowing this changes how you think about your own profiles.')}</div>
-<div>${card(`<h3 style="margin-top:0">What an attacker can find in 10 minutes</h3><ul class="small"><li>Your school and graduation year</li><li>Your sports team and coach’s name</li><li>Your pet’s name (a common security answer)</li><li>Where you checked in last weekend</li><li>Your friends and family - more targets</li></ul>`)}</div></div>`});
-
-S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Defense',title:'How to beat social engineering',html:`
-<div class="grid g2"><div><ul>
-<li><b>Verify before you trust.</b> Hang up, then call the official number yourself.</li>
-<li><b>Slow down.</b> Urgency is the trap; a pause defeats most attacks.</li>
-<li><b>Never share passwords or one-time codes.</b> Nobody legitimate asks.</li></ul></div><div><ul>
-<li><b>Check the URL</b> and the padlock before typing anything.</li>
-<li><b>Turn on MFA</b> so a stolen password is not enough.</li>
-<li><b>When in doubt, throw it out</b> and report it.</li></ul></div></div>
-${kc('Why is "slow down" such a powerful defense?','Attackers manufacture urgency precisely to stop you thinking. The moment you pause to verify through a second channel, almost every social-engineering trick falls apart.')}`});
-
 S({sec:'Day 2',time:'11:00 - 12:00',kick:'Code Lab 6.4',title:'Code Lab: build a phishing scorer',html:`
 <div class="grid g2">
 <div>${codeRun(`<span class="k">import</span> re
@@ -643,6 +614,35 @@ secret = <span class="s">"meet at noon"</span>
 <span class="f">print</span>(base64.b64encode(secret.encode()).decode())`,'Spot Base64 by the <code>=</code> padding and only letters, digits, + and /.')}</div>
 <div>${def('Encoding vs Encryption','key idea','Encoding (like Base64) just reformats data - anyone can reverse it, there is no secret. Encryption needs a key. Never confuse "encoded" with "secure".')}
 ${why('You will use this exact trick to crack Friday’s CTF challenges.')}</div></div>`});
+
+S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Payloads',title:'Know your malware',html:`
+${def('Malware','Malicious Software','Any software built to damage, disrupt, steal, or gain unauthorized access.')}
+<table>
+<tr><th>Type</th><th>What it does</th><th>Real example</th></tr>
+<tr><td><b>Virus</b></td><td>Attaches to a program; spreads when shared</td><td>Needs a host to copy itself</td></tr>
+<tr><td><b>Worm</b></td><td>Self-spreads across networks, no host needed</td><td>WannaCry hit 200,000 machines in 4 days (2017)</td></tr>
+<tr><td><b>Trojan</b></td><td>Disguised as legitimate software</td><td>A "free game" that is really malware</td></tr>
+<tr><td><b>Ransomware</b></td><td>Encrypts your files, demands payment</td><td>Change Healthcare, 22 million dollar ransom</td></tr>
+<tr><td><b>Spyware</b></td><td>Secretly watches and reports activity</td><td>Keyloggers record every keystroke</td></tr>
+<tr><td><b>Rootkit</b></td><td>Hides itself deep in the system</td><td>Can survive a normal antivirus scan</td></tr>
+<tr><td><b>Botnet</b></td><td>An army of infected "zombie" PCs</td><td>Mirai used 600,000 devices (2016)</td></tr>
+</table>`});
+
+S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Reconnaissance',title:'OSINT: how attackers research you',html:`
+<div class="grid g2">
+<div>${def('OSINT','Open Source Intelligence','Information gathered from public sources: Google, social media, school sites, job posts, public records. Completely legal - and used by both attackers and defenders.')}
+${why('Everything you post in public is raw material for a personalized attack. Knowing this changes how you think about your own profiles.')}</div>
+<div>${card(`<h3 style="margin-top:0">What an attacker can find in 10 minutes</h3><ul class="small"><li>Your school and graduation year</li><li>Your sports team and coach’s name</li><li>Your pet’s name (a common security answer)</li><li>Where you checked in last weekend</li><li>Your friends and family - more targets</li></ul>`)}</div></div>`});
+
+S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Defense',title:'How to beat social engineering',html:`
+<div class="grid g2"><div><ul>
+<li><b>Verify before you trust.</b> Hang up, then call the official number yourself.</li>
+<li><b>Slow down.</b> Urgency is the trap; a pause defeats most attacks.</li>
+<li><b>Never share passwords or one-time codes.</b> Nobody legitimate asks.</li></ul></div><div><ul>
+<li><b>Check the URL</b> and the padlock before typing anything.</li>
+<li><b>Turn on MFA</b> so a stolen password is not enough.</li>
+<li><b>When in doubt, throw it out</b> and report it.</li></ul></div></div>
+${kc('Why is "slow down" such a powerful defense?','Attackers manufacture urgency precisely to stop you thinking. The moment you pause to verify through a second channel, almost every social-engineering trick falls apart.')}`});
 
 S({sec:'Day 2',time:'2:45 - 4:00',kick:'Group Project - Session 2 of 4',title:'Project work: build your outline (1 hr 15 min)',html:`
 ${card(`<h3 style="margin-top:0">Today’s tasks</h3><ol class="small">
@@ -715,25 +715,6 @@ S({sec:'Day 3',time:'9:20 - 10:45',kick:'Lesson Block 1 - Integrity tool',title:
 <div class="grid g2"><div>${card(`<h3 style="margin-top:0">Four properties</h3><ul class="small"><li><b>Deterministic</b> - same input, same hash</li><li><b>One-way</b> - cannot run backward</li><li><b>Avalanche</b> - one bit changes everything</li><li><b>Collision-resistant</b> - hard to find two inputs with the same hash</li></ul>`)}</div>
 <div>${card(`<h3 style="margin-top:0">Used for</h3><p class="small">Storing passwords (sites keep the hash, not the password), verifying a download was not tampered with, and blockchains (each block holds the previous block’s hash).</p>`)}</div></div>`});
 
-S({sec:'Day 3',time:'1:00 - 2:30',kick:'Lesson Block 2 - Worked numeric example',title:'RSA with tiny numbers you can check by hand',html:`
-<div class="grid g2">
-<div><ol class="small">
-<li>Pick primes <code>p=5</code>, <code>q=11</code>.</li>
-<li><code>n = p&times;q = 55</code>.</li>
-<li><code>phi = (p-1)(q-1) = 40</code>.</li>
-<li>Pick <code>e=3</code> (coprime to 40). <b>Public key = (3, 55)</b>.</li>
-<li>Find <code>d</code> with <code>3&times;d mod 40 = 1</code> -&gt; <code>d=27</code>. <b>Private key = (27, 55)</b>.</li>
-</ol>
-<p class="small"><b>Encrypt</b> m=7: <code>7^3 mod 55 = 343 mod 55 = 13</code>.<br><b>Decrypt</b> c=13: <code>13^27 mod 55 = 7</code>. Back to the start.</p></div>
-<div>${codeRun(`<span class="k">def</span> <span class="f">rsa</span>(m, key):
-    exp, n = key
-    <span class="k">return</span> <span class="f">pow</span>(m, exp, n)
-
-c = rsa(<span class="n">7</span>,  (<span class="n">3</span>, <span class="n">55</span>))   <span class="c"># 13</span>
-m = rsa(c,  (<span class="n">27</span>, <span class="n">55</span>))  <span class="c"># 7</span>
-<span class="f">print</span>(c, m)`,plat('colab','run it - then try m = 9'))}
-${note('Real RSA uses primes hundreds of digits long. Security rests on this: multiplying two big primes is easy, factoring the result back is practically impossible.')}</div></div>`});
-
 S({sec:'Day 3',time:'9:20 - 10:45',kick:'Lesson Block 1 - Worked numeric example',title:'XOR and the one-time pad',html:`
 <div class="grid g2">
 <div>${def('XOR','exclusive OR','A bit operation: 0 XOR 0 = 0, 1 XOR 1 = 0, 0 XOR 1 = 1. Crucially, applying the same key twice returns the original: <code>(M XOR K) XOR K = M</code>.')}
@@ -765,6 +746,59 @@ ${lab('Three stations','Rotate through all three.',[
 '<b>Hashing demo:</b> hash your name on an online SHA-256 tool, change one letter, watch it transform. Look up the hash of <code>password123</code> in a cracking database.'],
 plat('web','online SHA-256 + hash-lookup tools')+plat('colab','run the cipher notebook'))}
 ${note('practice these ciphers with dcode.fr and CyberChef, plus the exercises in <code>Day3/Day3.ipynb</code>.')}`});
+
+S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 2.4 / 6.2',title:'Code Lab: why salt matters',html:`
+<div class="grid g2">
+<div>${codeRun(`<span class="k">import</span> hashlib, os
+<span class="k">def</span> <span class="f">h</span>(pw, salt=<span class="s">b""</span>):
+    <span class="k">return</span> hashlib.sha256(salt+pw.encode()).hexdigest()
+
+<span class="c"># same password, NO salt -> identical hashes</span>
+<span class="f">print</span>(h(<span class="s">"password1"</span>))
+<span class="f">print</span>(h(<span class="s">"password1"</span>))     <span class="c"># rainbow tables win</span>
+
+<span class="c"># add a random per-user salt</span>
+s1, s2 = os.urandom(<span class="n">8</span>), os.urandom(<span class="n">8</span>)
+<span class="f">print</span>(h(<span class="s">"password1"</span>, s1))
+<span class="f">print</span>(h(<span class="s">"password1"</span>, s2))   <span class="c"># now different</span>`,plat('colab','run and compare the four outputs'))}</div>
+<div>${def('Salt','-','A random value added to each password before hashing, so identical passwords produce different hashes.')}
+${kc('How does salt defeat a rainbow table?','A rainbow table is precomputed for plain inputs. A unique salt per user means the attacker’s table no longer matches any hash - they must redo the cracking work for every single account.')}</div></div>`});
+
+S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 1 + 3',title:'Code Lab: ciphers and RSA in the notebook',html:`
+<div class="grid g2">
+<div>${card(`<h3 style="margin-top:0">In the day's notebook</h3><ul class="small">
+<li><b>Module 1:</b> Caesar, Vigenere, Rail Fence, frequency analysis, XOR one-time pad.</li>
+<li><b>Module 2:</b> MD5/SHA, HMAC, PBKDF2 password hashing.</li>
+<li><b>Module 3:</b> extended GCD, RSA keygen, encrypt/decrypt, even encrypting image pixels.</li></ul>`)}</div>
+<div>${codeRun(`<span class="c"># Vigenere: a repeating-key Caesar</span>
+<span class="k">def</span> <span class="f">vig</span>(text, key):
+    out, k = <span class="s">""</span>, <span class="n">0</span>
+    <span class="k">for</span> c <span class="k">in</span> text:
+        <span class="k">if</span> c.isalpha():
+            s = <span class="f">ord</span>(key[k%<span class="f">len</span>(key)].lower())-<span class="n">97</span>
+            out += <span class="f">chr</span>((<span class="f">ord</span>(c.lower())-<span class="n">97</span>+s)%<span class="n">26</span>+<span class="n">97</span>); k+=<span class="n">1</span>
+        <span class="k">else</span>: out += c
+    <span class="k">return</span> out
+<span class="f">print</span>(vig(<span class="s">"attack"</span>, <span class="s">"key"</span>))`,plat('colab','open the notebook, run Modules 1 to 3'))}</div></div>`});
+
+S({sec:'Day 3',time:'1:00 - 2:30',kick:'Lesson Block 2 - Worked numeric example',title:'RSA with tiny numbers you can check by hand',html:`
+<div class="grid g2">
+<div><ol class="small">
+<li>Pick primes <code>p=5</code>, <code>q=11</code>.</li>
+<li><code>n = p&times;q = 55</code>.</li>
+<li><code>phi = (p-1)(q-1) = 40</code>.</li>
+<li>Pick <code>e=3</code> (coprime to 40). <b>Public key = (3, 55)</b>.</li>
+<li>Find <code>d</code> with <code>3&times;d mod 40 = 1</code> -&gt; <code>d=27</code>. <b>Private key = (27, 55)</b>.</li>
+</ol>
+<p class="small"><b>Encrypt</b> m=7: <code>7^3 mod 55 = 343 mod 55 = 13</code>.<br><b>Decrypt</b> c=13: <code>13^27 mod 55 = 7</code>. Back to the start.</p></div>
+<div>${codeRun(`<span class="k">def</span> <span class="f">rsa</span>(m, key):
+    exp, n = key
+    <span class="k">return</span> <span class="f">pow</span>(m, exp, n)
+
+c = rsa(<span class="n">7</span>,  (<span class="n">3</span>, <span class="n">55</span>))   <span class="c"># 13</span>
+m = rsa(c,  (<span class="n">27</span>, <span class="n">55</span>))  <span class="c"># 7</span>
+<span class="f">print</span>(c, m)`,plat('colab','run it - then try m = 9'))}
+${note('Real RSA uses primes hundreds of digits long. Security rests on this: multiplying two big primes is easy, factoring the result back is practically impossible.')}</div></div>`});
 
 S({sec:'Day 3',time:'1:00 - 2:30',kick:'Lesson Block 2 - Passwords',title:'The password problem',html:`
 <p>Passwords are the most common and the weakest form of authentication. The world’s most-used passwords stay embarrassingly predictable:</p>
@@ -806,40 +840,6 @@ S({sec:'Day 3',time:'1:00 - 2:30',kick:'Lesson Block 2 - Second line of defense'
 <div style="text-align:center;margin:2px 0">${SVG.mfa}</div>
 ${def('MFA','Multi-Factor Authentication','Requiring two or more independent proofs of identity, so a stolen password alone is not enough.')}
 ${kc('The 2024 Microsoft breach succeeded partly because target accounts lacked one control. Which one, and why did it matter?','<b>MFA.</b> Even after guessing the password, attackers would have needed the second factor (a phone or key) to log in. Without MFA, the password was the only door.')}`});
-
-S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 2.4 / 6.2',title:'Code Lab: why salt matters',html:`
-<div class="grid g2">
-<div>${codeRun(`<span class="k">import</span> hashlib, os
-<span class="k">def</span> <span class="f">h</span>(pw, salt=<span class="s">b""</span>):
-    <span class="k">return</span> hashlib.sha256(salt+pw.encode()).hexdigest()
-
-<span class="c"># same password, NO salt -> identical hashes</span>
-<span class="f">print</span>(h(<span class="s">"password1"</span>))
-<span class="f">print</span>(h(<span class="s">"password1"</span>))     <span class="c"># rainbow tables win</span>
-
-<span class="c"># add a random per-user salt</span>
-s1, s2 = os.urandom(<span class="n">8</span>), os.urandom(<span class="n">8</span>)
-<span class="f">print</span>(h(<span class="s">"password1"</span>, s1))
-<span class="f">print</span>(h(<span class="s">"password1"</span>, s2))   <span class="c"># now different</span>`,plat('colab','run and compare the four outputs'))}</div>
-<div>${def('Salt','-','A random value added to each password before hashing, so identical passwords produce different hashes.')}
-${kc('How does salt defeat a rainbow table?','A rainbow table is precomputed for plain inputs. A unique salt per user means the attacker’s table no longer matches any hash - they must redo the cracking work for every single account.')}</div></div>`});
-
-S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 1 + 3',title:'Code Lab: ciphers and RSA in the notebook',html:`
-<div class="grid g2">
-<div>${card(`<h3 style="margin-top:0">In the day's notebook</h3><ul class="small">
-<li><b>Module 1:</b> Caesar, Vigenere, Rail Fence, frequency analysis, XOR one-time pad.</li>
-<li><b>Module 2:</b> MD5/SHA, HMAC, PBKDF2 password hashing.</li>
-<li><b>Module 3:</b> extended GCD, RSA keygen, encrypt/decrypt, even encrypting image pixels.</li></ul>`)}</div>
-<div>${codeRun(`<span class="c"># Vigenere: a repeating-key Caesar</span>
-<span class="k">def</span> <span class="f">vig</span>(text, key):
-    out, k = <span class="s">""</span>, <span class="n">0</span>
-    <span class="k">for</span> c <span class="k">in</span> text:
-        <span class="k">if</span> c.isalpha():
-            s = <span class="f">ord</span>(key[k%<span class="f">len</span>(key)].lower())-<span class="n">97</span>
-            out += <span class="f">chr</span>((<span class="f">ord</span>(c.lower())-<span class="n">97</span>+s)%<span class="n">26</span>+<span class="n">97</span>); k+=<span class="n">1</span>
-        <span class="k">else</span>: out += c
-    <span class="k">return</span> out
-<span class="f">print</span>(vig(<span class="s">"attack"</span>, <span class="s">"key"</span>))`,plat('colab','open the notebook, run Modules 1 to 3'))}</div></div>`});
 
 S({sec:'Day 3',time:'2:45 - 4:00',kick:'Group Project - Session 3 of 4',title:'Project work: Building structural content (1 hr 15 min)',html:`
 <div class="grid g2a">
@@ -899,24 +899,6 @@ ${lab('Nmap Scanning and Infrastructure Auditing','Deploy active scanning suites
 plat('range','Free online practice lab')+plat('kali','Kali diagnostic command interface'))}
 ${note('Class safety directive: executing discovery sweeps against non-authorized exterior infrastructure spaces constitutes a violation of federal guidelines under the CFAA.')}`});
 
-S({sec:'Day 4',time:'1:00 - 2:30',kick:'Lesson Block 2',title:'Defending the Gateway Matrix',html:`
-<div class="flex" style="gap:22px;align-items:center">
-<div style="flex:none;width:470px">${SVG.net}</div>
-<div class="col">
-<p>Defenders structure layered concentric topologies to neutralize lateral threat progression across enterprise assets.</p>
-${def('Firewall Guard','Access Matrix','An inline filtering gate that dropping or relays packet blocks based on distinct port rules.')}
-${def('IDS/IPS Array','Detection Sensor','<b>IDS</b> monitors telemetry for malicious signatures. <b>IPS</b> detects anomalies and actively alters firewall tables to drop attackers dynamically.')}
-</div></div>`});
-
-S({sec:'Day 4',time:'1:00 - 2:30',kick:'Lesson Block 2 - Attacks',title:'Drowning Availability: Denial of Service architecture',html:`
-<div class="flex" style="gap:22px;align-items:center">
-<div style="flex:none;width:420px">${SVG.ddos}</div>
-<div class="col">
-<p>adversaries utilize distributed zombie arrays to violate the <b>Availability</b> component of the CIA matrix.</p>
-${def('Honeypot Decoy','-','A highly vulnerable target profile exposed purposefully to draw adversary focus, gather exploit threat intelligence, and divert attacks from production servers.')}
-${kc('An adversary floods an enterprise server with thousands of fake initial handshake requests. What is the tactical defensive move?','Implement an automated rate-limiting script on the edge firewall, activate an upstream content delivery network scrubbing link, or route incoming vectors through an active inline IPS appliance.')}
-</div></div>`});
-
 S({sec:'Day 4',time:'11:00 - 12:00',kick:'Code Lab - Python Module 4',title:'Code Lab: Build a diagnostic Port Connection Scanner',html:`
 <div class="grid g2">
 <div>${codeRun(`<span class="k">import</span> socket
@@ -935,6 +917,24 @@ S({sec:'Day 4',time:'11:00 - 12:00',kick:'Code Lab - Python Module 4',title:'Cod
 scan_port(<span class="s">"127.0.0.1"</span>, <span class="n">80</span>)`,plat('colab','initialize network test module inside local environment cell'))}</div>
 <div>${kc('Why do we append a strict timeout setting of 0.5 seconds?','Without an explicit timeout boundary, the underlying operating system socket will hold a blocked thread for over 20 seconds waiting for non-responsive ports, slowing your multi-port scripts to a crawl.')}
 ${note('Advanced modification tip: wrap this function setup inside a standard <code>for</code> parsing routine to execute automated sequentially targeted scanning workflows.')}</div></div>`});
+
+S({sec:'Day 4',time:'1:00 - 2:30',kick:'Lesson Block 2',title:'Defending the Gateway Matrix',html:`
+<div class="flex" style="gap:22px;align-items:center">
+<div style="flex:none;width:470px">${SVG.net}</div>
+<div class="col">
+<p>Defenders structure layered concentric topologies to neutralize lateral threat progression across enterprise assets.</p>
+${def('Firewall Guard','Access Matrix','An inline filtering gate that dropping or relays packet blocks based on distinct port rules.')}
+${def('IDS/IPS Array','Detection Sensor','<b>IDS</b> monitors telemetry for malicious signatures. <b>IPS</b> detects anomalies and actively alters firewall tables to drop attackers dynamically.')}
+</div></div>`});
+
+S({sec:'Day 4',time:'1:00 - 2:30',kick:'Lesson Block 2 - Attacks',title:'Drowning Availability: Denial of Service architecture',html:`
+<div class="flex" style="gap:22px;align-items:center">
+<div style="flex:none;width:420px">${SVG.ddos}</div>
+<div class="col">
+<p>adversaries utilize distributed zombie arrays to violate the <b>Availability</b> component of the CIA matrix.</p>
+${def('Honeypot Decoy','-','A highly vulnerable target profile exposed purposefully to draw adversary focus, gather exploit threat intelligence, and divert attacks from production servers.')}
+${kc('An adversary floods an enterprise server with thousands of fake initial handshake requests. What is the tactical defensive move?','Implement an automated rate-limiting script on the edge firewall, activate an upstream content delivery network scrubbing link, or route incoming vectors through an active inline IPS appliance.')}
+</div></div>`});
 
 S({sec:'Day 4',time:'2:45 - 4:00',kick:'Group Project - Session 4 of 4',title:'Project Finalization: Slide assembly and rehearsal (1 hr 15 min)',html:`
 ${card(`<h3 style="margin-top:0">Final Day Polish Goals</h3><ol class="small">
