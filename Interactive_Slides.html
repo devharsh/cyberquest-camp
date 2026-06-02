@@ -230,7 +230,7 @@ const news=(t,txt)=>`<div class="news"><b>${t}</b> ${txt}</div>`;
 const note=(t)=>`<div class="note">${t}</div>`;
 const kc=(q,a)=>{_kc++;return `<div class="kc"><h3>Knowledge Check</h3><div class="q">${q}</div><button onclick="this.closest('.kc').classList.toggle('show');this.textContent=this.closest('.kc').classList.contains('show')?'Hide answer':'Show answer'">Show answer</button><div class="ans"><b>Answer:</b> ${a}</div></div>`;};
 const card=(h)=>`<div class="card">${h}</div>`;
-const plat=(type,txt)=>{const m={colab:'Google Colab',range:'U.S. Cyber Range',kali:'Kali Linux',web:'Browser'};return `<span class="plat ${type}">${m[type]||''}: ${txt}</span>`;};
+const plat=(type,txt)=>{const m={colab:'Google Colab',range:'Free Online Lab',kali:'Kali Linux',web:'Browser'};return `<span class="plat ${type}">${m[type]||''}: ${txt}</span>`;};
 function lab(title,intro,steps,plats){return `<div class="lab"><h3>${title}</h3>${intro?`<p class="small">${intro}</p>`:''}<ol class="small">${steps.map(s=>`<li>${s}</li>`).join('')}</ol>${plats?`<div>${plats}</div>`:''}</div>`;}
 function codeRun(code,run){return `<pre>${code}</pre>${run?`<div class="small" style="margin-top:4px">${run}</div>`:''}`;}
 
@@ -249,7 +249,7 @@ S({t:'cover',sec:'Welcome',html:`
 <p class="lead">A five day cybersecurity course for middle and high school students. Learn how attacks work, how to stop them, basic Python, ethical hacking, and the new world of AI security - all hands-on.</p>
 <div class="chips" style="margin-top:18px">
 <span class="pill on">Day 1 Foundations</span><span class="pill">Day 2 Attackers</span><span class="pill">Day 3 Secrets</span><span class="pill">Day 4 Networks</span><span class="pill">Day 5 Capture the Flag</span></div>
-<p class="small muted" style="margin-top:22px">Devharsh Trivedi, Ph.D., CISSP - Department of Computer Science, Bowie State University<br>Computer Science Building, Room 221 - Washington D.C., 20003 - July 13 to 17, 2026</p>
+<p class="small muted" style="margin-top:22px">Devharsh Trivedi, Ph.D., CISSP - Department of Computer Science, Bowie State University<br>Computer Science Building, Room 221 - Washington D.C., 20003</p>
 <p class="tiny muted" style="margin-top:10px">Tip: press the right arrow to advance, <b>F</b> for fullscreen, <b>C</b> for the contents menu.</p>`});
 
 S({t:'divider',sec:'Welcome',html:`
@@ -274,7 +274,7 @@ S({sec:'Welcome',kick:'How the week works',title:'Five days, one mission, buildi
 <li>Reading and writing basic <b>Python</b> security scripts</li>
 <li>Breaking and making secret codes</li>
 <li>Spotting phishing, scams, and deepfakes</li>
-<li>Using real tools in the U.S. Cyber Range</li></ul>`)}
+<li>Using real, free online security tools</li></ul>`)}
 ${why('Cybersecurity is one of the fastest growing careers on Earth, with about 3.5 million unfilled jobs worldwide. The skills start here, and they protect you and your family right now.')}</div>
 </div>`});
 
@@ -300,13 +300,13 @@ ${card('<h3 style="margin-top:0">Two kinds of activity</h3><p class="small"><b>L
 S({sec:'Welcome',kick:'Set up once, use all week',title:'Your three hands-on platforms',html:`
 <div class="grid g3">
 <div>${card(`<div class="plat colab">Google Colab</div><p class="small">Free Python in your browser, nothing to install. Go to <b>colab.research.google.com</b>, click <b>New notebook</b>, type code in a cell, press <b>Shift+Enter</b> to run.</p>`)}</div>
-<div>${card(`<div class="plat range">U.S. Cyber Range</div><p class="small">Safe, isolated virtual machines in the cloud. Log in, open the assigned course, and launch the lab environment. This is where you do anything that touches a network.</p>`)}</div>
-<div>${card(`<div class="plat kali">Kali Linux</div><p class="small">A Linux system loaded with security tools. Inside the Cyber Range you open a Kali terminal to run real commands like <code>nmap</code> and <code>nslookup</code>.</p>`)}</div></div>
-${note('<b>Golden rule before any tool:</b> only test systems you own or are given written permission to test (like the Cyber Range labs). You will learn exactly why on Day 1 afternoon.')}
-<div class="small muted">Course material is in your <b>Bowie</b> folder. Code for every example lives in <code>CyberSquad_Python_Exercises.ipynb</code> - open it in Colab and follow along.</div>`});
+<div>${card(`<div class="plat range">Free Online Labs</div><p class="small">Free, browser-based practice sites such as OverTheWire Bandit (a real Linux terminal over SSH) and Google Colab. They run in your browser, so there is nothing to buy or install.</p>`)}</div>
+<div>${card(`<div class="plat kali">Browser Terminal</div><p class="small">Sites like OverTheWire Bandit give you a real Linux command line in the browser, where you practice commands like <code>ls</code>, <code>cat</code>, and <code>ssh</code> safely.</p>`)}</div></div>
+${note('<b>Golden rule before any tool:</b> only test systems you own or are given written permission to test (like the free practice labs listed here). You will learn exactly why on Day 1 afternoon.')}
+<div class="small muted">Code for every example lives in each day's notebook (for example <code>Day1/Day1.ipynb</code>) - open it in Colab and follow along.</div>`});
 
 /* ============================ DAY 1 ============================ */
-S({t:'divider',sec:'Day 1',html:`<div class="badge">DAY 1 - MONDAY, JULY 13</div>
+S({t:'divider',sec:'Day 1',html:`<div class="badge">DAY 1</div>
 <h1 style="margin-top:14px">Foundations: <span style="color:#2563eb">Welcome to the Cyber World</span></h1>
 <p class="lead">Today you build the mental model everything else rests on: what security protects, who is fighting over it, and the line between an ethical hacker and a criminal.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">CIA Triad</span><span class="pill">Threats</span><span class="pill">Attackers vs Defenders</span><span class="pill">Ethics and the law</span><span class="pill">Python basics</span></div>`});
@@ -387,7 +387,7 @@ ${lab('Case Study Analysis','In teams of 3, dissect a real breach using today’
 'Name one <b>control</b> that could have prevented or limited the damage.',
 'Present a 2 minute summary. Could it happen today? What would you change?'],
 plat('range','open the Day 1 case-study packet')+plat('web','read the linked news source'))}
-${note('Supplementary handout: the four case-study one-pagers are in your Bowie folder as <code>Supplement_Breach_Case_Studies</code> with a teacher answer key.')}`});
+${note('Supplementary handout: the breach case studies are covered in the Day 1 guide (<code>Day1/Day1.md</code>).')}`});
 
 S({sec:'Day 1',time:'11:00 - 12:00',kick:'Worked example',title:'Modeling the method: Equifax 2017',html:`
 <div class="grid g2">
@@ -438,7 +438,7 @@ ${kc('A school leaves a server with a default password (admin/admin). A hacker l
 S({t:'divider',sec:'Day 1',html:`<div class="badge" style="border-color:#16a34a;color:#15803d">DAY 1 - CODE LAB - PYTHON MODULE 0</div>
 <h1 style="margin-top:12px">Your first <span style="color:#16a34a">Python</span></h1>
 <p class="lead">Security professionals automate everything. You only need a little Python to write your own tools. Open Colab and type along - do not just read.</p>
-<div style="margin-top:10px">${plat('colab','colab.research.google.com → New notebook')}${plat('range','or the Day 1 notebook in the Cyber Range')}</div>`});
+<div style="margin-top:10px">${plat('colab','colab.research.google.com → New notebook')}${plat('range','or open Day1/Day1.ipynb from this repo')}</div>`});
 
 S({sec:'Day 1',time:'11:00 - 12:00',kick:'Code Lab 0.1 to 0.3',title:'Variables, strings, and loops',html:`
 <div class="grid g2">
@@ -527,7 +527,7 @@ S({sec:'Day 1',time:'4:00 - 4:15',kick:'Wrap-Up',title:'Day 1 takeaways, and wha
 ${kc('In one sentence, what is the difference between a vulnerability and a threat?','A vulnerability is a <b>weakness</b> that exists; a threat is the <b>thing that could exploit</b> that weakness. The control is what closes the gap.')}</div></div>`});
 
 /* ============================ DAY 2 ============================ */
-S({t:'divider',sec:'Day 2',html:`<div class="badge" style="border-color:#d97706;color:#b45309">DAY 2 - TUESDAY, JULY 14</div>
+S({t:'divider',sec:'Day 2',html:`<div class="badge" style="border-color:#d97706;color:#b45309">DAY 2</div>
 <h1 style="margin-top:14px">The Attackers: <span style="color:#d97706">the human side of hacking</span></h1>
 <p class="lead">Story so far: you know what security protects. Today you learn how break-ins actually begin. The shocking part: the easiest target is rarely the computer. It is the person using it.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">Social engineering</span><span class="pill">Phishing</span><span class="pill">Malware</span><span class="pill">OSINT</span><span class="pill">Defense</span></div>`});
@@ -581,7 +581,7 @@ ${lab('Sort the inbox','You receive a packet of 10 emails. Some are real, some a
 'As a class, reveal the verdicts. Which fakes were most convincing, and why?',
 'Bonus: using only the school website, sketch what a <b>spear-phishing</b> email aimed at one teacher might say. What public info makes it believable?'],
 plat('web','open the 10-email packet')+plat('range','submit answers in the Day 2 lab'))}
-${note('Supplementary handout: <code>Supplement_Phishing_Email_Packet</code> in your Bowie folder contains all 10 emails plus the answer key with each red flag marked.')}`});
+${note('Supplementary handout: the phishing red flags from this section are covered in the Day 2 guide (<code>Day2/Day2.md</code>).')}`});
 
 S({sec:'Day 2',time:'1:00 - 2:30',kick:'Lesson Block 2 - Payloads',title:'Know your malware',html:`
 ${def('Malware','Malicious Software','Any software built to damage, disrupt, steal, or gain unauthorized access.')}
@@ -659,7 +659,7 @@ S({sec:'Day 2',time:'4:00 - 4:15',kick:'Wrap-Up',title:'Day 2 takeaways, and wha
 ${kc('A USB drive labeled "Salaries 2026" is on the hallway floor. What do you do?','Do not plug it in - that is <b>baiting</b>. Hand it to IT or security. Curiosity is exactly what the attacker is counting on.')}`});
 
 /* ============================ DAY 3 ============================ */
-S({t:'divider',sec:'Day 3',html:`<div class="badge" style="border-color:#7c3aed;color:#6d28d9">DAY 3 - WEDNESDAY, JULY 15</div>
+S({t:'divider',sec:'Day 3',html:`<div class="badge" style="border-color:#7c3aed;color:#6d28d9">DAY 3</div>
 <h1 style="margin-top:14px">Secrets and Identity: <span style="color:#7c3aed">Cryptography and Passwords</span></h1>
 <p class="lead">Story so far: attackers want your data. Today you learn the math that hides it - from Caesar to modern AES and RSA - and why the password is the weakest brick in the wall.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">Ciphers</span><span class="pill">Hashing</span><span class="pill">RSA</span><span class="pill">Passwords</span><span class="pill">MFA</span></div>`});
@@ -764,7 +764,7 @@ ${lab('Three stations','Rotate through all three.',[
 '<b>Cipher wheel:</b> build the paper wheel, encode a note with a shift of your choice, swap with a partner, and crack each other’s.',
 '<b>Hashing demo:</b> hash your name on an online SHA-256 tool, change one letter, watch it transform. Look up the hash of <code>password123</code> in a cracking database.'],
 plat('web','online SHA-256 + hash-lookup tools')+plat('colab','run the cipher notebook'))}
-${note('Supplementary handouts in your Bowie folder: <code>Supplement_Cipher_Challenges</code> (with answers) and <code>Supplement_Cipher_Wheel</code> (printable template).')}`});
+${note('practice these ciphers with dcode.fr and CyberChef, plus the exercises in <code>Day3/Day3.ipynb</code>.')}`});
 
 S({sec:'Day 3',time:'1:00 - 2:30',kick:'Lesson Block 2 - Passwords',title:'The password problem',html:`
 <p>Passwords are the most common and the weakest form of authentication. The world’s most-used passwords stay embarrassingly predictable:</p>
@@ -826,7 +826,7 @@ ${kc('How does salt defeat a rainbow table?','A rainbow table is precomputed for
 
 S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 1 + 3',title:'Code Lab: ciphers and RSA in the notebook',html:`
 <div class="grid g2">
-<div>${card(`<h3 style="margin-top:0">In <code>CyberSquad_Python_Exercises.ipynb</code></h3><ul class="small">
+<div>${card(`<h3 style="margin-top:0">In the day's notebook</h3><ul class="small">
 <li><b>Module 1:</b> Caesar, Vigenere, Rail Fence, frequency analysis, XOR one-time pad.</li>
 <li><b>Module 2:</b> MD5/SHA, HMAC, PBKDF2 password hashing.</li>
 <li><b>Module 3:</b> extended GCD, RSA keygen, encrypt/decrypt, even encrypting image pixels.</li></ul>`)}</div>
@@ -861,7 +861,7 @@ S({sec:'Day 3',time:'4:00 - 4:15',kick:'Wrap-Up',title:'Day 3 takeaways, and wha
 
 
 /* ============================ DAY 4 ============================ */
-S({t:'divider',sec:'Day 4',html:`<div class="badge" style="border-color:#0891b2;color:#0e7490">DAY 4 - THURSDAY, JULY 16</div>
+S({t:'divider',sec:'Day 4',html:`<div class="badge" style="border-color:#0891b2;color:#0e7490">DAY 4</div>
 <h1 style="margin-top:14px">The Battlefield: <span style="color:#0891b2">Networks and Defense Systems</span></h1>
 <p class="lead">Story so far: you can lock secrets inside a data file. Today you study the transit network: how data segments travel across the globe and how defenders construct rings of firewalls around infrastructure hubs.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">Packets & Layers</span><span class="pill">Routing Stack</span><span class="pill">Firewall Filters</span><span class="pill">Nmap Scanning</span><span class="pill">Intrusion Detection</span></div>`});
@@ -896,7 +896,7 @@ ${lab('Nmap Scanning and Infrastructure Auditing','Deploy active scanning suites
 'Execute <code>nslookup bowie.edu</code> to identify host addressing configurations.',
 'Run an authorized scan against localized test parameters: <code>nmap -F 10.0.2.0/24</code>.',
 'Isolate system nodes actively rendering HTTP communication patterns on port 80 or port 443.'],
-plat('range','U.S. Cyber Range isolated workspace')+plat('kali','Kali diagnostic command interface'))}
+plat('range','Free online practice lab')+plat('kali','Kali diagnostic command interface'))}
 ${note('Class safety directive: executing discovery sweeps against non-authorized exterior infrastructure spaces constitutes a violation of federal guidelines under the CFAA.')}`});
 
 S({sec:'Day 4',time:'1:00 - 2:30',kick:'Lesson Block 2',title:'Defending the Gateway Matrix',html:`
@@ -955,7 +955,7 @@ S({sec:'Day 4',time:'4:00 - 4:15',kick:'Wrap-Up',title:'Day 4 takeaways, and wha
 
 
 /* ============================ DAY 5 ============================ */
-S({t:'divider',sec:'Day 5',html:`<div class="badge" style="border-color:#e11d48;color:#e11d48">DAY 5 - FRIDAY, JULY 17</div>
+S({t:'divider',sec:'Day 5',html:`<div class="badge" style="border-color:#e11d48;color:#e11d48">DAY 5</div>
 <h1 style="margin-top:14px">Prove It: <span style="color:#e11d48">AI Frontiers and CTF Arena</span></h1>
 <p class="lead">The final milestone. Today we examine the bleeding edge of engineering: Large Language Model exploit paths, automated prompt manipulation, followed by the live team Capture the Flag tournament and formal project defenses.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">AI Vulnerabilities</span><span class="pill">Prompt Injections</span><span class="pill">Live CTF Tournament</span><span class="pill">Project Defenses</span><span class="pill">Graduation Loop</span></div>`});
@@ -1005,7 +1005,7 @@ S({sec:'Day 5',time:'3:30 - 4:15',kick:'Graduation Loop',title:'Course Completio
 <h2>Congratulations, Cyber Squad Graduates!</h2>
 <p class="lead">You have completed 35 rigorous hours of cryptographic evaluation, Python automation script build loops, network reconnaissance tracking, and artificial intelligence safety engineering.</p>
 ${note('<b>Next Progression Milestones:</b> Continue refining your code templates inside your GitHub workspace, configure your personal environment labs using open-source virtualization resources, and review upcoming regional SummitCTF junior division entry schedules.')}
-<p class="muted small">Department of Computer Science - Bowie State University &middot; June 2026</p>
+<p class="muted small">Department of Computer Science - Bowie State University</p>
 </div></div>`});
 
 
