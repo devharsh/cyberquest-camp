@@ -2,12 +2,6 @@
 
 A free, five-day, hands-on introduction to cybersecurity for middle and high school students. Every tool used here is free and runs in a web browser. No paid range or special hardware required.
 
-> Suggested public repository names (pick whichever you like best):
-> - **cyberquest-camp** (used in this repo)
-> - cyber-rookies
-> - hack-the-summer
-> - cyber-cadets-camp
-> - ctf-summer-school
 
 ## Who this is for
 - Students ages roughly 11 to 18, complete beginners welcome.
