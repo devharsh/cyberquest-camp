@@ -307,336 +307,263 @@ ${note('<b>Golden rule before any tool:</b> only test systems you own or are giv
 
 /* ============================ DAY 1 ============================ */
 /* ============================ DAY 1 ============================ */
+/* ===== DAY 1 ===== */
+/* ===== DAY 1 ===== */
 S({t:'divider',sec:'Day 1',html:`<div class="badge">DAY 1</div>
 <h1 style="margin-top:14px">Foundations: <span style="color:#2563eb">Code and the Command Line</span></h1>
 <p class="lead">Your first two superpowers: a little Python, and the Linux terminal that runs most of the internet.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">Python</span><span class="pill">Variables</span><span class="pill">Loops</span><span class="pill">Functions</span><span class="pill">Linux terminal</span></div>`});
 
-S({sec:'Day 1',kick:'How today works',title:'Your hands-on plan for today',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">1. Learn here in this deck</h3><p class="small">Watch the concepts and worked examples. Keep pressing Next.</p>')}</div>
-<div>${card('<h3 style="margin-top:0">2. Do the hands-on in the Day 1 deck</h3><p class="small">Open the <b>Day 1 deck</b> (Day decks button, top right). Do <b>Part 3 Code along</b> by running <b>Modules 1 to 4</b> in <code>Day1.ipynb</code>, then <b>Part 4 Play the free tools</b> (CodeCombat and OverTheWire Bandit). It opens in a new tab, so close it to come back.</p>')}</div>
-</div>
-${note('Optional self-study in the Day 1 deck: Part 1 Get oriented, Part 2 Learn the basics, Part 5 Test yourself.')}`});
+S({sec:'Day 1',kick:'How today works',title:'How the main deck, day deck, and notebook fit together',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">This is your main deck</h3><p class="small">It teaches every idea and tells you exactly when to act. Keep pressing Next.</p>')}</div><div>${card('<h3 style="margin-top:0">You will be sent out and back</h3><p class="small">At marked points, open the <b>Day 1 deck</b> (Day decks button, top right) for a Part, or run a <b>Module</b> in <code>Day1.ipynb</code>. Each opens in a new tab, so close it to return here.</p>')}</div></div>${note('Today you will run Modules 1 to 4 in Day1.ipynb, and use CodeCombat and OverTheWire Bandit in the Day 1 deck Part 4.')}`});
 
 S({sec:'Day 1',kick:'Cyber News',title:'Why code and the terminal matter',html:`
-${news('Python is everywhere:','it ranks among the most popular languages in the world each year (Stack Overflow Developer Survey, TIOBE index). Security teams use it to automate scans and build small tools in a few lines.')}
-${news('Linux runs the internet:','most web servers, Android phones, and supercomputers run Linux, which is why the command line is a real job skill.')}`});
+${news('Python is everywhere:','it ranks among the most popular languages in the world each year (Stack Overflow Developer Survey, TIOBE index). Security teams use it to automate scans and build small tools in a few lines.')}${news('Linux runs the internet:','most web servers, Android phones, and supercomputers run Linux, which is why the command line is a real job skill.')}`});
+
+S({sec:'Day 1',kick:'Lesson',title:'What is Python?',html:`
+<div class="grid g2"><div>${def('Python','named after Monty Python','A popular, easy-to-read programming language used across data, web, and security.')}${def('Interpreter','runs your code','Python runs your instructions line by line, so you see results immediately.')}</div><div>${card('<h3 style="margin-top:0">Why security pros use it</h3><p class="small">A few lines can automate a boring task, parse a log, or test an idea. You will write real tools this week.</p>')}</div></div>`});
 
 S({sec:'Day 1',kick:'Lesson',title:'Variables and data types',html:`
-<div class="grid g2">
-<div>${def('Variable','named box','A name that stores a value so you can reuse it. The equals sign stores the value on the right into the name on the left.')}
-${def('Data types','str int float bool','Text in quotes (str), whole numbers (int), decimals (float), and True or False (bool).')}</div>
-<div>${codeRun(`agent = "Ada"
+<div class="grid g2"><div>${def('Variable','named box','Stores a value so you can reuse it. The equals sign stores the value on the right into the name on the left.')}${def('Data types','str int float bool','Text in quotes (str), whole numbers (int), decimals (float), and True or False (bool).')}</div><div>${codeRun(`agent = "Ada"
 missions = 3
 ready = True
-print(agent, missions, ready)`,plat('colab','this is Module 1 in Day1.ipynb'))}</div>
-</div>`});
+print(agent, missions, ready)`,plat('colab','this is Module 1 in Day1.ipynb'))}</div></div>`});
 
-S({sec:'Day 1',kick:'Lesson',title:'Loops and functions',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">A loop repeats work</h3><p class="small">Moving a hero through a CodeCombat maze is just a loop of steps.</p>')}
-${card('<h3 style="margin-top:0">A function is reusable code</h3><p class="small">Define it once with <code>def</code>, then call it many times.</p>')}</div>
-<div>${codeRun(`for n in range(1, 6):
-    print("Mission", n, "ready")
+S({sec:'Day 1',kick:'Hands-on now',title:'Run Modules 1 in the notebook',html:`
+${lab('Open the Day 1 deck, Part 3 Code along','Run these in <code>Day1.ipynb</code>, then come back here.',['<b>Module 1:</b> create variables and print their types.'],plat('colab','Day1.ipynb Modules 1'))}${note('When you finish, close the Day 1 deck tab and come back to this slide, then press Next.')}`});
 
-def greet(name):
-    return "Welcome, " + name`,plat('colab','Modules 2 and 3 in Day1.ipynb'))}</div>
-</div>`});
+S({sec:'Day 1',kick:'Lesson',title:'Loops repeat work',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Do it again, automatically</h3><p class="small">A loop runs the same block many times. Moving a hero through a CodeCombat maze is just a loop of steps.</p>')}</div><div>${codeRun(`for n in range(1, 6):
+    print("Mission", n, "ready")`,plat('colab','Module 2 in Day1.ipynb'))}</div></div>`});
 
-S({sec:'Day 1',kick:'Code Lab',title:'Code Lab: run Modules 1 to 4',html:`
-${lab('Code along in the notebook','Open the Day 1 deck, Part 3 Code along, and run these in <code>Day1.ipynb</code>.',[
-'<b>Module 1:</b> variables and data types.',
-'<b>Module 2:</b> loops.',
-'<b>Module 3:</b> functions.',
-'<b>Module 4 (challenge):</b> build a password strength checker that scores length and variety.'],
-plat('colab','Day1.ipynb Modules 1 to 4'))}
-${note('When you finish the modules, close the Day 1 deck tab and come back here, then press Next.')}`});
+S({sec:'Day 1',kick:'Lesson',title:'Functions: reusable code',html:`
+<div class="grid g2"><div>${def('Function','def name(...)','A named, reusable block of code. Define it once, call it many times.')}</div><div>${codeRun(`def greet(name):
+    return "Welcome, " + name
+
+print(greet("Ada"))`,plat('colab','Module 3 in Day1.ipynb'))}</div></div>`});
+
+S({sec:'Day 1',kick:'Hands-on now',title:'Run Modules 2 and 3 in the notebook',html:`
+${lab('Open the Day 1 deck, Part 3 Code along','Run these in <code>Day1.ipynb</code>, then come back here.',['<b>Module 2:</b> write a loop.','<b>Module 3:</b> write and call a function.'],plat('colab','Day1.ipynb Modules 2 and 3'))}${note('When you finish, close the Day 1 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 1',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('How many times does for i in range(3) repeat, and why?','Three times: range(3) gives 0, 1, 2.')}`});
+
+S({sec:'Day 1',kick:'Challenge',title:'Build a password strength checker',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Your challenge</h3><p class="small">Score a password: +1 for length 12 or more, +1 for a digit, +1 for an uppercase letter, +1 for a symbol. Print Weak, Okay, or Strong.</p>')}</div><div>${card('<p class="small">This is <b>Module 4</b> in Day1.ipynb. You will see why length matters when we do the password math on Day 2.</p>')}</div></div>`});
+
+S({sec:'Day 1',kick:'Hands-on now',title:'Run Module 4 in the notebook',html:`
+${lab('Open the Day 1 deck, Part 3 Code along','Run these in <code>Day1.ipynb</code>, then come back here.',['<b>Module 4 (challenge):</b> finish the password strength checker.'],plat('colab','Day1.ipynb Module 4'))}${note('When you finish, close the Day 1 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 1',kick:'The terminal',title:'Meet the Linux command line',html:`
-<div class="grid g2">
-<div>${def('CLI','Command Line Interface','Controlling a computer by typing commands instead of clicking.')}
-${def('SSH','Secure Shell','A safe way to log in to another computer over the network.')}</div>
-<div>${card('<h3 style="margin-top:0">Commands you will use</h3><p class="small"><code>ls</code> list files, <code>cd</code> change folder, <code>pwd</code> where am I, <code>cat</code> print a file, <code>ssh user@host -p 2220</code> log in.</p>')}</div>
-</div>
-${why('OverTheWire Bandit teaches these by having you read a hidden password at each level using real commands.')}`});
+<div class="grid g2"><div>${def('CLI','Command Line Interface','Controlling a computer by typing commands instead of clicking.')}${def('SSH','Secure Shell','A safe way to log in to another computer over the network.')}</div><div>${card('<h3 style="margin-top:0">Commands you will use</h3><p class="small"><code>ls</code> list, <code>cd</code> change folder, <code>pwd</code> where am I, <code>cat</code> print a file, <code>ssh user@host -p 2220</code> log in.</p>')}</div></div>${why('OverTheWire Bandit teaches these by hiding a password at each level that you read with real commands.')}`});
 
-S({sec:'Day 1',kick:'Play',title:'Play the free tools (Day 1 deck, Part 4)',html:`
-${lab('Two free, fun tools','Open the Day 1 deck, Part 4 Play the free tools.',[
-'<b>CodeCombat</b> (codecombat.com): clear the first Computer Science 1 levels. Notice the loops.',
-'<b>OverTheWire Bandit</b> (overthewire.org/wargames/bandit): connect with SSH and clear Level 0.'],
-plat('web','codecombat.com')+plat('web','overthewire.org/wargames/bandit'))}
-${note('Do the games in the Day 1 deck, then close that tab and come back here.')}`});
+S({sec:'Day 1',kick:'Hands-on now',title:'Play the free tools (Day 1 deck, Part 4)',html:`
+${lab('Open the Day 1 deck, Part 4 Play the free tools','Use both tools, then come back here.',['<b>CodeCombat</b> (codecombat.com): clear the first Computer Science 1 levels and spot the loops.','<b>OverTheWire Bandit</b> (overthewire.org/wargames/bandit): connect with SSH and clear Level 0.'],plat('web','codecombat.com')+plat('web','overthewire.org/wargames/bandit'))}${note('When you finish, close the Day 1 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 1',kick:'Team Project',title:'Team project: learn from a real breach',html:`
-${card('<h3 style="margin-top:0">Your week-long project</h3><p class="small">In teams of 2 to 3, pick one real breach, study it across the week, and present on Day 5.</p>')}
-${lab('Pick a case study','Ready-made one-pagers with verified sources are in the repo folder <code>resources/case-studies/</code>.',[
-'Choose one: <a href="resources/case-studies/equifax-2017.md">Equifax 2017</a>, <a href="resources/case-studies/yahoo-2013.md">Yahoo 2013</a>, <a href="resources/case-studies/target-2013.md">Target 2013</a>, or <a href="resources/case-studies/solarwinds-2020.md">SolarWinds 2020</a>.',
-'For your breach name the asset, the vulnerability, the threat that exploited it, which CIA pillar broke, and one control that would have helped.'],
-plat('web','resources/case-studies/'))}`});
+${card('<h3 style="margin-top:0">Your week-long project</h3><p class="small">In teams of 2 to 3, pick one real breach, study it across the week, and present on Day 5.</p>')}${lab('Pick a case study','Ready-made one-pagers with verified sources are in <code>resources/case-studies/</code>.',['Choose one: <a href="resources/case-studies/equifax-2017.md">Equifax 2017</a>, <a href="resources/case-studies/yahoo-2013.md">Yahoo 2013</a>, <a href="resources/case-studies/target-2013.md">Target 2013</a>, or <a href="resources/case-studies/solarwinds-2020.md">SolarWinds 2020</a>.','Name the asset, the vulnerability, the threat, which CIA pillar broke, and one control that would have helped.'],plat('web','resources/case-studies/'))}`});
 
 S({sec:'Day 1',kick:'Wrap-Up',title:'Day 1 takeaways',html:`
-${kc('What does for i in range(3) repeat, and why does length matter for passwords?','It repeats 3 times (0, 1, 2). Longer passwords matter because the number of combinations grows as N to the power L, which you will prove with math on Day 2.')}
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">You can now</h3><ul class="small"><li>Use variables, loops, and functions.</li><li>Read and run a Python notebook.</li><li>Navigate a Linux terminal.</li></ul>')}</div>
-<div>${card('<h3 style="margin-top:0">Tomorrow</h3><p class="small">Foundations of security and the math of strong passwords.</p>')}</div>
-</div>`});
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">You can now</h3><ul class="small"><li>Use variables, loops, and functions.</li><li>Run a Python notebook.</li><li>Navigate a Linux terminal.</li></ul>')}</div><div>${card('<h3 style="margin-top:0">Tomorrow</h3><p class="small">Foundations of security and the math of strong passwords.</p>')}</div></div>`});
 
-/* ============================ DAY 2 ============================ */
+/* ===== DAY 2 ===== */
 S({t:'divider',sec:'Day 2',html:`<div class="badge" style="border-color:#d97706;color:#b45309">DAY 2</div>
 <h1 style="margin-top:14px">Foundations and <span style="color:#d97706">Strong Passwords</span></h1>
-<p class="lead">The three goals of security, and why a long passphrase beats a short complicated password every time.</p>
+<p class="lead">The three goals of security, and why a long passphrase beats a short complicated password.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">CIA triad</span><span class="pill">Passwords</span><span class="pill">Hashing</span><span class="pill">MFA</span><span class="pill">Phishing</span></div>`});
 
-S({sec:'Day 2',kick:'How today works',title:'Your hands-on plan for today',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">1. Learn here in this deck</h3><p class="small">Concepts and the password math. Keep pressing Next.</p>')}</div>
-<div>${card('<h3 style="margin-top:0">2. Do the hands-on in the Day 2 deck</h3><p class="small">Open the <b>Day 2 deck</b> (top right). Run <b>Modules 1 to 4</b> in <code>Day2.ipynb</code> (Part 3 Code along), then do <b>Part 4 Play the free tools</b>: Google Interland and the Security.org tester. Close the tab to return.</p>')}</div>
-</div>`});
+S({sec:'Day 2',kick:'How today works',title:'How the main deck, day deck, and notebook fit together',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">This is your main deck</h3><p class="small">It teaches every idea and tells you exactly when to act. Keep pressing Next.</p>')}</div><div>${card('<h3 style="margin-top:0">You will be sent out and back</h3><p class="small">At marked points, open the <b>Day 2 deck</b> (Day decks button, top right) for a Part, or run a <b>Module</b> in <code>Day2.ipynb</code>. Each opens in a new tab, so close it to return here.</p>')}</div></div>${note('Today you will run Modules 1 to 4 in Day2.ipynb, and use Google Interland and the Security.org tester in the Day 2 deck Part 4.')}`});
 
 S({sec:'Day 2',kick:'Cyber News',title:'The password problem is real',html:`
-${news('Most common password, every year:','password managers such as NordPass repeatedly find that 123456 and password top the worldwide list. A computer guesses these in well under a second.')}
-${news('The lesson pros repeat:','length and unpredictability matter far more than swapping an a for an at-sign.')}`});
+${news('Most common password, every year:','password managers such as NordPass repeatedly find 123456 and password at the top of the worldwide list. A computer guesses these in under a second.')}${news('The lesson pros repeat:','length and unpredictability matter far more than swapping an a for an at-sign.')}`});
 
 S({sec:'Day 2',kick:'Lesson',title:'The CIA triad',html:`
-<div class="grid g3">
-<div>${def('Confidentiality','C','Only authorized people can view the data. Tools: encryption, access control.')}</div>
-<div>${def('Integrity','I','Only authorized people can change the data. Tools: hashing, signatures.')}</div>
-<div>${def('Availability','A','Authorized people can use the data when needed. Tools: backups, redundancy.')}</div>
-</div>
-${why('Every defense you learn protects one or more of these three goals.')}`});
+<div class="grid g3"><div>${def('Confidentiality','C','Only authorized people can view the data. Tools: encryption, access control.')}</div><div>${def('Integrity','I','Only authorized people can change the data. Tools: hashing, signatures.')}</div><div>${def('Availability','A','Authorized people can use the data when needed. Tools: backups, redundancy.')}</div></div>${why('Every defense you learn protects one or more of these three goals.')}`});
 
-S({sec:'Day 2',kick:'Code Lab',title:'Code Lab: the math of passwords',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">Keyspace</h3><p class="small">Possible passwords = N to the power L. Bigger character set (N) and longer length (L) both explode the number.</p>')}
-${why('Run the numbers yourself so you can see why 8 characters is no longer safe.')}</div>
-<div>${codeRun(`def crack_years(N, L, gps=1_000_000_000):
+S({sec:'Day 2',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('What does the C in the CIA triad stand for?','Confidentiality: keeping information secret from those who should not see it.')}`});
+
+S({sec:'Day 2',kick:'Lesson',title:'Authentication and passwords',html:`
+<div class="grid g2"><div>${def('Authentication','proving identity','Showing you are who you claim to be, usually with a password (something you know).')}${def('Keyspace','all possible passwords','Equals N to the power L, where N is the character set size and L is the length.')}</div><div>${card('<h3 style="margin-top:0">Bigger is exponentially harder</h3><p class="small">Adding length or more character types multiplies the number of guesses an attacker must try.</p>')}</div></div>`});
+
+S({sec:'Day 2',kick:'Lesson',title:'The math of cracking',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Time to crack</h3><p class="small">Time = combinations divided by guesses per second. Attackers can try billions per second on stolen hashes.</p>')}</div><div>${codeRun(`def crack_years(N, L, gps=1_000_000_000):
     return (N ** L) / gps / (60*60*24*365)
 
 for L in [6, 8, 12, 16]:
-    print(L, crack_years(95, L))`,plat('colab','Modules 1 and 2 in Day2.ipynb'))}</div>
-</div>
-${note('Open the Day 2 deck, Part 3 Code along, run Modules 1 and 2, then come back.')}`});
+    print(L, crack_years(95, L))`,plat('colab','Modules 1 and 2 in Day2.ipynb'))}</div></div>`});
 
-S({sec:'Day 2',kick:'Lesson',title:'Hashing, salt, and MFA',html:`
-<div class="grid g2">
-<div>${def('Hash','one-way fingerprint','Turns any input into a fixed fingerprint you cannot reverse. Sites store password hashes, not passwords.')}
-${def('Salt','random extra','Random text added before hashing so two identical passwords get different hashes.')}</div>
-<div>${def('MFA','Multi-Factor Authentication','Two or more proofs of identity (a password plus a phone code), so a stolen password alone is not enough.')}
-${card('<p class="small"><b>Try it:</b> Module 4 in Day2.ipynb shows the same password hashing to different values once you add a salt.</p>')}</div>
-</div>`});
+S({sec:'Day 2',kick:'Hands-on now',title:'Run Modules 1 and 2 in the notebook',html:`
+${lab('Open the Day 2 deck, Part 3 Code along','Run these in <code>Day2.ipynb</code>, then come back here.',['<b>Module 1:</b> compute the keyspace.','<b>Module 2:</b> estimate crack time for different lengths.'],plat('colab','Day2.ipynb Modules 1 and 2'))}${note('When you finish, close the Day 2 deck tab and come back to this slide, then press Next.')}`});
 
-S({sec:'Day 2',kick:'Code Lab',title:'Code Lab: run Modules 1 to 4',html:`
-${lab('Code along in the notebook','Open the Day 2 deck, Part 3 Code along, and run <code>Day2.ipynb</code>.',[
-'<b>Module 1:</b> password keyspace math.',
-'<b>Module 2:</b> crack-time estimate.',
-'<b>Module 3 (challenge):</b> a password strength meter.',
-'<b>Module 4:</b> hashing and why salt matters.'],
-plat('colab','Day2.ipynb Modules 1 to 4'))}
-${note('Finish the modules, then come back here and press Next.')}`});
+S({sec:'Day 2',kick:'Challenge',title:'Build a strength meter',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Module 3</h3><p class="small">Combine length and variety into a Weak, Okay, or Strong score. Compare a short complex password against a four-word passphrase.</p>')}</div><div>${card('<p class="small"><b>Try it:</b> a passphrase like purple-kite-river-stone beats P at ss1 because it is long and unpredictable.</p>')}</div></div>`});
 
-S({sec:'Day 2',kick:'Play',title:'Play the free tools (Day 2 deck, Part 4)',html:`
-${lab('Two free tools','Open the Day 2 deck, Part 4.',[
-'<b>Google Interland</b>: play Tower of Treasure (strong passwords) and Reality River (phishing).',
-'<b>Security.org tester</b>: type made-up passwords and watch the crack time jump as you add length. Never type a real password.'],
-plat('web','beinternetawesome.withgoogle.com/interland')+plat('web','security.org/how-secure-is-my-password'))}
-${note('Play in the Day 2 deck, then close the tab and come back.')}`});
+S({sec:'Day 2',kick:'Hands-on now',title:'Run Module 3 in the notebook',html:`
+${lab('Open the Day 2 deck, Part 3 Code along','Run these in <code>Day2.ipynb</code>, then come back here.',['<b>Module 3 (challenge):</b> finish the password strength meter.'],plat('colab','Day2.ipynb Module 3'))}${note('When you finish, close the Day 2 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 2',kick:'Lesson',title:'Hashing and salt',html:`
+<div class="grid g2"><div>${def('Hash','one-way fingerprint','Turns any input into a fixed fingerprint you cannot reverse. Sites store password hashes, not passwords.')}${def('Salt','random extra','Random text added before hashing so two identical passwords get different hashes.')}</div><div>${card('<p class="small"><b>Module 4</b> shows the same password hashing to different values once you add a salt.</p>')}</div></div>`});
+
+S({sec:'Day 2',kick:'Hands-on now',title:'Run Module 4 in the notebook',html:`
+${lab('Open the Day 2 deck, Part 3 Code along','Run these in <code>Day2.ipynb</code>, then come back here.',['<b>Module 4:</b> hash a word, then add salts and compare the results.'],plat('colab','Day2.ipynb Module 4'))}${note('When you finish, close the Day 2 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 2',kick:'Lesson',title:'Multi-Factor Authentication and phishing',html:`
+<div class="grid g2"><div>${def('MFA','Multi-Factor Authentication','Two or more proofs of identity (a password plus a phone code), so a stolen password alone is not enough.')}</div><div>${card('<h3 style="margin-top:0">Phishing</h3><p class="small">A fake message that tricks you into giving up a password. Red flags: urgency, generic greeting, a look-alike link like paypa1 with a one for the l.</p>')}</div></div>`});
+
+S({sec:'Day 2',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('Which is stronger: P at ss1 or purple-kite-river-stone, and why?','The four-word passphrase. It is long and unpredictable, which beats a short complicated password.')}`});
+
+S({sec:'Day 2',kick:'Hands-on now',title:'Play the free tools (Day 2 deck, Part 4)',html:`
+${lab('Open the Day 2 deck, Part 4 Play the free tools','Use both tools, then come back here.',['<b>Google Interland</b>: play Tower of Treasure (passwords) and Reality River (phishing).','<b>Security.org tester</b>: type made-up passwords and watch the crack time jump as you add length. Never type a real password.'],plat('web','beinternetawesome.withgoogle.com/interland')+plat('web','security.org/how-secure-is-my-password'))}${note('When you finish, close the Day 2 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 2',kick:'Wrap-Up',title:'Day 2 takeaways',html:`
-${kc('Which is stronger: P at ss1 or purple-kite-river-stone, and why?','The four-word passphrase. It is long and unpredictable, which beats a short complicated password. Length is the biggest win.')}
 ${card('<h3 style="margin-top:0">Tomorrow</h3><p class="small">Cryptography: the codes and ciphers that hide data, from Caesar to RSA.</p>')}`});
 
-/* ============================ DAY 3 ============================ */
+/* ===== DAY 3 ===== */
 S({t:'divider',sec:'Day 3',html:`<div class="badge" style="border-color:#7c3aed;color:#6d28d9">DAY 3</div>
 <h1 style="margin-top:14px">Cryptography: <span style="color:#7c3aed">Codes and Ciphers</span></h1>
 <p class="lead">The math that hides information, from a 2000-year-old Roman cipher to the encryption that protects the web.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">Encoding</span><span class="pill">Caesar</span><span class="pill">Hashing</span><span class="pill">RSA</span><span class="pill">CyberChef</span></div>`});
 
-S({sec:'Day 3',kick:'How today works',title:'Your hands-on plan for today',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">1. Learn here in this deck</h3><p class="small">The ideas and worked examples. Keep pressing Next.</p>')}</div>
-<div>${card('<h3 style="margin-top:0">2. Do the hands-on in the Day 3 deck</h3><p class="small">Open the <b>Day 3 deck</b> (top right). Run <b>Modules 1 to 4</b> in <code>Day3.ipynb</code> (Part 3 Code along), then <b>Part 4 Play the free tools</b>: dcode.fr and CyberChef. Close the tab to return.</p>')}</div>
-</div>`});
+S({sec:'Day 3',kick:'How today works',title:'How the main deck, day deck, and notebook fit together',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">This is your main deck</h3><p class="small">It teaches every idea and tells you exactly when to act. Keep pressing Next.</p>')}</div><div>${card('<h3 style="margin-top:0">You will be sent out and back</h3><p class="small">At marked points, open the <b>Day 3 deck</b> (Day decks button, top right) for a Part, or run a <b>Module</b> in <code>Day3.ipynb</code>. Each opens in a new tab, so close it to return here.</p>')}</div></div>${note('Today you will run Modules 1 to 4 in Day3.ipynb, and use dcode.fr and CyberChef in the Day 3 deck Part 4.')}`});
 
 S({sec:'Day 3',kick:'Cyber News',title:'Cryptography changes history',html:`
-${news('World War Two:','the German military used the Enigma machine. A team at Bletchley Park, including Alan Turing, broke it, which historians say helped shorten the war.')}
-${news('Today:','the same field protects your messages and the entire web through HTTPS and the AES standard.')}`});
+${news('World War Two:','the German military used the Enigma machine. A team at Bletchley Park, including Alan Turing, broke it, which historians say helped shorten the war.')}${news('Today:','the same field protects your messages and the whole web through HTTPS and the AES standard.')}`});
 
 S({sec:'Day 3',kick:'Lesson',title:'Three ideas, do not mix them',html:`
-<div class="grid g3">
-<div>${def('Encoding','Base64','Reformatting that anyone can reverse. No secrecy.')}</div>
-<div>${def('Encryption','AES, RSA','Scrambling that needs a secret key to reverse.')}</div>
-<div>${def('Hashing','SHA-256','A one-way fingerprint you cannot reverse.')}</div>
-</div>`});
+<div class="grid g3"><div>${def('Encoding','Base64','Reformatting that anyone can reverse. No secrecy.')}</div><div>${def('Encryption','AES, RSA','Scrambling that needs a secret key to reverse.')}</div><div>${def('Hashing','SHA-256','A one-way fingerprint you cannot reverse.')}</div></div>`});
 
-S({sec:'Day 3',kick:'Code Lab',title:'Code Lab: the Caesar cipher',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">Shift every letter</h3><p class="small">Caesar shifted letters by a fixed amount. With only 25 shifts, a computer brute-forces it instantly.</p>')}</div>
-<div>${codeRun(`def caesar(t, s):
+S({sec:'Day 3',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('Is Base64 encryption? Why or why not?','No. Base64 only reformats data with no key, so anyone can reverse it. Encryption needs a secret key.')}`});
+
+S({sec:'Day 3',kick:'Lesson',title:'The Caesar cipher',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Shift every letter</h3><p class="small">Caesar shifted letters by a fixed amount. With only 25 shifts, a computer brute-forces it instantly.</p>')}</div><div>${codeRun(`def caesar(t, s):
     o = ""
     for c in t:
         if c.isalpha():
             b = 65 if c.isupper() else 97
             o += chr((ord(c)-b+s) % 26 + b)
         else: o += c
-    return o`,plat('colab','Module 1 in Day3.ipynb'))}</div>
-</div>
-${note('Open the Day 3 deck, Part 3, run Module 1, then come back.')}`});
+    return o`,plat('colab','Module 1 in Day3.ipynb'))}</div></div>`});
+
+S({sec:'Day 3',kick:'Hands-on now',title:'Run Module 1 in the notebook',html:`
+${lab('Open the Day 3 deck, Part 3 Code along','Run these in <code>Day3.ipynb</code>, then come back here.',['<b>Module 1:</b> encrypt with Caesar, then brute-force all 25 shifts.'],plat('colab','Day3.ipynb Module 1'))}${note('When you finish, close the Day 3 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 3',kick:'Lesson',title:'Encoding, XOR, and hashing',html:`
-<div class="grid g2">
-<div>${def('Base64','encoding','Writes data with 64 safe characters so it survives travel. Reversible by anyone.')}
-${def('XOR','exclusive or','Combine with a key bit by bit. Apply the same key twice and you get the original back.')}</div>
-<div>${def('Avalanche effect','hashing','Change one character of the input and the whole hash fingerprint changes. Try it in Module 3.')}</div>
-</div>
-${note('Modules 2 and 3 in Day3.ipynb cover Base64, XOR, and hashing.')}`});
+<div class="grid g2"><div>${def('Base64','encoding','Writes data with 64 safe characters so it survives travel. Reversible by anyone.')}${def('XOR','exclusive or','Combine with a key bit by bit. Apply the same key twice and you get the original back.')}</div><div>${def('Avalanche effect','hashing','Change one character and the whole hash fingerprint changes. Try it in Module 3.')}</div></div>`});
 
-S({sec:'Day 3',kick:'Worked Example',title:'RSA with tiny numbers (Module 4)',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">Two keys</h3><p class="small">Pick primes p=5 and q=11, so n=55. Public key is (e=3, n=55); private key is (d=27, n=55). Encrypt with one key, decrypt with the other.</p>')}
-${why('Real RSA uses huge primes. The security comes from how hard it is to factor n back into p and q.')}</div>
-<div>${codeRun(`def rsa(m, key):
+S({sec:'Day 3',kick:'Hands-on now',title:'Run Modules 2 and 3 in the notebook',html:`
+${lab('Open the Day 3 deck, Part 3 Code along','Run these in <code>Day3.ipynb</code>, then come back here.',['<b>Module 2:</b> Base64 and XOR round trip.','<b>Module 3:</b> SHA-256 and the avalanche effect.'],plat('colab','Day3.ipynb Modules 2 and 3'))}${note('When you finish, close the Day 3 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 3',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('Why is a hash called one-way?','You can compute the fingerprint from the input, but you cannot turn the fingerprint back into the input. That is why sites store hashes.')}`});
+
+S({sec:'Day 3',kick:'Worked Example',title:'RSA with tiny numbers',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Two keys</h3><p class="small">Pick primes p=5 and q=11, so n=55. Public key is (e=3, n=55); private key is (d=27, n=55). Encrypt with one key, decrypt with the other.</p>')}${why('Real RSA uses huge primes. The security comes from how hard it is to factor n back into p and q.')}</div><div>${codeRun(`def rsa(m, key):
     e, n = key
     return pow(m, e, n)
 
 c = rsa(7, (3, 55))     # encrypt -> 13
-print(rsa(c, (27, 55))) # decrypt -> 7`,plat('colab','Module 4 in Day3.ipynb'))}</div>
-</div>`});
+print(rsa(c, (27, 55))) # decrypt -> 7`,plat('colab','Module 4 in Day3.ipynb'))}</div></div>`});
 
-S({sec:'Day 3',kick:'Code Lab',title:'Code Lab: run Modules 1 to 4',html:`
-${lab('Code along in the notebook','Open the Day 3 deck, Part 3 Code along, and run <code>Day3.ipynb</code>.',[
-'<b>Module 1:</b> Caesar cipher and brute force.',
-'<b>Module 2:</b> Base64 and XOR.',
-'<b>Module 3:</b> hashing and the avalanche effect.',
-'<b>Module 4:</b> RSA with tiny numbers.'],
-plat('colab','Day3.ipynb Modules 1 to 4'))}
-${note('Finish the modules, then come back and press Next.')}`});
+S({sec:'Day 3',kick:'Hands-on now',title:'Run Module 4 in the notebook',html:`
+${lab('Open the Day 3 deck, Part 3 Code along','Run these in <code>Day3.ipynb</code>, then come back here.',['<b>Module 4:</b> run the RSA example and check that decrypting returns the original number.'],plat('colab','Day3.ipynb Module 4'))}${note('When you finish, close the Day 3 deck tab and come back to this slide, then press Next.')}`});
 
-S({sec:'Day 3',kick:'Play',title:'Play the free tools (Day 3 deck, Part 4)',html:`
-${lab('Two free tools','Open the Day 3 deck, Part 4.',[
-'<b>dcode.fr</b>: paste a scrambled message and let the identifier suggest the cipher, then solve it.',
-'<b>CyberChef</b>: build a recipe From Base64 then ROT13 to decode a two-step message.'],
-plat('web','dcode.fr')+plat('web','cyberchef.org'))}
-${note('Play in the Day 3 deck, then come back here.')}`});
+S({sec:'Day 3',kick:'Hands-on now',title:'Play the free tools (Day 3 deck, Part 4)',html:`
+${lab('Open the Day 3 deck, Part 4 Play the free tools','Use both tools, then come back here.',['<b>dcode.fr</b>: paste a scrambled message and let the identifier suggest the cipher, then solve it.','<b>CyberChef</b>: build a recipe From Base64 then ROT13 to decode a two-step message.'],plat('web','dcode.fr')+plat('web','cyberchef.org'))}${note('When you finish, close the Day 3 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 3',kick:'Wrap-Up',title:'Day 3 takeaways',html:`
-${kc('Is Base64 encryption? Why or why not?','No. Base64 is encoding: it reformats data with no secret key, so anyone can reverse it. Encryption needs a key.')}
 ${card('<h3 style="margin-top:0">Tomorrow</h3><p class="small">How websites break, and how AI assistants can be tricked.</p>')}`});
 
-/* ============================ DAY 4 ============================ */
+/* ===== DAY 4 ===== */
 S({t:'divider',sec:'Day 4',html:`<div class="badge" style="border-color:#0891b2;color:#0e7490">DAY 4</div>
 <h1 style="margin-top:14px">Web Security and <span style="color:#0891b2">AI Security</span></h1>
 <p class="lead">Peek under the hood of websites, find your first web flags, and learn why AI assistants can be fooled.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">HTTP</span><span class="pill">SQL injection</span><span class="pill">XSS</span><span class="pill">LLM</span><span class="pill">Prompt injection</span></div>`});
 
-S({sec:'Day 4',kick:'How today works',title:'Your hands-on plan for today',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">1. Learn here in this deck</h3><p class="small">How the web works and where it breaks. Keep pressing Next.</p>')}</div>
-<div>${card('<h3 style="margin-top:0">2. Do the hands-on in the Day 4 deck</h3><p class="small">Open the <b>Day 4 deck</b> (top right). Run <b>Modules 1 to 4</b> in <code>Day4.ipynb</code> (Part 3 Code along), then <b>Part 4 Play the free tools</b>: CTFLearn and Lakera Gandalf. Close the tab to return.</p>')}</div>
-</div>`});
+S({sec:'Day 4',kick:'How today works',title:'How the main deck, day deck, and notebook fit together',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">This is your main deck</h3><p class="small">It teaches every idea and tells you exactly when to act. Keep pressing Next.</p>')}</div><div>${card('<h3 style="margin-top:0">You will be sent out and back</h3><p class="small">At marked points, open the <b>Day 4 deck</b> (Day decks button, top right) for a Part, or run a <b>Module</b> in <code>Day4.ipynb</code>. Each opens in a new tab, so close it to return here.</p>')}</div></div>${note('Today you will run Modules 1 to 4 in Day4.ipynb, and use CTFLearn and Lakera Gandalf in the Day 4 deck Part 4.')}`});
 
 S({sec:'Day 4',kick:'Cyber News',title:'These are the bugs pros worry about',html:`
-${news('OWASP Top 10:','the Open Worldwide Application Security Project lists the most critical web risks, and injection flaws like SQL injection have been on it for years.')}
-${news('OWASP Top 10 for LLMs:','OWASP now also ranks risks for AI apps, and prompt injection is listed as the number one risk.')}`});
+${news('OWASP Top 10:','the Open Worldwide Application Security Project lists the most critical web risks, and injection flaws like SQL injection have been on it for years.')}${news('OWASP Top 10 for LLMs:','OWASP now ranks risks for AI apps too, and prompt injection is listed as the number one risk.')}`});
 
 S({sec:'Day 4',kick:'Lesson',title:'How the web talks',html:`
-<div class="grid g2">
-<div>${def('HTTP / HTTPS','HyperText Transfer Protocol','The language browsers and servers use. The S in HTTPS adds encryption and a verified identity.')}
-${def('URL','Uniform Resource Locator','A web address. It has a scheme, host, path, and query parameters.')}</div>
-<div>${codeRun(`from urllib.parse import urlparse
+<div class="grid g2"><div>${def('HTTP / HTTPS','HyperText Transfer Protocol','The language browsers and servers use. The S in HTTPS adds encryption and a verified identity.')}${def('URL','Uniform Resource Locator','A web address with a scheme, host, path, and query parameters.')}</div><div>${codeRun(`from urllib.parse import urlparse
 p = urlparse("https://shop.com/search?q=shoes")
-print(p.scheme, p.netloc, p.path)`,plat('colab','Module 1 in Day4.ipynb'))}</div>
-</div>`});
+print(p.scheme, p.netloc, p.path)`,plat('colab','Module 1 in Day4.ipynb'))}</div></div>`});
+
+S({sec:'Day 4',kick:'Hands-on now',title:'Run Module 1 in the notebook',html:`
+${lab('Open the Day 4 deck, Part 3 Code along','Run these in <code>Day4.ipynb</code>, then come back here.',['<b>Module 1:</b> break a URL into its parts.'],plat('colab','Day4.ipynb Module 1'))}${note('When you finish, close the Day 4 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 4',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('What does the S in HTTPS add compared to HTTP?','Security: the traffic is encrypted and the site identity is verified.')}`});
 
 S({sec:'Day 4',kick:'Lesson',title:'SQL injection and XSS',html:`
-<div class="grid g2">
-<div>${def('SQLi','SQL Injection','Smuggling commands into a site that trusts user input. Defense: parameterized queries that treat input as data, never code.')}
-${def('XSS','Cross-Site Scripting','Tricking a site into running attacker code in a victim browser. Defense: encode output and validate input.')}</div>
-<div>${card('<h3 style="margin-top:0">Never trust input</h3><p class="small">Module 2 in Day4.ipynb simulates spotting dangerous input safely. We never attack a real site.</p>')}</div>
-</div>`});
+<div class="grid g2"><div>${def('SQLi','SQL Injection','Smuggling commands into a site that trusts user input. Defense: parameterized queries that treat input as data, never code.')}${def('XSS','Cross-Site Scripting','Tricking a site into running attacker code in a victim browser. Defense: encode output and validate input.')}</div><div>${card('<h3 style="margin-top:0">Never trust input</h3><p class="small">Module 2 simulates spotting dangerous input safely. We never attack a real site.</p>')}</div></div>`});
+
+S({sec:'Day 4',kick:'Hands-on now',title:'Run Modules 2 and 3 in the notebook',html:`
+${lab('Open the Day 4 deck, Part 3 Code along','Run these in <code>Day4.ipynb</code>, then come back here.',['<b>Module 2:</b> input-validation simulation.','<b>Module 3:</b> decode a hidden flag from a cookie.'],plat('colab','Day4.ipynb Modules 2 and 3'))}${note('When you finish, close the Day 4 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 4',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('Name one real defense against SQL injection.','Parameterized queries (prepared statements): user input is always treated as data, never run as part of the command.')}`});
 
 S({sec:'Day 4',kick:'Lesson',title:'Tricking an AI: prompt injection',html:`
-<div class="grid g2">
-<div>${def('LLM','Large Language Model','An AI trained on text that follows instructions written in plain language.')}
-${def('Prompt injection','exploit','Hiding instructions inside text the model reads, so it ignores its rules. The number one AI app risk.')}</div>
-<div>${card('<h3 style="margin-top:0">Build a guard</h3><p class="small">Module 4 in Day4.ipynb has you write a bot that never reveals its secret, no matter how it is asked.</p>')}</div>
-</div>`});
+<div class="grid g2"><div>${def('LLM','Large Language Model','An AI trained on text that follows instructions written in plain language.')}${def('Prompt injection','exploit','Hiding instructions inside text the model reads, so it ignores its rules. The number one AI app risk.')}</div><div>${card('<h3 style="margin-top:0">Build a guard</h3><p class="small">Module 4 has you write a bot that never reveals its secret, no matter how it is asked.</p>')}</div></div>`});
 
-S({sec:'Day 4',kick:'Code Lab',title:'Code Lab: run Modules 1 to 4',html:`
-${lab('Code along in the notebook','Open the Day 4 deck, Part 3 Code along, and run <code>Day4.ipynb</code>.',[
-'<b>Module 1:</b> break a URL into its parts.',
-'<b>Module 2:</b> input validation (safe simulation).',
-'<b>Module 3:</b> decode a hidden flag from a cookie.',
-'<b>Module 4:</b> a prompt-injection guard.'],
-plat('colab','Day4.ipynb Modules 1 to 4'))}
-${note('Finish the modules, then come back and press Next.')}`});
+S({sec:'Day 4',kick:'Hands-on now',title:'Run Module 4 in the notebook',html:`
+${lab('Open the Day 4 deck, Part 3 Code along','Run these in <code>Day4.ipynb</code>, then come back here.',['<b>Module 4:</b> write a prompt-injection guard.'],plat('colab','Day4.ipynb Module 4'))}${note('When you finish, close the Day 4 deck tab and come back to this slide, then press Next.')}`});
 
-S({sec:'Day 4',kick:'Play',title:'Play the free tools (Day 4 deck, Part 4)',html:`
-${lab('Two free tools','Open the Day 4 deck, Part 4.',[
-'<b>CTFLearn</b>: make a free account and try the Easy web challenges. Use your URL and Base64 skills.',
-'<b>Lakera Gandalf</b>: convince the AI to reveal its password. Each level adds a stronger defense.'],
-plat('web','ctflearn.com')+plat('web','gandalf.lakera.ai/baseline'))}
-${note('Play in the Day 4 deck, then come back here.')}`});
+S({sec:'Day 4',kick:'Hands-on now',title:'Play the free tools (Day 4 deck, Part 4)',html:`
+${lab('Open the Day 4 deck, Part 4 Play the free tools','Use both tools, then come back here.',['<b>CTFLearn</b>: make a free account and try the Easy web challenges. Use your URL and Base64 skills.','<b>Lakera Gandalf</b>: convince the AI to reveal its password. Each level adds a stronger defense.'],plat('web','ctflearn.com')+plat('web','gandalf.lakera.ai/baseline'))}${note('When you finish, close the Day 4 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 4',kick:'Wrap-Up',title:'Day 4 takeaways',html:`
-${kc('Name one real defense against SQL injection.','Parameterized queries (also called prepared statements): the user input is always treated as data, never run as part of the database command.')}
 ${card('<h3 style="margin-top:0">Tomorrow</h3><p class="small">The capstone: a Capture The Flag, plus ethical open-source investigation.</p>')}`});
 
-/* ============================ DAY 5 ============================ */
+/* ===== DAY 5 ===== */
 S({t:'divider',sec:'Day 5',html:`<div class="badge" style="border-color:#e11d48;color:#e11d48">DAY 5</div>
 <h1 style="margin-top:14px">Capstone: <span style="color:#e11d48">Capture The Flag and OSINT</span></h1>
 <p class="lead">Put the whole week together: compete on picoCTF and learn ethical open-source investigation.</p>
 <div class="chips" style="margin-top:12px"><span class="pill on">CTF</span><span class="pill">OSINT</span><span class="pill">Ethics</span><span class="pill">Careers</span></div>`});
 
-S({sec:'Day 5',kick:'How today works',title:'Your hands-on plan for today',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">1. Learn here in this deck</h3><p class="small">CTF and OSINT basics, plus the ethics rules. Keep pressing Next.</p>')}</div>
-<div>${card('<h3 style="margin-top:0">2. Do the hands-on in the Day 5 deck</h3><p class="small">Open the <b>Day 5 deck</b> (top right). Run <b>Modules 1 to 4</b> in <code>Day5.ipynb</code> (Part 3 Code along), then <b>Part 4 Play the free tools</b>: picoCTF and the OSINT Framework. Close the tab to return.</p>')}</div>
-</div>`});
+S({sec:'Day 5',kick:'How today works',title:'How the main deck, day deck, and notebook fit together',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">This is your main deck</h3><p class="small">It teaches every idea and tells you exactly when to act. Keep pressing Next.</p>')}</div><div>${card('<h3 style="margin-top:0">You will be sent out and back</h3><p class="small">At marked points, open the <b>Day 5 deck</b> (Day decks button, top right) for a Part, or run a <b>Module</b> in <code>Day5.ipynb</code>. Each opens in a new tab, so close it to return here.</p>')}</div></div>${note('Today you will run Modules 1 to 4 in Day5.ipynb, and use picoCTF and the OSINT Framework in the Day 5 deck Part 4.')}`});
 
 S({sec:'Day 5',kick:'Ethics first',title:'The white-hat rule',html:`
-${note('OSINT means using only information that is already public, and only on targets you are allowed to investigate (a practice account, a fictional persona, or yourself). Never harass anyone, never access private accounts, and always have permission.')}
-${def('CTF','Capture The Flag','A security game where you solve puzzles to find hidden text called flags, like picoCTF{you_found_me}.')}`});
+${note('OSINT means using only information that is already public, and only on targets you are allowed to investigate (a practice account, a fictional persona, or yourself). Never harass anyone, never access private accounts, and always have permission.')}${def('CTF','Capture The Flag','A security game where you solve puzzles to find hidden text called flags, like picoCTF{you_found_me}.')}`});
 
 S({sec:'Day 5',kick:'Cyber News',title:'CTF is how pros sharpen up',html:`
-${news('picoCTF:','built by security experts at Carnegie Mellon University, it is one of the largest free Capture The Flag programs and has introduced very large numbers of students to the field.')}
-${news('DEF CON:','Capture The Flag is a headline event at major security conferences, where professional teams compete.')}`});
+${news('picoCTF:','built by security experts at Carnegie Mellon University, it is one of the largest free Capture The Flag programs and has introduced very large numbers of students to the field.')}${news('DEF CON:','Capture The Flag is a headline event at major security conferences, where professional teams compete.')}`});
 
-S({sec:'Day 5',kick:'Code Lab',title:'Code Lab: decode the flags',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">Combine your skills</h3><p class="small">Module 1 decodes a Base64 flag. Module 2 is a two-step flag: XOR with a key, then Base64. Reverse both.</p>')}</div>
-<div>${codeRun(`import base64
+S({sec:'Day 5',kick:'Code Lab',title:'Decode the flags',html:`
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Combine your skills</h3><p class="small">Module 1 decodes a Base64 flag. Module 2 is a two-step flag: XOR with a key, then Base64. Reverse both.</p>')}</div><div>${codeRun(`import base64
 blob = base64.b64decode("fWRuYk5ZS3Z1PX9SYn5kY3lSfX9icA==")
-print(bytes(b ^ 13 for b in blob).decode())`,plat('colab','Modules 1 and 2 in Day5.ipynb'))}</div>
-</div>
-${note('Open the Day 5 deck, Part 3, run Modules 1 and 2, then come back.')}`});
+print(bytes(b ^ 13 for b in blob).decode())`,plat('colab','Modules 1 and 2 in Day5.ipynb'))}</div></div>`});
+
+S({sec:'Day 5',kick:'Hands-on now',title:'Run Modules 1 and 2 in the notebook',html:`
+${lab('Open the Day 5 deck, Part 3 Code along','Run these in <code>Day5.ipynb</code>, then come back here.',['<b>Module 1:</b> decode a Base64 flag.','<b>Module 2:</b> reverse a two-step XOR-then-Base64 flag.'],plat('colab','Day5.ipynb Modules 1 and 2'))}${note('When you finish, close the Day 5 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 5',kick:'Knowledge Check',title:'Check your understanding',html:`
+${kc('What does a picoCTF flag look like?','It follows the format picoCTF{...}, so it is easy to recognise when you find it.')}`});
 
 S({sec:'Day 5',kick:'Lesson',title:'OSINT and metadata',html:`
-<div class="grid g2">
-<div>${def('OSINT','Open-Source Intelligence','Finding information from public sources only, with permission.')}
-${def('EXIF','Exchangeable Image File Format','Hidden data inside photos: time taken, camera model, and sometimes GPS location. Strip it before posting private photos.')}</div>
-<div>${card('<h3 style="margin-top:0">Try it</h3><p class="small">Module 3 reads example metadata; Module 4 builds username-check URLs and the capstone. Public data only.</p>')}</div>
-</div>`});
+<div class="grid g2"><div>${def('OSINT','Open-Source Intelligence','Finding information from public sources only, with permission.')}${def('EXIF','Exchangeable Image File Format','Hidden data inside photos: time taken, camera model, and sometimes GPS location. Strip it before posting private photos.')}</div><div>${card('<h3 style="margin-top:0">Try it</h3><p class="small">Module 3 reads example metadata; Module 4 builds username-check URLs and the capstone. Public data only.</p>')}</div></div>`});
 
-S({sec:'Day 5',kick:'Play',title:'Play the free tools (Day 5 deck, Part 4)',html:`
-${lab('Two free tools','Open the Day 5 deck, Part 4.',[
-'<b>picoCTF</b>: open picoGym and solve General Skills and Cryptography challenges. Many use exactly what you learned this week.',
-'<b>OSINT Framework</b>: explore the map of free investigation tools and pick one category to explain.'],
-plat('web','picoctf.org')+plat('web','osintframework.com'))}
-${note('Play in the Day 5 deck, then come back here.')}`});
+S({sec:'Day 5',kick:'Hands-on now',title:'Run Modules 3 and 4 in the notebook',html:`
+${lab('Open the Day 5 deck, Part 3 Code along','Run these in <code>Day5.ipynb</code>, then come back here.',['<b>Module 3:</b> read example EXIF metadata.','<b>Module 4:</b> build OSINT username URLs and finish the capstone.'],plat('colab','Day5.ipynb Modules 3 and 4'))}${note('When you finish, close the Day 5 deck tab and come back to this slide, then press Next.')}`});
+
+S({sec:'Day 5',kick:'Hands-on now',title:'Play the free tools (Day 5 deck, Part 4)',html:`
+${lab('Open the Day 5 deck, Part 4 Play the free tools','Use both tools, then come back here.',['<b>picoCTF</b>: open picoGym and solve General Skills and Cryptography challenges. Many use exactly what you learned this week.','<b>OSINT Framework</b>: explore the map of free investigation tools and pick one category to explain.'],plat('web','picoctf.org')+plat('web','osintframework.com'))}${note('When you finish, close the Day 5 deck tab and come back to this slide, then press Next.')}`});
 
 S({sec:'Day 5',kick:'Careers',title:'Where this can take you',html:`
-<div class="grid g2">
-<div>${card('<h3 style="margin-top:0">Roles</h3><ul class="small"><li>SOC analyst (Security Operations Center)</li><li>Penetration tester</li><li>Incident responder</li><li>Security engineer</li></ul>')}</div>
-<div>${card('<h3 style="margin-top:0">Next steps</h3><p class="small">Keep a free picoCTF account, join or start a cyber club, and look into CyberPatriot. Common certifications later: CompTIA Security+ and Certified Ethical Hacker.</p>')}</div>
-</div>`});
+<div class="grid g2"><div>${card('<h3 style="margin-top:0">Roles</h3><ul class="small"><li>SOC analyst (Security Operations Center)</li><li>Penetration tester</li><li>Incident responder</li><li>Security engineer</li></ul>')}</div><div>${card('<h3 style="margin-top:0">Next steps</h3><p class="small">Keep a free picoCTF account, join or start a cyber club, and look into CyberPatriot. Common certifications later: CompTIA Security+ and Certified Ethical Hacker.</p>')}</div></div>`});
 
 S({sec:'Day 5',kick:'Project Defense',title:'Team project presentations',html:`
-${card('<h3 style="margin-top:0">Present your breach</h3><p class="small">Each team presents the case study it chose on Day 1 (from <code>resources/case-studies/</code>): what happened, which CIA pillar broke, and how it could have been prevented. Aim for 5 minutes.</p>')}
-${kc('What three things should every breach analysis name?','The vulnerability (the weakness), the threat (who or what exploited it), and a control (what would have prevented or limited it).')}`});
+${card('<h3 style="margin-top:0">Present your breach</h3><p class="small">Each team presents the case study it chose on Day 1 (from <code>resources/case-studies/</code>): what happened, which CIA pillar broke, and how it could have been prevented. Aim for 5 minutes.</p>')}${kc('What three things should every breach analysis name?','The vulnerability (the weakness), the threat (who or what exploited it), and a control (what would have prevented or limited it).')}`});
 
 S({sec:'Day 5',kick:'Graduation',title:'Congratulations, CyberQuest graduates',html:`
-${kc('What separates a white-hat hacker from a criminal?','Permission. White hats only test systems they own or are authorized to test, and they use their skills to protect people.')}
 ${card('<h3 style="margin-top:0">You did it</h3><p class="small">You learned Python and Linux, the math of passwords, cryptography, web and AI security, and finished with a Capture The Flag. Keep practicing in picoGym, OverTheWire, and CTFLearn.</p>')}`});
 
 /* ============================ JAVASCRIPT SLIDESHOW ENGINE ============ */

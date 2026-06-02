@@ -8,9 +8,11 @@ A free, five-day, hands-on introduction to cybersecurity for middle and high sch
 - Teachers, club leaders, parents, and volunteers running a camp or after-school program.
 
 ## How the week flows
+`Interactive_Slides.html` is the main course deck: it teaches every topic and, at marked points, sends you to a specific Part of that day's deck and to numbered Modules in the notebook, then back. The per-day decks and notebooks can also be used on their own.
+
 Each day has just two files: an interactive slide deck (`.html`) and a hands-on notebook (`.ipynb`). The slide deck now contains the full day guide too (objectives, vocabulary, news, activities, numericals, multiple choice with an answer key, and the code challenge), so there is nothing else to open.
 
-Open the slide deck and just press the Next arrow from start to finish. Each deck opens with a "Your plan for today" roadmap and is split into clearly labeled Parts (Get oriented, Learn the basics, Code along, Play the free tools, Test yourself, Go deeper, Wrap up). Every Part begins with a divider that says what to do and how many slides it is, so you always know where you are and what is next.
+Open the slide deck and just press the Next arrow from start to finish. Each deck opens with a "Your plan for today" roadmap and is split into clearly labeled Parts (Get oriented, Learn the basics, Code along, Play the free tools, Test yourself, Wrap up). Every Part begins with a divider that says what to do and how many slides it is, so you always know where you are and what is next.
 
 Each day follows the same friendly pattern:
 1. **Watch and click**: open the interactive HTML slides to learn the basics and answer knowledge-check questions.
