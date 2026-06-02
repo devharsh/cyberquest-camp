@@ -36,13 +36,128 @@
   .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
   .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
   a{color:var(--accent)}
+.slide h3{font-size:18px;margin:14px 0 6px;color:var(--accent)}.slide table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}.slide th,.slide td{border:1px solid #dfe6f5;padding:6px 10px;text-align:left;vertical-align:top}.slide th{background:#f1f5ff}.callout{background:#eef6ff;border:1px solid #c7d4f0;border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:12px 0}.slide hr{border:none;border-top:1px solid #dfe6f5;margin:16px 0}
 </style>
 </head>
 <body>
 <div class="stage">
   <div class="topbar"><span class="badge">CyberQuest</span><span>Day 2 of 5</span><span id="counter"></span></div>
   <div id="deck"><div class='slide'><h1>Day 2: Foundations and Strong Passwords</h1><p>Learn the three goals of security and prove with math why long passwords win.</p><p><span class='pill'>Google Interland</span><span class='pill'>Security.org tester</span></p></div><div class='slide'><h2>The CIA triad</h2><p class='muted'>Three goals of security</p><ul><li><b>Confidentiality</b>: keep data secret.</li><li><b>Integrity</b>: keep data correct.</li><li><b>Availability</b>: keep data reachable.</li></ul><p class='muted'>CIA = Confidentiality, Integrity, Availability.</p></div><div class='slide'><h2>Knowledge check</h2><p>The C in the CIA triad stands for...</p><button class='opt' data-c='0' onclick="choose(this,false,'Confidentiality means keeping information secret from those who should not see it.')">Control</button><button class='opt' data-c='1' onclick="choose(this,true,'Confidentiality means keeping information secret from those who should not see it.')">Confidentiality</button><button class='opt' data-c='0' onclick="choose(this,false,'Confidentiality means keeping information secret from those who should not see it.')">Computer</button><div class='feedback'></div></div><div class='slide'><h2>Why length beats tricks</h2><p class='muted'>The math of keyspace</p><p>Possible passwords = N to the power L, where N is the character set size and L is the length.</p><pre>26 ** 8  = lowercase, 8 long
-95 ** 12 = all symbols, 12 long  (vastly larger)</pre><p>Adding length grows the keyspace far faster than swapping a for @.</p></div><div class='slide'><h2>Knowledge check</h2><p>Which password is stronger?</p><button class='opt' data-c='0' onclick="choose(this,false,'Four random words are long and unpredictable, which beats a short symbol password.')">P@ss1!</button><button class='opt' data-c='1' onclick="choose(this,true,'Four random words are long and unpredictable, which beats a short symbol password.')">purple-kite-river-stone</button><div class='feedback'></div></div><div class='slide'><h2>Multi-Factor Authentication</h2><p class='muted'>A second lock on the door</p><ul><li>Something you KNOW: a password.</li><li>Something you HAVE: a phone or key.</li><li>Something you ARE: a fingerprint.</li></ul><p class='muted'>MFA = Multi-Factor Authentication. Even if a password leaks, the attacker still needs the second factor.</p></div><div class='slide'><h2>Knowledge check</h2><p>MFA improves security because...</p><button class='opt' data-c='0' onclick="choose(this,false,'A stolen password alone is not enough when a second factor is required.')">It makes passwords shorter</button><button class='opt' data-c='1' onclick="choose(this,true,'A stolen password alone is not enough when a second factor is required.')">An attacker needs more than just your password</button><button class='opt' data-c='0' onclick="choose(this,false,'A stolen password alone is not enough when a second factor is required.')">It hides your screen</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>Interland</b>: Tower of Treasure and Reality River.</li><li><b>Security.org</b>: type made-up passwords and watch crack time grow.</li></ul><p>Then open <code>Day2.ipynb</code> to build a strength meter.</p></div></div>
+95 ** 12 = all symbols, 12 long  (vastly larger)</pre><p>Adding length grows the keyspace far faster than swapping a for @.</p></div><div class='slide'><h2>Knowledge check</h2><p>Which password is stronger?</p><button class='opt' data-c='0' onclick="choose(this,false,'Four random words are long and unpredictable, which beats a short symbol password.')">P@ss1!</button><button class='opt' data-c='1' onclick="choose(this,true,'Four random words are long and unpredictable, which beats a short symbol password.')">purple-kite-river-stone</button><div class='feedback'></div></div><div class='slide'><h2>Multi-Factor Authentication</h2><p class='muted'>A second lock on the door</p><ul><li>Something you KNOW: a password.</li><li>Something you HAVE: a phone or key.</li><li>Something you ARE: a fingerprint.</li></ul><p class='muted'>MFA = Multi-Factor Authentication. Even if a password leaks, the attacker still needs the second factor.</p></div><div class='slide'><h2>Knowledge check</h2><p>MFA improves security because...</p><button class='opt' data-c='0' onclick="choose(this,false,'A stolen password alone is not enough when a second factor is required.')">It makes passwords shorter</button><button class='opt' data-c='1' onclick="choose(this,true,'A stolen password alone is not enough when a second factor is required.')">An attacker needs more than just your password</button><button class='opt' data-c='0' onclick="choose(this,false,'A stolen password alone is not enough when a second factor is required.')">It hides your screen</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>Interland</b>: Tower of Treasure and Reality River.</li><li><b>Security.org</b>: type made-up passwords and watch crack time grow.</li></ul><p>Then open <code>Day2.ipynb</code> to build a strength meter.</p></div><div class='slide'><h2>Time to code: open the notebook</h2><div class='callout'>Open <code>Day2.ipynb</code> now. Upload it to Google Colab (colab.research.google.com, choose Upload) or open it in Jupyter, then run each cell with <b>Shift + Enter</b>.</div><p>The notebook holds the worked examples and the CHALLENGE cells for today. Work through it, then return to these slides for the games and the knowledge checks below.</p></div><div class='slide'><h1>Full Day Guide</h1><p class='muted'>The complete guide is built into these slides: objectives, vocabulary, news, activities, numericals, multiple choice, and the code challenge. Watch for the prompts that tell you when to run <code>Day2.ipynb</code>.</p></div><div class='slide'><h1>Day 2: Cyber Foundations and the Math of Passwords</h1>
+<p><strong>Duration:</strong> about 3 hours
+<strong>Goal:</strong> Understand the core goals of security and prove with math why long passwords win.</p>
+<hr /></div><div class='slide'><h2>Learning objectives</h2>
+<ul>
+<li>State the three goals of security (the CIA triad).</li>
+<li>Explain why password length beats complexity.</li>
+<li>Use a password tester responsibly and estimate crack time.</li>
+</ul></div><div class='slide'><h2>Vocabulary (acronyms expanded and defined)</h2>
+<ul>
+<li><strong>CIA triad = Confidentiality, Integrity, Availability</strong>: keep data secret, keep it correct, keep it reachable.</li>
+<li><strong>MFA = Multi-Factor Authentication</strong>: proving who you are with two or more things (a password plus a phone code).</li>
+<li><strong>2FA = Two-Factor Authentication</strong>: MFA with exactly two factors.</li>
+<li><strong>PIN = Personal Identification Number</strong>: a short numeric code.</li>
+<li><strong>Phishing</strong>: a fake message that tricks you into giving up a password.</li>
+<li><strong>Keyspace</strong>: the total number of possible passwords; bigger is harder to guess.</li>
+<li><strong>Brute force</strong>: trying every possible password until one works.</li>
+</ul></div><div class='slide'><h2>Picture it</h2>
+<pre><code>  Something you KNOW (password)
+  Something you HAVE (phone, key)   -&gt;  combine two = Multi-Factor Authentication
+  Something you ARE  (fingerprint)
+</code></pre></div><div class='slide'><h2>In the news (real and verifiable)</h2>
+<p>Every year, password managers such as NordPass publish a list of the most common passwords, and weak choices like 123456 and password appear at the top again and again. These take well under a second for a computer to guess. The lesson security pros repeat: length and unpredictability matter far more than swapping an a for an @.</p></div><div class='slide'><h2>Activity 1: Google Interland</h2>
+<p>Open https://beinternetawesome.withgoogle.com/en_us/interland
+- Play <strong>Tower of Treasure</strong> to practice building strong passwords.
+- Play <strong>Reality River</strong> to spot phishing and scams.</p></div><div class='slide'><h2>Activity 2: Security.org password tester (math you can see)</h2>
+<p>Open https://www.security.org/how-secure-is-my-password/
+- Type made-up passwords only. Never type a real password you actually use.
+- Add one character at a time and watch the estimated crack time jump. This is the keyspace growing.</p></div><div class='slide'><h2>Numericals (do these in the notebook)</h2>
+<ol>
+<li>How many 4-digit PINs are possible (digits 0 to 9)?</li>
+<li>An 8-character lowercase password: how many combinations (26 to the power 8)?</li>
+<li>If an attacker tries 1 billion guesses per second, roughly how long to try all 8-character all-symbol passwords? (The notebook computes this.)</li>
+</ol></div><div class='slide'><h2>Multiple choice (MCQ)</h2>
+<ol>
+<li>The C in the CIA triad stands for:
+   a) Control  b) Confidentiality  c) Computer</li>
+<li>Which is stronger?
+   a) <code>P@ss1!</code>  b) <code>purple-kite-river-stone</code></li>
+<li>MFA improves security because:
+   a) it makes passwords shorter  b) an attacker needs more than just your password  c) it hides your screen</li>
+</ol></div><div class='slide'><h2>Code challenge</h2>
+<p>Open <strong>Day2.ipynb</strong> and finish the password strength meter and the passphrase keyspace calculation.</p></div><div class='slide'><h2>Reflection and homework</h2>
+<p>Turn on MFA on one of your own accounts with a parent or guardian. Write one sentence on why a passphrase of four random words can beat a short symbol password.</p>
+<hr />
+<p><strong>Answer key.</strong> Numericals: 1) 10,000 PINs, 2) 208,827,064,576 (about 2.09 x 10^11), 3) see notebook (a few hours, which is why 8 chars is no longer safe). MCQ: 1-b, 2-b, 3-b.</p>
+<hr /></div><div class='slide'><h1>Extended Lecture Notes</h1></div><div class='slide'><h1>Day 2: Risk Frameworks, Threat Matrices, and Legal Controls</h1></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
+<ul>
+<li><strong>Case Profile</strong>: The 2024 Change Healthcare Ransomware Attack. Cybercriminals exploited an unauthenticated entry portal, halting health payment infrastructure nationwide. This underscores why missing security controls present catastrophic operational risks.</li>
+</ul></div><div class='slide'><h2>Teaching Session I: Core Lecture (09:15 AM - 11:15 AM)</h2>
+<h3>Cybersecurity Governance Terminology</h3>
+<ul>
+<li><strong>Asset</strong>: Any high-value resource, hardware appliance, or data segment owned by an organization (e.g., patient health records database records).</li>
+<li><strong>Threat</strong>: Any potential event or entity capable of causing harm or unauthorized access to an asset (e.g., a ransomware gang).</li>
+<li><strong>Vulnerability</strong>: A flaw or operational weakness in system architecture, software code, or physical access controls that can be exploited by an attacker.</li>
+<li><strong>Risk</strong>: The mathematical probability that a specific threat will exploit a vulnerability, multiplied by the operational impact or financial loss ($Risk = Probability \times Impact$).</li>
+<li><strong>Security Assessment</strong>: A comprehensive technical evaluation of an infrastructure's defensive posture to identify vulnerabilities before attackers do.</li>
+</ul>
+<h3>The Threat Actor Spectrum</h3>
+<ul>
+<li><strong>White Hat Hackers</strong>: Security professionals who perform penetration testing with legal authorization to help defend networks.</li>
+<li><strong>Black Hat Hackers</strong>: Malicious cybercriminals who breach infrastructure unlawfully for financial gain or disruption.</li>
+<li><strong>Gray Hat Hackers</strong>: Individuals who find vulnerabilities without authorization but report them without malicious intent, operating outside strict legal boundaries.</li>
+<li><strong>Script Kiddies</strong>: Amateurs who launch pre-made exploit tools and scripts without understanding their underlying code mechanics.</li>
+<li><strong>Hacktivists</strong>: Politically or ideologically motivated actors who deface web systems or leak files to draw attention to a social cause.</li>
+</ul>
+<h3>Legal Frameworks and Core Governance Matrix</h3>
+<ul>
+<li><strong>Ethical Hacking Rules</strong>: Requires <strong>explicit written permission</strong>, a clearly defined <strong>scope</strong> of testing targets, and adhering to <strong>responsible disclosure</strong> policies by reporting vulnerabilities privately to owners.</li>
+<li><strong>Computer Fraud and Abuse Act (CFAA)</strong>: The primary United States federal computer crime statute. It criminalizes accessing a protected computer system without authorization or exceeding authorized access bounds.</li>
+</ul>
+<h3>The CIA Security Triad Core Properties</h3>
+<ul>
+<li><strong>Confidentiality</strong>: Ensuring data is accessible only to authorized entities. Attacks include <strong>Brute-Force Password Cracking</strong>.</li>
+<li><strong>Integrity</strong>: Safeguarding data from unauthorized modification or tampering.</li>
+<li><strong>Availability</strong>: Ensuring information networks are reliably accessible to users. Attacks include <strong>Denial-of-Service (DoS)</strong> and <strong>Distributed Denial-of-Service (DDoS)</strong> attacks, which flood bandwidth to crash systems.</li>
+</ul>
+<hr /></div><div class='slide'><h2>Teaching Session II: Labs &amp; Interactive Tools (11:45 AM - 01:45 PM)</h2>
+<h3>Practical Interactive Tools for Today</h3>
+<ol>
+<li><strong>Google Interland</strong>: Complete gamified interactive paths focused on evaluating threat links, phishing recognition, and risk management parameters.</li>
+<li><strong>Security.org Password Tool</strong>: Input testing phrases to see how expanding character lengths affects brute-force cracking time metrics.</li>
+</ol>
+<hr /></div><div class='slide'><h2>Knowledge Evaluation Bank (Embedded Assessments)</h2>
+<h3>Multiple-Choice Questions (MCQ)</h3>
+<ol>
+<li>
+<p>A hacker leaks corporate database documents to protest a company's environmental policy. This actor belongs to which category?</p>
+<ul>
+<li>A) Script Kiddie</li>
+<li>B) Hacktivist</li>
+<li>C) White Hat Hacker</li>
+<li><em>Answer Key</em>: B. Hacktivists use technical exploits to drive ideological or political messages.</li>
+</ul>
+</li>
+<li>
+<p>An attacker floods an e-commerce platform with 500,000 automated requests per second, causing the web servers to crash. Which component of the CIA Triad is compromised?</p>
+<ul>
+<li>A) Confidentiality</li>
+<li>B) Integrity</li>
+<li>C) Availability</li>
+<li><em>Answer Key</em>: C. Flooding infrastructure with requests causes a denial of service, violating system Availability.</li>
+</ul>
+</li>
+</ol>
+<h3>Numerical Exercise</h3>
+<p>An executive calculates that a corporate server holding customer records faces an asset evaluation cost of \$200,000. Risk analysts determine a threat group has an annual rate of occurrence matching 0.5 (once every two years). If an exploit occurs, the exposure factor damage is 40% of the total asset value. Calculate the Single Loss Expectancy (SLE) and Annualized Loss Expectancy (ALE) values using these metrics.
+* <em>Solution Steps</em>:
+    * $$\text{SLE} = \text{Asset Value} \times \text{Exposure Factor} = \$200,000 \times 0.40 = \$80,000$$
+    * $$\text{ALE} = \text{SLE} \times \text{Annual Rate of Occurrence} = \$80,000 \times 0.5 = \$40,000 \text{ loss per year}$$</p>
+<hr /></div><div class='slide'><h2>Recap &amp; Tomorrow's Horizon (04:15 PM - 04:30 PM)</h2>
+<ul>
+<li><strong>Summary</strong>: Today we broke down risk, mapped threat profiles, analyzed the CFAA, and explored how brute-force and DDoS attacks disrupt the CIA Triad.</li>
+<li><strong>Tomorrow Preview</strong>: We will explore defensive mechanics, covering encoding, hashing, encryption, and strategies to resist social engineering.</li>
+</ul></div></div>
   <div class="progress"><div id="bar"></div></div>
   <div class="nav">
     <button class="nav-btn" id="prev">Back</button>

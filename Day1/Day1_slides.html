@@ -36,6 +36,7 @@
   .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
   .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
   a{color:var(--accent)}
+.slide h3{font-size:18px;margin:14px 0 6px;color:var(--accent)}.slide table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}.slide th,.slide td{border:1px solid #dfe6f5;padding:6px 10px;text-align:left;vertical-align:top}.slide th{background:#f1f5ff}.callout{background:#eef6ff;border:1px solid #c7d4f0;border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:12px 0}.slide hr{border:none;border-top:1px solid #dfe6f5;margin:16px 0}
 </style>
 </head>
 <body>
@@ -45,7 +46,121 @@
     print(step)   # indented = inside the loop</pre></div><div class='slide'><h2>Variables: labeled boxes</h2><p class='muted'>Storing information</p><p>A variable stores a value so you can reuse it. <code>=</code> means store the value on the right into the name on the left.</p><pre>agent_name = "Ada"
 missions = 3
 print(agent_name, missions)</pre></div><div class='slide'><h2>Knowledge check</h2><p>A variable is best described as...</p><button class='opt' data-c='0' onclick="choose(this,false,'A variable holds a value under a name so you can use it again.')">A type of computer virus</button><button class='opt' data-c='1' onclick="choose(this,true,'A variable holds a value under a name so you can use it again.')">A named box that stores a value</button><button class='opt' data-c='0' onclick="choose(this,false,'A variable holds a value under a name so you can use it again.')">A website address</button><div class='feedback'></div></div><div class='slide'><h2>Data types</h2><p class='muted'>The kinds of values</p><ul><li><b>str</b> (string): text in quotes, like a password.</li><li><b>int</b> (integer): whole numbers like 42.</li><li><b>float</b>: decimals like 3.14.</li><li><b>bool</b> (boolean): True or False.</li></ul></div><div class='slide'><h2>Knowledge check</h2><p>What data type is the value 42 ?</p><button class='opt' data-c='0' onclick="choose(this,false,'Whole numbers are integers, written without quotes.')">str (string)</button><button class='opt' data-c='1' onclick="choose(this,true,'Whole numbers are integers, written without quotes.')">int (integer)</button><button class='opt' data-c='0' onclick="choose(this,false,'Whole numbers are integers, written without quotes.')">bool (boolean)</button><div class='feedback'></div></div><div class='slide'><h2>Loops repeat work</h2><p class='muted'>Do it again, automatically</p><p>A loop runs the same block many times. Moving a hero through a maze in CodeCombat is just a loop of steps.</p><pre>for i in range(5):
-    print("Mission", i, "ready")</pre></div><div class='slide'><h2>Knowledge check</h2><p>How many times does for i in range(3): repeat?</p><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">2 times</button><button class='opt' data-c='1' onclick="choose(this,true,'range(3) gives 0, 1, 2 which is three repeats.')">3 times</button><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">Forever</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>CodeCombat</b>: codecombat.com - clear the first Computer Science 1 levels.</li><li><b>OverTheWire Bandit</b>: connect with SSH and clear Level 0.</li></ul><p>Then open <code>Day1.ipynb</code> for the code challenges.</p></div></div>
+    print("Mission", i, "ready")</pre></div><div class='slide'><h2>Knowledge check</h2><p>How many times does for i in range(3): repeat?</p><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">2 times</button><button class='opt' data-c='1' onclick="choose(this,true,'range(3) gives 0, 1, 2 which is three repeats.')">3 times</button><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">Forever</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>CodeCombat</b>: codecombat.com - clear the first Computer Science 1 levels.</li><li><b>OverTheWire Bandit</b>: connect with SSH and clear Level 0.</li></ul><p>Then open <code>Day1.ipynb</code> for the code challenges.</p></div><div class='slide'><h2>Time to code: open the notebook</h2><div class='callout'>Open <code>Day1.ipynb</code> now. Upload it to Google Colab (colab.research.google.com, choose Upload) or open it in Jupyter, then run each cell with <b>Shift + Enter</b>.</div><p>The notebook holds the worked examples and the CHALLENGE cells for today. Work through it, then return to these slides for the games and the knowledge checks below.</p></div><div class='slide'><h1>Full Day Guide</h1><p class='muted'>The complete guide is built into these slides: objectives, vocabulary, news, activities, numericals, multiple choice, and the code challenge. Watch for the prompts that tell you when to run <code>Day1.ipynb</code>.</p></div><div class='slide'><h1>Day 1: Foundations - Python and the Linux Command Line</h1>
+<p><strong>Duration:</strong> about 3 hours (flexible)
+<strong>Goal:</strong> Write your first real code and meet the terminal that powers most of the internet.</p>
+<hr /></div><div class='slide'><h2>Learning objectives</h2>
+<p>By the end of today you can:
+- Explain what Python is and why it is used in cybersecurity.
+- Use variables, data types, and a loop.
+- Navigate a Linux terminal and read your first hidden password in OverTheWire Bandit.</p></div><div class='slide'><h2>Vocabulary (acronyms expanded and defined)</h2>
+<ul>
+<li><strong>Python</strong>: a popular, easy-to-read programming language (named after the comedy group Monty Python, not the snake).</li>
+<li><strong>CLI = Command Line Interface</strong>: a text-only way to control a computer by typing commands.</li>
+<li><strong>OS = Operating System</strong>: the software that runs a computer, such as Windows, macOS, or Linux.</li>
+<li><strong>Linux</strong>: a free, open-source operating system that runs most web servers, phones (Android), and supercomputers.</li>
+<li><strong>SSH = Secure Shell</strong>: a tool to safely log in to another computer over the network.</li>
+<li><strong>IDE = Integrated Development Environment</strong>: an app for writing and running code.</li>
+<li><strong>Syntax</strong>: the grammar rules of a programming language.</li>
+<li><strong>Variable</strong>: a named box that stores a value.</li>
+</ul></div><div class='slide'><h2>Picture it</h2>
+<pre><code>   YOU type a command  -&gt;  [ TERMINAL ]  -&gt;  the computer obeys
+        ls                                     shows your files
+        cd Desktop                             moves into a folder
+        cat secret.txt                         prints a file
+</code></pre>
+<p>A loop is like telling a robot: "take a step, repeat 5 times."</p></div><div class='slide'><h2>In the news (real and verifiable)</h2>
+<p>Python is consistently ranked among the most popular programming languages in the world in the annual Stack Overflow Developer Survey and the TIOBE index. Security teams love it because you can automate boring tasks in a few lines. Most websites you visit run on Linux servers, which is why learning the terminal is a real career skill.</p></div><div class='slide'><h2>Activity 1: CodeCombat (Python through a game)</h2>
+<p>Open https://codecombat.com/ and start <strong>Computer Science 1</strong> (free levels).
+1. Create a free account or play as a guest.
+2. Move your hero with code like <code>hero.moveRight()</code>.
+3. When you repeat moves, use a loop, the same idea as the notebook.
+Aim to clear the first 5 to 8 levels.</p></div><div class='slide'><h2>Activity 2: OverTheWire Bandit (Linux terminal levels)</h2>
+<p>Open https://overthewire.org/wargames/bandit/bandit0.html
+- <strong>Bandit Level 0:</strong> log in with SSH. On Windows use the built-in Terminal or PowerShell; on Mac use Terminal.
+  - Command: <code>ssh bandit0@bandit.labs.overthewire.org -p 2220</code>
+  - Password: <code>bandit0</code>
+- <strong>Bandit Level 0 to 1:</strong> read the file named <code>readme</code>.
+  - Command: <code>cat readme</code>  (this prints the password for the next level)
+- Commands you will use a lot: <code>ls</code> (list files), <code>cd</code> (change directory), <code>cat</code> (print a file), <code>pwd</code> (where am I).
+Write each password you find in a safe note so you can keep climbing.</p></div><div class='slide'><h2>Numericals (do these in the notebook)</h2>
+<ol>
+<li>How many times does <code>for i in range(7):</code> repeat?</li>
+<li>What is <code>2 ** 10</code> (two to the power ten)?</li>
+<li>What is <code>25 % 4</code> (the remainder)?</li>
+</ol></div><div class='slide'><h2>Multiple choice (MCQ)</h2>
+<ol>
+<li>A variable is best described as:
+   a) a type of virus  b) a named box that stores a value  c) a website</li>
+<li>Which command prints the contents of a file in Linux?
+   a) <code>cat</code>  b) <code>run</code>  c) <code>open</code></li>
+<li>SSH stands for:
+   a) Super Secure Hardware  b) Secure Shell  c) System Service Host</li>
+</ol></div><div class='slide'><h2>Code challenge</h2>
+<p>Open <strong>Day1.ipynb</strong> and complete Challenge 1 (mission counter) and Challenge 2 (password length checker).</p></div><div class='slide'><h2>Reflection and homework</h2>
+<p>Write two sentences: what does a loop in code have in common with a maze in CodeCombat? Try one more Bandit level at home if you want a head start.</p>
+<hr />
+<p><strong>Answer key.</strong> Numericals: 1) 7 times, 2) 1024, 3) 1. MCQ: 1-b, 2-a, 3-b.</p>
+<hr /></div><div class='slide'><h1>Extended Lecture Notes</h1></div><div class='slide'><h1>Day 1: Foundational Scripting, Networks, and Linux Environments</h1></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
+<ul>
+<li><strong>Case Profile</strong>: The 2014 Sony Pictures Hack. Attackers compromised network architectures using targeted data deletion tools, revealing confidential emails and unreleased files. This illustrates how technical script logic alters international geopolitics.</li>
+</ul></div><div class='slide'><h2>Teaching Session I: Core Lecture (09:15 AM - 11:15 AM)</h2>
+<h3>Introduction to Computer Programming using Python</h3>
+<p>Python is an interpreted, high-level, general-purpose programming language. Because its syntax focuses heavily on readability, it is the primary industry tool used by security professionals to write automated scanners and network exploit modules.
+* <strong>Variables</strong>: Allocated memory addresses holding data values.
+* <strong>Syntax</strong>: The grammar rules regulating code configuration.
+* <strong>Data Types</strong>: Strings (textual data like <code>"admin"</code>), Integers (whole numbers like <code>80</code>), and Booleans (logical evaluations representing <code>True</code> or <code>False</code>).</p>
+<h3>Computer Networking Foundations</h3>
+<ul>
+<li><strong>Internet Protocol Address (IP Address)</strong>: A unique numerical identifier assigned to every hardware component interacting on an internet network framework.</li>
+<li><strong>Data Packet</strong>: A formatted unit of data carried by a packet-switched network. Contains control metadata (headers) and user data payloads.</li>
+<li><strong>Routing</strong>: The functional process of selecting paths across network nodes to guide packets from their source to their destination.</li>
+<li><strong>HTTP vs HTTPS</strong>: Hypertext Transfer Protocol (HTTP) transmits network requests in unencrypted plain text. Hypertext Transfer Protocol Secure (HTTPS) uses Transport Layer Security (TLS) cryptographic protocols to encrypt communication channels, preventing eavesdropping.</li>
+</ul>
+<h3>The Linux Operating System Command Line Interface (CLI)</h3>
+<p>Cybersecurity systems, cloud networks, and penetration testing platforms like Kali Linux rely on a text-based command line interface instead of a graphical user interface.
+* <code>pwd</code> (Print Working Directory): Outputs the full path of the current working folder.
+* <code>ls</code> (List Directory Contents): Displays files inside the current working folder.
+* <code>cd</code> (Change Directory): Moves the user into a different directory folder.
+* <code>mkdir</code> (Make Directory): Generates a brand-new directory folder.
+* <code>echo</code> (Display text line): Prints arguments to the standard output screen.
+* <code>cat</code> (Concatenate): Reads file inner text and displays it directly to the terminal.</p>
+<hr /></div><div class='slide'><h2>Teaching Session II: Labs &amp; Interactive Tools (11:45 AM - 01:45 PM)</h2>
+<h3>Practical Interactive Tools for Today</h3>
+<ol>
+<li><strong>CodeCombat</strong>: Navigate programming levels by typing functional Python loops and variable calls.</li>
+<li><strong>OverTheWire Bandit</strong>: Connect via Secure Shell (SSH) and run commands (<code>ls</code>, <code>cd</code>, <code>cat</code>) to search for text-based authentication keys hidden in files.</li>
+</ol>
+<hr /></div><div class='slide'><h2>Knowledge Evaluation Bank (Embedded Assessments)</h2>
+<h3>Multiple-Choice Questions (MCQ)</h3>
+<ol>
+<li>
+<p>An analyst intercepts network traffic and reads user passwords in plain text. What unencrypted protocol was the target web application using?</p>
+<ul>
+<li>A) HTTPS</li>
+<li>B) HTTP</li>
+<li>C) SSH</li>
+<li><em>Answer Key</em>: B. HTTP transmits payloads without cryptographic protection layers.</li>
+</ul>
+</li>
+<li>
+<p>Which Linux CLI command displays the contents of a text file on the terminal screen?</p>
+<ul>
+<li>A) mkdir</li>
+<li>B) pwd</li>
+<li>C) cat</li>
+<li><em>Answer Key</em>: C. <code>cat</code> reads and outputs file contents to standard output.</li>
+</ul>
+</li>
+</ol>
+<h3>Numerical Exercise</h3>
+<p>A network router receives an unfragmented data packet file with a total payload size of 4,500 bytes. If the local network limits the maximum packet transmission size to 1,500 bytes per transmission unit, calculate the exact minimum number of individual packet segments the router must generate to transmit the complete payload data across the network.
+* <em>Solution Step</em>: $\text{Segments} = \frac{4500 \text{ bytes}}{1500 \text{ bytes/packet}} = 3 \text{ packets}$.</p>
+<hr /></div><div class='slide'><h2>Recap &amp; Tomorrow's Horizon (04:15 PM - 04:30 PM)</h2>
+<ul>
+<li><strong>Summary</strong>: Today we mastered core variables, network routing differences, and basic terminal control commands.</li>
+<li><strong>Tomorrow Preview</strong>: We will move from basic technical systems to security management frameworks, examining threats, vulnerability analysis, and the legal limits of hacking.</li>
+</ul></div></div>
   <div class="progress"><div id="bar"></div></div>
   <div class="nav">
     <button class="nav-btn" id="prev">Back</button>

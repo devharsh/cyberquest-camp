@@ -8,21 +8,23 @@ A free, five-day, hands-on introduction to cybersecurity for middle and high sch
 - Teachers, club leaders, parents, and volunteers running a camp or after-school program.
 
 ## How the week flows
+Each day has just two files: an interactive slide deck (`.html`) and a hands-on notebook (`.ipynb`). The slide deck now contains the full day guide too (objectives, vocabulary, news, activities, numericals, multiple choice with an answer key, and the code challenge), so there is nothing else to open.
+
 Each day follows the same friendly pattern:
 1. **Watch and click**: open the interactive HTML slides to learn the basics and answer knowledge-check questions.
-2. **Code along**: open the Jupyter notebook (.ipynb) and run the examples and challenges.
+2. **Code along**: when a slide says so, open the Jupyter notebook (`.ipynb`) and run the examples and challenges.
 3. **Play**: use two free, fun, interactive tools to practice for real.
-4. **Reflect**: short questions and an answer key are in each day guide (.md).
+4. **Reflect**: the reflection prompts and answer key are built into the slides.
 
 ## Daily plan
 
-| Day | Topic | Slides + Notebook | Free tools |
-|-----|-------|-------------------|-----------|
-| 1 | Python and the Linux command line | Day1_slides.html, Day1.ipynb, Day1.md | CodeCombat, OverTheWire Bandit |
-| 2 | Security foundations and strong passwords | Day2_slides.html, Day2.ipynb, Day2.md | Google Interland, Security.org password tester |
-| 3 | Cryptography: codes and ciphers | Day3_slides.html, Day3.ipynb, Day3.md | dcode.fr, CyberChef |
-| 4 | Web security and AI security | Day4_slides.html, Day4.ipynb, Day4.md | CTFLearn, Lakera Gandalf |
-| 5 | Capstone: Capture The Flag and OSINT | Day5_slides.html, Day5.ipynb, Day5.md | picoCTF, OSINT Framework |
+| Day | Topic | Files | Free tools |
+|-----|-------|-------|-----------|
+| 1 | Python and the Linux command line | Day1_slides.html, Day1.ipynb | CodeCombat, OverTheWire Bandit |
+| 2 | Security foundations and strong passwords | Day2_slides.html, Day2.ipynb | Google Interland, Security.org password tester |
+| 3 | Cryptography: codes and ciphers | Day3_slides.html, Day3.ipynb | dcode.fr, CyberChef |
+| 4 | Web security and AI security | Day4_slides.html, Day4.ipynb | CTFLearn, Lakera Gandalf |
+| 5 | Capstone: Capture The Flag and OSINT | Day5_slides.html, Day5.ipynb | picoCTF, OSINT Framework |
 
 ## Suggested daily schedule (09:00 to 16:30)
 
@@ -79,14 +81,14 @@ cyberquest-camp/
   LICENSE
   CITATION.cff
   Interactive_Slides.html  (full combined deck + Day decks menu)
-  Day1/  Day1_slides.html  Day1.ipynb  Day1.md
-  Day2/  Day2_slides.html  Day2.ipynb  Day2.md
-  Day3/  Day3_slides.html  Day3.ipynb  Day3.md
-  Day4/  Day4_slides.html  Day4.ipynb  Day4.md
-  Day5/  Day5_slides.html  Day5.ipynb  Day5.md
+  Day1/  Day1_slides.html  Day1.ipynb
+  Day2/  Day2_slides.html  Day2.ipynb
+  Day3/  Day3_slides.html  Day3.ipynb
+  Day4/  Day4_slides.html  Day4.ipynb
+  Day5/  Day5_slides.html  Day5.ipynb
 ```
 
-Each day folder holds exactly three files: the interactive slide deck (`.html`), the hands-on notebook (`.ipynb`), and the guide (`.md`). The guide includes an Extended Lecture Notes section, and the notebook includes a Supplementary Practical Lab section, both merged from the earlier curriculum draft.
+Each day folder holds two files: the interactive slide deck (`.html`) and the hands-on notebook (`.ipynb`). The slide deck absorbs the full written guide (objectives, vocabulary, news, activities, numericals, multiple choice with answer key, and the code challenge) and tells you exactly when to open and run the notebook. The notebook includes a Supplementary Practical Lab section merged from the earlier curriculum draft.
 
 ## Additional bundled materials
 - `Interactive_Slides.html`: the full combined course deck, with a Day decks menu linking to each per-day deck.

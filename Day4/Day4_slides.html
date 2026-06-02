@@ -36,13 +36,122 @@
   .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
   .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
   a{color:var(--accent)}
+.slide h3{font-size:18px;margin:14px 0 6px;color:var(--accent)}.slide table{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px}.slide th,.slide td{border:1px solid #dfe6f5;padding:6px 10px;text-align:left;vertical-align:top}.slide th{background:#f1f5ff}.callout{background:#eef6ff;border:1px solid #c7d4f0;border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:12px 0}.slide hr{border:none;border-top:1px solid #dfe6f5;margin:16px 0}
 </style>
 </head>
 <body>
 <div class="stage">
   <div class="topbar"><span class="badge">CyberQuest</span><span>Day 4 of 5</span><span id="counter"></span></div>
   <div id="deck"><div class='slide'><h1>Day 4: Web and AI Security</h1><p>See how websites work, find web flags, and learn why AI can be tricked.</p><p><span class='pill'>CTFLearn</span><span class='pill'>Lakera Gandalf</span></p></div><div class='slide'><h2>How the web talks</h2><p class='muted'>Request and response</p><pre>Browser  -- HTTP request -->  Server  -->  Database
-         <- HTML response --         <--</pre><p class='muted'>HTTP = HyperText Transfer Protocol. HTTPS adds encryption.</p></div><div class='slide'><h2>Knowledge check</h2><p>HTTPS adds what compared to HTTP?</p><button class='opt' data-c='0' onclick="choose(this,false,'The S means Secure: traffic is encrypted and the site identity is checked.')">Faster ads</button><button class='opt' data-c='1' onclick="choose(this,true,'The S means Secure: traffic is encrypted and the site identity is checked.')">Encryption and verified identity</button><button class='opt' data-c='0' onclick="choose(this,false,'The S means Secure: traffic is encrypted and the site identity is checked.')">Bigger images</button><div class='feedback'></div></div><div class='slide'><h2>SQL injection</h2><p class='muted'>When sites trust bad input</p><p>SQL Injection (SQLi) happens when a site trusts user input and runs it as a database command.</p><pre>Login: admin' OR 1=1 --</pre><p>Defense: parameterized queries that never treat input as code.</p></div><div class='slide'><h2>Knowledge check</h2><p>SQL injection happens when...</p><button class='opt' data-c='1' onclick="choose(this,true,'Never trust input. Parameterized queries keep data separate from commands.')">A site trusts user input and runs it as a command</button><button class='opt' data-c='0' onclick="choose(this,false,'Never trust input. Parameterized queries keep data separate from commands.')">The wifi is slow</button><button class='opt' data-c='0' onclick="choose(this,false,'Never trust input. Parameterized queries keep data separate from commands.')">The password is short</button><div class='feedback'></div></div><div class='slide'><h2>Prompt injection (AI security)</h2><p class='muted'>Tricking an AI</p><p>A Large Language Model (LLM) follows instructions in text. If untrusted text hides instructions, the model may obey them.</p><p class='muted'>OWASP lists prompt injection as the number one risk for LLM apps. The Gandalf game teaches exactly this.</p></div><div class='slide'><h2>Knowledge check</h2><p>Prompt injection targets...</p><button class='opt' data-c='0' onclick="choose(this,false,'It slips hidden instructions into text the AI reads and trusts.')">Databases</button><button class='opt' data-c='1' onclick="choose(this,true,'It slips hidden instructions into text the AI reads and trusts.')">An AI model that follows instructions in text</button><button class='opt' data-c='0' onclick="choose(this,false,'It slips hidden instructions into text the AI reads and trusts.')">Printers</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>CTFLearn</b>: easy Web challenges.</li><li><b>Gandalf</b>: trick the AI into revealing its password, level by level.</li></ul><p>Then open <code>Day4.ipynb</code>.</p></div></div>
+         <- HTML response --         <--</pre><p class='muted'>HTTP = HyperText Transfer Protocol. HTTPS adds encryption.</p></div><div class='slide'><h2>Knowledge check</h2><p>HTTPS adds what compared to HTTP?</p><button class='opt' data-c='0' onclick="choose(this,false,'The S means Secure: traffic is encrypted and the site identity is checked.')">Faster ads</button><button class='opt' data-c='1' onclick="choose(this,true,'The S means Secure: traffic is encrypted and the site identity is checked.')">Encryption and verified identity</button><button class='opt' data-c='0' onclick="choose(this,false,'The S means Secure: traffic is encrypted and the site identity is checked.')">Bigger images</button><div class='feedback'></div></div><div class='slide'><h2>SQL injection</h2><p class='muted'>When sites trust bad input</p><p>SQL Injection (SQLi) happens when a site trusts user input and runs it as a database command.</p><pre>Login: admin' OR 1=1 --</pre><p>Defense: parameterized queries that never treat input as code.</p></div><div class='slide'><h2>Knowledge check</h2><p>SQL injection happens when...</p><button class='opt' data-c='1' onclick="choose(this,true,'Never trust input. Parameterized queries keep data separate from commands.')">A site trusts user input and runs it as a command</button><button class='opt' data-c='0' onclick="choose(this,false,'Never trust input. Parameterized queries keep data separate from commands.')">The wifi is slow</button><button class='opt' data-c='0' onclick="choose(this,false,'Never trust input. Parameterized queries keep data separate from commands.')">The password is short</button><div class='feedback'></div></div><div class='slide'><h2>Prompt injection (AI security)</h2><p class='muted'>Tricking an AI</p><p>A Large Language Model (LLM) follows instructions in text. If untrusted text hides instructions, the model may obey them.</p><p class='muted'>OWASP lists prompt injection as the number one risk for LLM apps. The Gandalf game teaches exactly this.</p></div><div class='slide'><h2>Knowledge check</h2><p>Prompt injection targets...</p><button class='opt' data-c='0' onclick="choose(this,false,'It slips hidden instructions into text the AI reads and trusts.')">Databases</button><button class='opt' data-c='1' onclick="choose(this,true,'It slips hidden instructions into text the AI reads and trusts.')">An AI model that follows instructions in text</button><button class='opt' data-c='0' onclick="choose(this,false,'It slips hidden instructions into text the AI reads and trusts.')">Printers</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>CTFLearn</b>: easy Web challenges.</li><li><b>Gandalf</b>: trick the AI into revealing its password, level by level.</li></ul><p>Then open <code>Day4.ipynb</code>.</p></div><div class='slide'><h2>Time to code: open the notebook</h2><div class='callout'>Open <code>Day4.ipynb</code> now. Upload it to Google Colab (colab.research.google.com, choose Upload) or open it in Jupyter, then run each cell with <b>Shift + Enter</b>.</div><p>The notebook holds the worked examples and the CHALLENGE cells for today. Work through it, then return to these slides for the games and the knowledge checks below.</p></div><div class='slide'><h1>Full Day Guide</h1><p class='muted'>The complete guide is built into these slides: objectives, vocabulary, news, activities, numericals, multiple choice, and the code challenge. Watch for the prompts that tell you when to run <code>Day4.ipynb</code>.</p></div><div class='slide'><h1>Day 4: Web Security and AI Security</h1>
+<p><strong>Duration:</strong> about 3 hours
+<strong>Goal:</strong> See how websites work, find your first web flags, and learn why AI assistants can be tricked.</p>
+<hr /></div><div class='slide'><h2>Learning objectives</h2>
+<ul>
+<li>Break a URL into its parts and explain an HTTP request.</li>
+<li>Describe two common web attacks and how sites defend against them.</li>
+<li>Explain prompt injection and try the Gandalf challenge.</li>
+</ul></div><div class='slide'><h2>Vocabulary (acronyms expanded and defined)</h2>
+<ul>
+<li><strong>HTTP = HyperText Transfer Protocol</strong>: the language browsers and servers use to talk.</li>
+<li><strong>HTTPS = HTTP Secure</strong>: HTTP with encryption so others cannot read your traffic.</li>
+<li><strong>URL = Uniform Resource Locator</strong>: the address of a page, such as https://example.com.</li>
+<li><strong>HTML = HyperText Markup Language</strong>: the code that builds web pages.</li>
+<li><strong>XSS = Cross-Site Scripting</strong>: tricking a site into running attacker code in your browser.</li>
+<li><strong>SQL = Structured Query Language</strong>: the language used to talk to databases.</li>
+<li><strong>SQLi = SQL Injection</strong>: smuggling commands into a site that trusts user input.</li>
+<li><strong>API = Application Programming Interface</strong>: a way for programs to talk to each other.</li>
+<li><strong>AI = Artificial Intelligence</strong>; <strong>LLM = Large Language Model</strong>: an AI trained on text that follows instructions.</li>
+</ul></div><div class='slide'><h2>Picture it</h2>
+<pre><code>  Browser  --- HTTP request ---&gt;  Web server  ---&gt;  Database
+           &lt;-- HTML response ---             &lt;---
+  If the server trusts bad input, an attacker can sneak commands through.
+</code></pre></div><div class='slide'><h2>In the news (real and verifiable)</h2>
+<p>The Open Worldwide Application Security Project (OWASP) publishes the OWASP Top 10, the most critical web risks, and injection flaws like SQL injection have appeared on that list for many years. OWASP also released a Top 10 for Large Language Model applications, and prompt injection is listed as the number one risk. In other words, the bugs you learn today are exactly what professionals worry about.</p></div><div class='slide'><h2>Activity 1: CTFLearn</h2>
+<p>Open https://ctflearn.com/
+- Make a free account and open the <strong>Easy</strong> challenges in the Web category.
+- Use your skills from Day 3: inspect URLs, decode Base64, and look at page source.</p></div><div class='slide'><h2>Activity 2: Lakera Gandalf</h2>
+<p>Open https://gandalf.lakera.ai/baseline
+- Your goal: convince the AI named Gandalf to reveal its secret password.
+- Each level adds a stronger defense, teaching you how prompt injection works and how it is blocked.</p></div><div class='slide'><h2>Numericals and puzzles (do these in the notebook)</h2>
+<ol>
+<li>In the URL https://shop.example.com/search?q=shoes&amp;page=2, what is the value of <code>page</code>?</li>
+<li>Decode the Base64 cookie in the notebook to reveal a flag.</li>
+<li>Count: how many parts does a full URL have (scheme, host, path, query)?</li>
+</ol></div><div class='slide'><h2>Multiple choice (MCQ)</h2>
+<ol>
+<li>HTTPS adds what compared to HTTP?
+   a) faster ads  b) encryption and verified identity  c) bigger images</li>
+<li>SQL injection happens when:
+   a) a site trusts user input and runs it as a command  b) the wifi is slow  c) the password is short</li>
+<li>Prompt injection targets:
+   a) databases  b) an AI model that follows instructions in text  c) printers</li>
+</ol></div><div class='slide'><h2>Code challenge</h2>
+<p>Open <strong>Day4.ipynb</strong>: run the URL parser, the input validation simulator, and strengthen the AI guard function.</p></div><div class='slide'><h2>Reflection and homework</h2>
+<p>Name one real defense against SQL injection (hint: parameterized queries) and one reason prompt injection is hard to fully stop.</p>
+<hr />
+<p><strong>Answer key.</strong> Numericals: 1) 2, 2) flag{web_basics_unlocked}, 3) four. MCQ: 1-b, 2-a, 3-b.</p>
+<hr /></div><div class='slide'><h1>Extended Lecture Notes</h1></div><div class='slide'><h1>Day 4: Web Application Vulnerabilities, Blockchain, and AI Safety</h1></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
+<ul>
+<li><strong>Case Profile</strong>: The 2017 Equifax Data Breach. Attackers exploited an unpatched vulnerability in an open-source web framework, gaining unauthorized access to the personal data of over 140 million people. This shows why secure input parsing is a critical layer of web defense.</li>
+</ul></div><div class='slide'><h2>Teaching Session I: Core Lecture (09:15 AM - 11:15 AM)</h2>
+<h3>Web Application Deficiencies and SQL Injection (SQLi)</h3>
+<p>Web applications rely on database backends to store information. If user inputs are concatenated directly into database commands without verification, applications become vulnerable to injection attacks.
+* <strong>Structured Query Language (SQL)</strong>: The standard programming language used to manage and manipulate relational databases.
+* <strong>SQL Injection (SQLi)</strong>: An attack where malicious SQL statements are inserted into web form input fields. This fools the database into executing unauthorized commands, allowing attackers to bypass authentication or leak database data.</p>
+<h3>Blockchain and Cryptocurrency Fundamentals</h3>
+<ul>
+<li><strong>Blockchain</strong>: A decentralized, distributed ledger technology that securely records transactions across a peer-to-peer network.</li>
+<li><strong>Cryptocurrency</strong>: A digital currency that uses cryptographic principles to secure transactions, control the creation of additional units, and verify the transfer of assets on an immutable ledger.</li>
+</ul>
+<h3>Steganography</h3>
+<ul>
+<li><strong>Definition</strong>: The practice of concealing a secret message, file, or image within another ordinary file (such as hiding text inside the pixel data of a digital image). Unlike encryption, which hides the <em>meaning</em> of data, steganography hides the <em>existence</em> of the communication.</li>
+</ul>
+<h3>Artificial Intelligence and Large Language Model (AI/LLM) Security</h3>
+<p>As applications integrate Large Language Models, new vulnerabilities emerge at the prompt interface layer.
+* <strong>Prompt Engineering</strong>: Designing and optimizing text prompts to guide an LLM into generating specific, accurate outputs.
+* <strong>Prompt Injection</strong>: An attack where a user crafts malicious input prompts to override an LLM's system instructions, forcing it to ignore safety rules or leak confidential data.
+* <strong>Hallucination</strong>: A phenomenon where an AI model confidently generates outputs that are factually incorrect, fabricated, or completely disconnected from reality.</p>
+<hr /></div><div class='slide'><h2>Teaching Session II: Labs &amp; Interactive Tools (11:45 AM - 01:45 PM)</h2>
+<h3>Practical Interactive Tools for Today</h3>
+<ol>
+<li><strong>CTFLearn</strong>: Solve beginner-friendly web application challenges focused on identifying hidden parameters and basic injection vulnerabilities.</li>
+<li><strong>Lakera Gandalf AI Challenge</strong>: Use creative prompt injection techniques to trick an LLM into revealing a secret passport code across increasingly secure protection layers.</li>
+</ol>
+<hr /></div><div class='slide'><h2>Knowledge Evaluation Bank (Embedded Assessments)</h2>
+<h3>Multiple-Choice Questions (MCQ)</h3>
+<ol>
+<li>
+<p>An attacker enters characters like <code>' OR '1'='1</code> into a login form, successfully bypassing authentication without a password. What vulnerability did they exploit?</p>
+<ul>
+<li>A) Steganography</li>
+<li>B) Structured Query Language Injection (SQLi)</li>
+<li>C) Multi-Factor Authentication Bypass</li>
+<li><em>Answer Key</em>: B. Failing to validate inputs allows raw SQL commands to be processed directly by the database backend.</li>
+</ul>
+</li>
+<li>
+<p>When an AI model generates factually incorrect information but presents it as a confident, accurate statement, this behavior is called what?</p>
+<ul>
+<li>A) Prompt Injection</li>
+<li>B) Data Encryption</li>
+<li>C) Hallucination</li>
+<li><em>Answer Key</em>: C. Hallucinations occur when an LLM outputs fabricated claims due to statistical training patterns.</li>
+</ul>
+</li>
+</ol>
+<h3>Numerical Exercise</h3>
+<p>A steganography tool hides secret data bytes inside the least significant bits of an image file. The target uncompressed image has a resolution of $1,000 \times 1,000$ pixels. If each pixel contains 3 color channels (Red, Green, Blue) and the tool can alter 1 bit per channel, calculate the maximum storage capacity of hidden data in bytes.
+* <em>Solution Steps</em>:
+    * $$\text{Total color channels} = 1000 \times 1000 \times 3 = 3,000,000 \text{ channels}$$
+    * $$\text{Available space in bits} = 3,000,000 \text{ channels} \times 1 \text{ bit/channel} = 3,000,000 \text{ bits}$$
+    * $$\text{Convert to bytes} = \frac{3,000,000 \text{ bits}}{8 \text{ bits/byte}} = 375,000 \text{ bytes (or } 375 \text{ KB)}$$</p>
+<hr /></div><div class='slide'><h2>Recap &amp; Tomorrow's Horizon (04:15 PM - 04:30 PM)</h2>
+<ul>
+<li><strong>Summary</strong>: Today we analyzed SQL Injection web vulnerabilities, explored blockchain structures, and experimented with prompt injection attacks against LLMs.</li>
+<li><strong>Tomorrow Preview</strong>: We will enter the Capture the Flag team arena and explore professional career paths, certifications, and academic degrees in cybersecurity.</li>
+</ul></div></div>
   <div class="progress"><div id="bar"></div></div>
   <div class="nav">
     <button class="nav-btn" id="prev">Back</button>
