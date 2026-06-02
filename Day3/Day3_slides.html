@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberQuest Day 3: Cryptography</title>
+<style>
+  :root{ --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c; --accent:#2563eb; --accent2:#7c3aed; --good:#16a34a; --bad:#dc2626; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);color:var(--ink);min-height:100vh}
+  .stage{max-width:960px;margin:0 auto;padding:24px;min-height:100vh;display:flex;flex-direction:column}
+  .topbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-bottom:8px}
+  .badge{background:var(--accent2);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
+  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;flex:1;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12)}
+  .slide.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h1{font-size:34px;margin:0 0 6px;line-height:1.15}
+  h2{font-size:26px;margin:0 0 14px;color:var(--accent)}
+  p,li{font-size:18px;line-height:1.6;color:var(--ink)}
+  .muted{color:var(--muted)}
+  code{background:#f1f5ff;border:1px solid #dfe6f5;border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace;color:#1d4ed8}
+  pre{background:#f1f5ff;border:1px solid #dfe6f5;border-radius:12px;padding:16px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;color:#1d4ed8;font-size:16px}
+  ul{margin:8px 0 0 0;padding-left:22px}
+  .pill{display:inline-block;background:#f1f5ff;border:1px solid #c7d4f0;color:var(--accent);border-radius:999px;padding:4px 12px;font-size:14px;margin:4px 6px 0 0}
+  .opt{display:block;width:100%;text-align:left;background:#f1f5ff;border:1px solid #c7d4f0;color:var(--ink);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:17px;cursor:pointer;transition:.15s}
+  .opt:hover{border-color:var(--accent)}
+  .opt.correct{background:rgba(22,163,74,.12);border-color:var(--good)}
+  .opt.wrong{background:rgba(220,38,38,.12);border-color:var(--bad)}
+  .feedback{margin-top:14px;font-size:17px;min-height:26px}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+  button.nav-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#ffffff;border:none;border-radius:12px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
+  button.nav-btn:disabled{opacity:.4;cursor:not-allowed}
+  .dots{display:flex;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%;background:#c7d4f0}
+  .dot.on{background:var(--accent)}
+  .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
+  .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="topbar"><span class="badge">CyberQuest</span><span>Day 3 of 5</span><span id="counter"></span></div>
+  <div id="deck"><div class='slide'><h1>Day 3: Secret Codes and Ciphers</h1><p>Encode, encrypt, and crack messages with the same tools real CTF players use.</p><p><span class='pill'>dcode.fr</span><span class='pill'>CyberChef</span></p></div><div class='slide'><h2>Three ideas, do not mix them</h2><p class='muted'>Encoding vs encryption vs hashing</p><ul><li><b>Encoding</b>: reformatting anyone can reverse (Base64).</li><li><b>Encryption</b>: scrambling that needs a secret key (AES).</li><li><b>Hashing</b>: a one-way fingerprint you cannot reverse (SHA-256).</li></ul></div><div class='slide'><h2>Knowledge check</h2><p>Base64 is...</p><button class='opt' data-c='0' onclick="choose(this,false,'Base64 just reformats data. It provides no secrecy at all.')">Strong encryption</button><button class='opt' data-c='1' onclick="choose(this,true,'Base64 just reformats data. It provides no secrecy at all.')">Encoding that anyone can reverse</button><button class='opt' data-c='0' onclick="choose(this,false,'Base64 just reformats data. It provides no secrecy at all.')">A hashing algorithm</button><div class='feedback'></div></div><div class='slide'><h2>The Caesar cipher</h2><p class='muted'>A 2000-year-old code</p><p>Shift every letter by a fixed amount. Shift 3 turns A into D.</p><pre>HELLO  (shift 3)  ->  KHOOR</pre><p>Only 25 useful shifts, so a computer cracks it instantly.</p></div><div class='slide'><h2>Knowledge check</h2><p>Why is the Caesar cipher weak?</p><button class='opt' data-c='0' onclick="choose(this,false,'With just 25 possibilities, brute force breaks it in an instant.')">It is too slow</button><button class='opt' data-c='1' onclick="choose(this,true,'With just 25 possibilities, brute force breaks it in an instant.')">There are only 25 shifts to try</button><button class='opt' data-c='0' onclick="choose(this,false,'With just 25 possibilities, brute force breaks it in an instant.')">It needs the internet</button><div class='feedback'></div></div><div class='slide'><h2>Hashing is one-way</h2><p class='muted'>Fingerprints for data</p><p>A hash turns any input into a fixed fingerprint. Change one letter and the whole fingerprint changes, and you cannot reverse it.</p><pre>password   -> 5e88489...
+Password   -> e7cf3ef...   (totally different)</pre></div><div class='slide'><h2>Knowledge check</h2><p>A hash is special because...</p><button class='opt' data-c='1' onclick="choose(this,true,'Hashes are one-way, which is why sites store password hashes instead of passwords.')">It is one-way and cannot be reversed</button><button class='opt' data-c='0' onclick="choose(this,false,'Hashes are one-way, which is why sites store password hashes instead of passwords.')">It hides files</button><button class='opt' data-c='0' onclick="choose(this,false,'Hashes are one-way, which is why sites store password hashes instead of passwords.')">It speeds up the internet</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>dcode.fr</b>: identify and solve ciphers.</li><li><b>CyberChef</b>: build a From Base64 then ROT13 recipe.</li></ul><p>Then open <code>Day3.ipynb</code> to brute force a Caesar cipher.</p></div></div>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="nav">
+    <button class="nav-btn" id="prev">Back</button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn" id="next">Next</button>
+  </div>
+</div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const dots=document.getElementById('dots');
+  slides.forEach((_,k)=>{const d=document.createElement('div');d.className='dot'+(k===0?' on':'');dots.appendChild(d);});
+  function render(){
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+    document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
+    document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('prev').disabled=(i===0);
+    document.getElementById('next').disabled=(i===slides.length-1);
+  }
+  document.getElementById('prev').onclick=()=>{if(i>0){i--;render();}};
+  document.getElementById('next').onclick=()=>{if(i<slides.length-1){i++;render();}};
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')document.getElementById('next').click();if(e.key==='ArrowLeft')document.getElementById('prev').click();});
+  function choose(btn,correct,explain){
+    const parent=btn.parentElement;
+    [...parent.querySelectorAll('.opt')].forEach(b=>b.disabled=true);
+    const fb=parent.parentElement.querySelector('.feedback');
+    if(correct){btn.classList.add('correct');fb.innerHTML='<span style="color:var(--good)">Correct. </span>'+explain;}
+    else{btn.classList.add('wrong');fb.innerHTML='<span style="color:var(--bad)">Not quite. </span>'+explain;
+      [...parent.querySelectorAll('.opt')].forEach(b=>{if(b.dataset.c==='1')b.classList.add('correct');});}
+  }
+  render();
+</script>
+</body>
+</html>

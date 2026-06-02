@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberQuest Day 1: Python and Terminal</title>
+<style>
+  :root{ --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c; --accent:#2563eb; --accent2:#7c3aed; --good:#16a34a; --bad:#dc2626; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);color:var(--ink);min-height:100vh}
+  .stage{max-width:960px;margin:0 auto;padding:24px;min-height:100vh;display:flex;flex-direction:column}
+  .topbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-bottom:8px}
+  .badge{background:var(--accent2);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
+  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;flex:1;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12)}
+  .slide.active{display:block;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  h1{font-size:34px;margin:0 0 6px;line-height:1.15}
+  h2{font-size:26px;margin:0 0 14px;color:var(--accent)}
+  p,li{font-size:18px;line-height:1.6;color:var(--ink)}
+  .muted{color:var(--muted)}
+  code{background:#f1f5ff;border:1px solid #dfe6f5;border-radius:8px;padding:2px 8px;font-family:ui-monospace,Menlo,Consolas,monospace;color:#1d4ed8}
+  pre{background:#f1f5ff;border:1px solid #dfe6f5;border-radius:12px;padding:16px;overflow:auto;font-family:ui-monospace,Menlo,Consolas,monospace;color:#1d4ed8;font-size:16px}
+  ul{margin:8px 0 0 0;padding-left:22px}
+  .pill{display:inline-block;background:#f1f5ff;border:1px solid #c7d4f0;color:var(--accent);border-radius:999px;padding:4px 12px;font-size:14px;margin:4px 6px 0 0}
+  .opt{display:block;width:100%;text-align:left;background:#f1f5ff;border:1px solid #c7d4f0;color:var(--ink);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:17px;cursor:pointer;transition:.15s}
+  .opt:hover{border-color:var(--accent)}
+  .opt.correct{background:rgba(22,163,74,.12);border-color:var(--good)}
+  .opt.wrong{background:rgba(220,38,38,.12);border-color:var(--bad)}
+  .feedback{margin-top:14px;font-size:17px;min-height:26px}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+  button.nav-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#ffffff;border:none;border-radius:12px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
+  button.nav-btn:disabled{opacity:.4;cursor:not-allowed}
+  .dots{display:flex;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%;background:#c7d4f0}
+  .dot.on{background:var(--accent)}
+  .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
+  .progress > div{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="topbar"><span class="badge">CyberQuest</span><span>Day 1 of 5</span><span id="counter"></span></div>
+  <div id="deck"><div class='slide'><h1>Day 1: Meet Python and the Terminal</h1><p>Two superpowers every ethical hacker needs: <b>programming</b> and the <b>command line</b>.</p><p class='muted'>Use the arrow keys or the buttons to move. Answer the knowledge checks as you go.</p><p><span class='pill'>CodeCombat</span><span class='pill'>OverTheWire Bandit</span></p></div><div class='slide'><h2>What is Python?</h2><p class='muted'>The language of automation</p><ul><li>A popular, easy-to-read programming language.</li><li>Named after the comedy group Monty Python, not the snake.</li><li>Security teams use it to automate tasks in just a few lines.</li></ul><pre>print("Hello, CyberQuest!")</pre></div><div class='slide'><h2>Syntax: the grammar of code</h2><p class='muted'>Rules the computer follows</p><p>Syntax means the rules a language expects. Python cares about spelling, punctuation, and indentation (spaces at the start of a line).</p><pre>for step in range(3):
+    print(step)   # indented = inside the loop</pre></div><div class='slide'><h2>Variables: labeled boxes</h2><p class='muted'>Storing information</p><p>A variable stores a value so you can reuse it. <code>=</code> means store the value on the right into the name on the left.</p><pre>agent_name = "Ada"
+missions = 3
+print(agent_name, missions)</pre></div><div class='slide'><h2>Knowledge check</h2><p>A variable is best described as...</p><button class='opt' data-c='0' onclick="choose(this,false,'A variable holds a value under a name so you can use it again.')">A type of computer virus</button><button class='opt' data-c='1' onclick="choose(this,true,'A variable holds a value under a name so you can use it again.')">A named box that stores a value</button><button class='opt' data-c='0' onclick="choose(this,false,'A variable holds a value under a name so you can use it again.')">A website address</button><div class='feedback'></div></div><div class='slide'><h2>Data types</h2><p class='muted'>The kinds of values</p><ul><li><b>str</b> (string): text in quotes, like a password.</li><li><b>int</b> (integer): whole numbers like 42.</li><li><b>float</b>: decimals like 3.14.</li><li><b>bool</b> (boolean): True or False.</li></ul></div><div class='slide'><h2>Knowledge check</h2><p>What data type is the value 42 ?</p><button class='opt' data-c='0' onclick="choose(this,false,'Whole numbers are integers, written without quotes.')">str (string)</button><button class='opt' data-c='1' onclick="choose(this,true,'Whole numbers are integers, written without quotes.')">int (integer)</button><button class='opt' data-c='0' onclick="choose(this,false,'Whole numbers are integers, written without quotes.')">bool (boolean)</button><div class='feedback'></div></div><div class='slide'><h2>Loops repeat work</h2><p class='muted'>Do it again, automatically</p><p>A loop runs the same block many times. Moving a hero through a maze in CodeCombat is just a loop of steps.</p><pre>for i in range(5):
+    print("Mission", i, "ready")</pre></div><div class='slide'><h2>Knowledge check</h2><p>How many times does for i in range(3): repeat?</p><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">2 times</button><button class='opt' data-c='1' onclick="choose(this,true,'range(3) gives 0, 1, 2 which is three repeats.')">3 times</button><button class='opt' data-c='0' onclick="choose(this,false,'range(3) gives 0, 1, 2 which is three repeats.')">Forever</button><div class='feedback'></div></div><div class='slide'><h2>Now go play</h2><p class='muted'>Hands-on time</p><ul><li><b>CodeCombat</b>: codecombat.com - clear the first Computer Science 1 levels.</li><li><b>OverTheWire Bandit</b>: connect with SSH and clear Level 0.</li></ul><p>Then open <code>Day1.ipynb</code> for the code challenges.</p></div></div>
+  <div class="progress"><div id="bar"></div></div>
+  <div class="nav">
+    <button class="nav-btn" id="prev">Back</button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn" id="next">Next</button>
+  </div>
+</div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const dots=document.getElementById('dots');
+  slides.forEach((_,k)=>{const d=document.createElement('div');d.className='dot'+(k===0?' on':'');dots.appendChild(d);});
+  function render(){
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    [...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+    document.getElementById('counter').textContent=(i+1)+' / '+slides.length;
+    document.getElementById('bar').style.width=((i+1)/slides.length*100)+'%';
+    document.getElementById('prev').disabled=(i===0);
+    document.getElementById('next').disabled=(i===slides.length-1);
+  }
+  document.getElementById('prev').onclick=()=>{if(i>0){i--;render();}};
+  document.getElementById('next').onclick=()=>{if(i<slides.length-1){i++;render();}};
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')document.getElementById('next').click();if(e.key==='ArrowLeft')document.getElementById('prev').click();});
+  function choose(btn,correct,explain){
+    const parent=btn.parentElement;
+    [...parent.querySelectorAll('.opt')].forEach(b=>b.disabled=true);
+    const fb=parent.parentElement.querySelector('.feedback');
+    if(correct){btn.classList.add('correct');fb.innerHTML='<span style="color:var(--good)">Correct. </span>'+explain;}
+    else{btn.classList.add('wrong');fb.innerHTML='<span style="color:var(--bad)">Not quite. </span>'+explain;
+      [...parent.querySelectorAll('.opt')].forEach(b=>{if(b.dataset.c==='1')b.classList.add('correct');});}
+  }
+  render();
+</script>
+</body>
+</html>
