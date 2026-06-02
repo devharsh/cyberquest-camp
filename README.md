@@ -83,6 +83,7 @@ cyberquest-camp/
   LICENSE
   CITATION.cff
   Interactive_Slides.html  (full combined deck + Day decks menu)
+  resources/case-studies/  (4 one-page breach studies with sources)
   Day1/  Day1_slides.html  Day1.ipynb
   Day2/  Day2_slides.html  Day2.ipynb
   Day3/  Day3_slides.html  Day3.ipynb

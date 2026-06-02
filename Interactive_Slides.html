@@ -388,12 +388,12 @@ ${why('Defense is a job, not a magic shield. Real people make these decisions ev
 
 S({sec:'Day 1',time:'11:00 - 12:00',kick:'Hands-On Lab',title:'Lab: Spot the Vulnerability (real breach case studies)',html:`
 ${lab('Case Study Analysis','In teams of 3, dissect a real breach using today’s vocabulary.',[
-'Each team gets a one-page case study: <b>Equifax 2017</b>, <b>Yahoo 2016</b>, <b>Target 2013</b>, or <b>SolarWinds 2020</b>.',
+'Each team picks one ready-made one-page case study from <code>resources/case-studies/</code>: <a href="resources/case-studies/equifax-2017.md">Equifax 2017</a>, <a href="resources/case-studies/yahoo-2013.md">Yahoo 2013</a>, <a href="resources/case-studies/target-2013.md">Target 2013</a>, or <a href="resources/case-studies/solarwinds-2020.md">SolarWinds 2020</a>.',
 'Identify the <b>asset</b>, the <b>vulnerability</b>, the <b>threat</b> that exploited it, and which <b>CIA</b> pillar broke.',
 'Name one <b>control</b> that could have prevented or limited the damage.',
 'Present a 2 minute summary. Could it happen today? What would you change?'],
-plat('range','open the Day 1 case-study packet')+plat('web','read the linked news source'))}
-${note('Supplementary handout: the breach case studies are covered in the Day 1 guide (<code>Day1/Day1_slides.html</code>).')}`});
+plat('web','case-study packet: resources/case-studies/')+plat('web','each file lists verified source links'))}
+${note('The four one-page case studies live in <code>resources/case-studies/</code>. Each has a summary, the broken CIA pillars, prevention controls, and links to authoritative sources such as the FTC, CISA, and Krebs on Security.')}`});
 
 S({sec:'Day 1',time:'11:00 - 12:00',kick:'Worked example',title:'Modeling the method: Equifax 2017',html:`
 <div class="grid g2">
@@ -409,7 +409,7 @@ ${why('This labeling habit is the single most useful skill from Day 1. You will 
 S({t:'divider',sec:'Day 1',html:`<div class="badge" style="border-color:#16a34a;color:#15803d">DAY 1 - CODE LAB - PYTHON MODULE 0</div>
 <h1 style="margin-top:12px">Your first <span style="color:#16a34a">Python</span></h1>
 <p class="lead">Security professionals automate everything. You only need a little Python to write your own tools. Open Colab and type along - do not just read.</p>
-<div style="margin-top:10px">${plat('colab','colab.research.google.com → New notebook')}${plat('range','or open Day1/Day1.ipynb from this repo')}</div>`});
+<div style="margin-top:10px">${plat('colab','colab.research.google.com → New notebook')}${plat('colab','or open Day1/Day1.ipynb from this repo')}</div>`});
 
 S({sec:'Day 1',time:'11:00 - 12:00',kick:'Code Lab 0.1 to 0.3',title:'Variables, strings, and loops',html:`
 <div class="grid g2">
@@ -588,12 +588,13 @@ ${kc('An email from "Netflix Billing" &lt;help@netflix-verify.shop&gt; says "Dea
 ${kc('Your "bank" calls asking you to read back the code they just texted you. Safe?','<b>No.</b> That is vishing combined with stealing your MFA code. Banks never ask for the one-time code. Hang up and call the number on your card.')}`});
 
 S({sec:'Day 2',time:'11:00 - 12:00',kick:'Hands-On Lab',title:'Lab: Phishing Detective',html:`
-${lab('Sort the inbox','You receive a packet of 10 emails. Some are real, some are phishing.',[
-'For each email, mark <b>SAFE</b> or <b>PHISHING</b> and list the exact red flags you spotted.',
-'As a class, reveal the verdicts. Which fakes were most convincing, and why?',
+${lab('Spot the phish','Use Google&apos;s free Phishing Quiz: eight real-style emails, one at a time.',[
+'Open <b>phishingquiz.withgoogle.com</b> and work through all eight examples.',
+'For each one, decide <b>SAFE</b> or <b>PHISHING</b> before clicking Reveal, then name the exact red flags.',
+'As a class, discuss which fakes were most convincing and why.',
 'Bonus: using only the school website, sketch what a <b>spear-phishing</b> email aimed at one teacher might say. What public info makes it believable?'],
-plat('web','open the 10-email packet')+plat('range','submit answers in the Day 2 lab'))}
-${note('Supplementary handout: the phishing red flags from this section are covered in the Day 2 guide (<code>Day2/Day2_slides.html</code>).')}`});
+plat('web','phishingquiz.withgoogle.com')+plat('colab','then build the phishing scorer in Day2/Day2.ipynb'))}
+${note('The Day 2 deck Part 4 also walks through Google Interland Reality River, another free phishing game.')}`});
 
 S({sec:'Day 2',time:'11:00 - 12:00',kick:'Code Lab 6.4',title:'Code Lab: build a phishing scorer',html:`
 <div class="grid g2">
@@ -762,7 +763,7 @@ ${lab('Three stations','Rotate through all three.',[
 '<b>Caesar challenge:</b> decode a message with frequency analysis (remember E ~ 12.7%). First team to solve wins.',
 '<b>Cipher wheel:</b> build the paper wheel, encode a note with a shift of your choice, swap with a partner, and crack each other’s.',
 '<b>Hashing demo:</b> hash your name on an online SHA-256 tool, change one letter, watch it transform. Look up the hash of <code>password123</code> in a cracking database.'],
-plat('web','online SHA-256 + hash-lookup tools')+plat('colab','run the cipher notebook'))}
+plat('web','SHA-256 in CyberChef: cyberchef.org')+plat('colab','run the cipher notebook'))}
 ${note('practice these ciphers with dcode.fr and CyberChef, plus the exercises in <code>Day3/Day3.ipynb</code>.')}`});
 
 S({sec:'Day 3',time:'11:00 - 12:00',kick:'Code Lab 2.4 / 6.2',title:'Code Lab: why salt matters',html:`
@@ -915,13 +916,13 @@ ${def('Internet Layer','IP Address Core','Affixes routing markers. Appends geogr
 </div></div>`});
 
 S({sec:'Day 4',time:'11:00 - 12:00',kick:'Hands-On Lab',title:'Lab: Network Mapping and Target Recognition',html:`
-${lab('Nmap Scanning and Infrastructure Auditing','Deploy active scanning suites inside the sandbox network to map active services.',[
-'Launch your terminal interface inside the <b>Kali Linux</b> safe operating environment.',
-'Execute <code>nslookup bowie.edu</code> to identify host addressing configurations.',
-'Run an authorized scan against localized test parameters: <code>nmap -F 10.0.2.0/24</code>.',
-'Isolate system nodes actively rendering HTTP communication patterns on port 80 or port 443.'],
-plat('range','Free online practice lab')+plat('kali','Kali diagnostic command interface'))}
-${note('Class safety directive: executing discovery sweeps against non-authorized exterior infrastructure spaces constitutes a violation of federal guidelines under the CFAA.')}`});
+${lab('Map a network the safe way','Use tools that are free and legal from any computer. Only ever scan machines you own or ones explicitly set up for testing.',[
+'In your own terminal run <code>nslookup example.com</code> to turn a name into IP addresses (this is DNS at work).',
+'Run the Python port scanner in <b>Day4/Day4.ipynb</b> against <code>127.0.0.1</code> (your own machine).',
+'To try real <code>nmap</code>, the one public target you are allowed to scan is Nmap&apos;s official test server: <code>nmap scanme.nmap.org</code>.',
+'List which ports were open and what each usually runs (80 = HTTP, 443 = HTTPS, 22 = SSH).'],
+plat('colab','port scanner: Day4/Day4.ipynb')+plat('web','authorized test target: scanme.nmap.org'))}
+${note('Safety and law: scanning systems you do not own or have permission to test can violate the Computer Fraud and Abuse Act (CFAA). Your own machine and scanme.nmap.org are the only safe targets here.')}`});
 
 S({sec:'Day 4',time:'11:00 - 12:00',kick:'Code Lab - Python Module 4',title:'Code Lab: Build a diagnostic Port Connection Scanner',html:`
 <div class="grid g2">
@@ -1016,7 +1017,7 @@ ${lab('CTF Tournament Challenge Matrix','Deploy your entire week\'s tactical kno
 '<b>Flag 3 (Attackers):</b> Analyze a multi-line raw phishing mail header block to validate the forged return server routing IP.',
 '<b>Flag 4 (Networks):</b> Review an active Nmap diagnostics log to isolate an unauthorized back-door port.',
 '<b>Flag 5 (AI Model):</b> Engineer an indirect injection text payload to extract a hidden variable key from a simulated LLM chat interface.'],
-plat('range','CTF Game Portal Interface Workspace'))}
+plat('web','play real CTFs free at picoctf.org (picoGym)')+plat('colab','flag warm-ups in Day5/Day5.ipynb'))}
 </div></div>`});
 
 S({sec:'Day 5',time:'1:00 - 3:30',kick:'Project Defense',title:'Group Presentations and Tactical Defenses',html:`
