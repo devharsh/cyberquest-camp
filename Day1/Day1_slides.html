@@ -115,7 +115,152 @@ print(word[0])    # f
 print(word[1:3])  # la</pre></div><div class='slide'><h2>A loop, step by step</h2><p class='muted'>Illustration</p><div style="text-align:center"><svg viewBox="0 0 740 262" style="width:100%;max-width:720px;height:auto" xmlns="http://www.w3.org/2000/svg"><rect x="300" y="30" width="160" height="40" rx="9" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/><text x="380" y="55" font-size="13" fill="#16203a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">n = 1</text><line x1="380" y1="70" x2="380" y2="88" stroke="#2563eb" stroke-width="2.5"/><polygon points="374,88 380,98 386,88" fill="#2563eb"/><rect x="285" y="98" width="190" height="44" rx="9" fill="#fff" stroke="#64748b" stroke-width="2"/><text x="380" y="125" font-size="13" fill="#16203a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">is n &lt; 6 ?</text><line x1="475" y1="120" x2="590" y2="120" stroke="#16a34a" stroke-width="2.5"/><polygon points="590,114 600,120 590,126" fill="#16a34a"/><text x="537" y="108" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">yes</text><rect x="600" y="98" width="110" height="44" rx="9" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/><text x="655" y="120" font-size="12" fill="#16203a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">print n</text><text x="655" y="137" font-size="10" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">n = n + 1</text><path d="M655,142 V178 H380 V144" fill="none" stroke="#16a34a" stroke-width="2.5"/><polygon points="374,158 380,146 386,158" fill="#16a34a"/><line x1="380" y1="142" x2="380" y2="200" stroke="#64748b" stroke-width="2.5"/><polygon points="374,200 380,210 386,200" fill="#64748b"/><text x="330" y="168" font-size="11" fill="#64748b" font-weight="600" text-anchor="end" font-family="Segoe UI,Arial,sans-serif">no</text><rect x="300" y="210" width="160" height="40" rx="9" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/><text x="380" y="235" font-size="12" fill="#16203a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">loop ends</text></svg></div><p class='muted' style='margin-top:10px'>Check, run the block, update the counter, repeat until the condition is false.</p></div><div class='slide'><h2>While loops</h2><p class='muted'>Repeat until a condition changes</p><p>A <code>while</code> loop repeats as long as its condition stays True. Be sure something changes, or it never stops.</p><pre>tries = 0
 while tries &lt; 3:
     print("attempt", tries)
-    tries = tries + 1</pre></div><div class='slide'><h2>Knowledge check</h2><p>How many times does for i in range(5) run?</p><button class='opt' data-c='0' onclick="choose(this,false,'range(5) gives 0,1,2,3,4: five times.')">4</button><button class='opt' data-c='1' onclick="choose(this,true,'range(5) gives 0,1,2,3,4: five times.')">5</button><button class='opt' data-c='0' onclick="choose(this,false,'range(5) gives 0,1,2,3,4: five times.')">6</button><div class='feedback'></div></div><div class='slide'><h2>SSH: logging in safely</h2><p class='muted'>Illustration</p><div style="text-align:center"><svg viewBox="0 0 740 188" style="width:100%;max-width:720px;height:auto" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="55" width="190" height="80" rx="12" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/><text x="135" y="88" font-size="12" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Your computer</text><text x="135" y="110" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">terminal</text><rect x="510" y="55" width="190" height="80" rx="12" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/><text x="605" y="88" font-size="12" fill="#16a34a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Remote server</text><text x="605" y="110" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Linux</text><line x1="230" y1="82" x2="500" y2="82" stroke="#16a34a" stroke-width="2.5"/><polygon points="500,76 510,82 500,88" fill="#16a34a"/><rect x="355" y="72" width="34.0" height="30.0" rx="5" fill="#fde7f1" stroke="#16a34a" stroke-width="2"/><path d="M363,72 v-6 a9,9 0 0 1 18,0 v6" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="372" cy="86" r="3.5" fill="#16a34a"/><text x="370" y="52" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">encrypted SSH tunnel (port 2220)</text><line x1="510" y1="118" x2="220" y2="118" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="220,112 230,118 220,124" fill="#64748b"/><text x="370" y="140" font-size="10" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">server replies, still encrypted</text><text x="370" y="170" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Anyone sniffing the network sees only scrambled bytes</text></svg></div><p class='muted' style='margin-top:10px'>SSH encrypts the whole session, so passwords and commands cannot be read on the network.</p></div><div class='slide'><h2>Linux commands you will use</h2><p class='muted'>Quick reference</p><table><tr><th>Command</th><th>Does</th></tr><tr><td><code>ls</code></td><td>list files</td></tr><tr><td><code>cd folder</code></td><td>move into a folder</td></tr><tr><td><code>pwd</code></td><td>show where you are</td></tr><tr><td><code>cat file</code></td><td>print a file</td></tr><tr><td><code>ssh user@host -p 2220</code></td><td>log in to another computer</td></tr></table></div><div class='slide'><h2>When code breaks</h2><p class='muted'>Reading errors</p><p>Errors are normal. Python prints the line and the problem. A SyntaxError means a typo in the grammar; a NameError means you used a name that does not exist yet. Read the last line first.</p></div><div class='slide'><p class='partbadge'>PART 3 OF 6</p><h1 style='margin-top:14px'>Code along</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Run Modules 1 to 4 in the notebook.</p><p class='muted'>This part is 1 slide. Press Next to begin.</p></div><div class='slide'><h2>Code along: open the notebook</h2><div class='do'>Open <code>Day1.ipynb</code> (upload to Google Colab at colab.research.google.com, or open in Jupyter) and run <b>Modules 1 to 4</b> with <b>Shift + Enter</b>.</div><p class='muted'>The main course deck (Interactive_Slides.html) will also tell you exactly when to run each module. After the notebook, return to the main deck.</p></div><div class='slide'><p class='partbadge'>PART 4 OF 6</p><h1 style='margin-top:14px'>Play the free tools</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Practice for real on two free, fun sites.</p><p class='muted'>This part is 3 slides. Press Next to begin.</p></div><div class='slide'><h2>Play the free tools</h2><div class='do'>Today you use <b>CodeCombat</b> and <b>OverTheWire Bandit</b>. Follow the steps on the next slides.</div></div><div class='slide'><h2>Activity 1: CodeCombat (Python through a game)</h2>
+    tries = tries + 1</pre></div><div class='slide'><h2>Knowledge check</h2><p>How many times does for i in range(5) run?</p><button class='opt' data-c='0' onclick="choose(this,false,'range(5) gives 0,1,2,3,4: five times.')">4</button><button class='opt' data-c='1' onclick="choose(this,true,'range(5) gives 0,1,2,3,4: five times.')">5</button><button class='opt' data-c='0' onclick="choose(this,false,'range(5) gives 0,1,2,3,4: five times.')">6</button><div class='feedback'></div></div><div class='slide'><h2>SSH: logging in safely</h2><p class='muted'>Illustration</p><div style="text-align:center"><svg viewBox="0 0 740 188" style="width:100%;max-width:720px;height:auto" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="55" width="190" height="80" rx="12" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/><text x="135" y="88" font-size="12" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Your computer</text><text x="135" y="110" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">terminal</text><rect x="510" y="55" width="190" height="80" rx="12" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/><text x="605" y="88" font-size="12" fill="#16a34a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Remote server</text><text x="605" y="110" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Linux</text><line x1="230" y1="82" x2="500" y2="82" stroke="#16a34a" stroke-width="2.5"/><polygon points="500,76 510,82 500,88" fill="#16a34a"/><rect x="355" y="72" width="34.0" height="30.0" rx="5" fill="#fde7f1" stroke="#16a34a" stroke-width="2"/><path d="M363,72 v-6 a9,9 0 0 1 18,0 v6" fill="none" stroke="#16a34a" stroke-width="2"/><circle cx="372" cy="86" r="3.5" fill="#16a34a"/><text x="370" y="52" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">encrypted SSH tunnel (port 2220)</text><line x1="510" y1="118" x2="220" y2="118" stroke="#64748b" stroke-width="2.5" stroke-dasharray="6 4"/><polygon points="220,112 230,118 220,124" fill="#64748b"/><text x="370" y="140" font-size="10" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">server replies, still encrypted</text><text x="370" y="170" font-size="11" fill="#64748b" font-weight="600" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif">Anyone sniffing the network sees only scrambled bytes</text></svg></div><p class='muted' style='margin-top:10px'>SSH encrypts the whole session, so passwords and commands cannot be read on the network.</p></div><div class='slide'><h2>Linux commands you will use</h2><p class='muted'>Quick reference</p><table><tr><th>Command</th><th>Does</th></tr><tr><td><code>ls</code></td><td>list files</td></tr><tr><td><code>cd folder</code></td><td>move into a folder</td></tr><tr><td><code>pwd</code></td><td>show where you are</td></tr><tr><td><code>cat file</code></td><td>print a file</td></tr><tr><td><code>ssh user@host -p 2220</code></td><td>log in to another computer</td></tr></table></div><div class='slide'><h2>When code breaks</h2><p class='muted'>Reading errors</p><p>Errors are normal. Python prints the line and the problem. A SyntaxError means a typo in the grammar; a NameError means you used a name that does not exist yet. Read the last line first.</p></div><div class='slide'>
+<div class='slide'><h2>Python functions</h2><p class='muted'>Reusable blocks of code</p>
+<p>A function is a named block that runs when you call it. Use <code>def</code> to define it, then call it by name. Functions stop repetition and make code readable.</p>
+<pre>def greet(name):
+    message = "Hello, " + name
+    return message
+
+print(greet("Ada"))   # Hello, Ada</pre>
+<div class='callout'>Security scripts are usually one big function that scans ports, plus smaller helper functions for each task.</div></div>
+
+<div class='slide'><h2>Python file I/O</h2><p class='muted'>Reading and writing files</p>
+<p><code>open()</code> returns a file object. Use <code>with</code> so the file closes automatically even if an error happens.</p>
+<pre># write a file
+with open("log.txt", "w") as f:
+    f.write("scan started
+")
+
+# read it back
+with open("log.txt", "r") as f:
+    print(f.read())   # scan started</pre>
+<table><tr><th>Mode</th><th>Meaning</th></tr>
+<tr><td><code>"r"</code></td><td>read (file must exist)</td></tr>
+<tr><td><code>"w"</code></td><td>write (overwrites)</td></tr>
+<tr><td><code>"a"</code></td><td>append (adds to end)</td></tr></table></div>
+
+<div class='slide'><h2>Knowledge check</h2><p>What keyword starts a function definition in Python?</p>
+<button class='opt' onclick="choose(this,false,'The keyword is def, short for define.')">function</button>
+<button class='opt' onclick="choose(this,true,'The keyword is def, short for define.')">def</button>
+<button class='opt' onclick="choose(this,false,'The keyword is def, short for define.')">start</button>
+<div class='feedback'></div></div>
+
+<div class='slide'><h2>The OSI model</h2><p class='muted'>A 7-layer map of how data travels</p>
+<div style="text-align:center">
+<svg viewBox="0 0 640 260" style="width:100%;max-width:620px;height:auto" xmlns="http://www.w3.org/2000/svg">
+<defs><style>.lbl{font-family:Segoe UI,Arial,sans-serif;font-size:12px;dominant-baseline:middle}</style></defs>
+<!-- layers -->
+<rect x="20" y="10"  width="200" height="30" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="120" y="25" class="lbl" text-anchor="middle" fill="#7c3aed" font-weight="700">7 Application</text>
+<text x="380" y="25" class="lbl" fill="#64748b">HTTP, DNS, SMTP, FTP</text>
+<rect x="20" y="46"  width="200" height="30" rx="5" fill="#eef3fb" stroke="#2563eb" stroke-width="1.5"/>
+<text x="120" y="61" class="lbl" text-anchor="middle" fill="#2563eb" font-weight="700">6 Presentation</text>
+<text x="380" y="61" class="lbl" fill="#64748b">TLS/SSL, JPEG, ASCII</text>
+<rect x="20" y="82"  width="200" height="30" rx="5" fill="#eef3fb" stroke="#2563eb" stroke-width="1.5"/>
+<text x="120" y="97" class="lbl" text-anchor="middle" fill="#2563eb" font-weight="700">5 Session</text>
+<text x="380" y="97" class="lbl" fill="#64748b">NetBIOS, RPC, SQL sessions</text>
+<rect x="20" y="118" width="200" height="30" rx="5" fill="#e9f7ef" stroke="#16a34a" stroke-width="1.5"/>
+<text x="120" y="133" class="lbl" text-anchor="middle" fill="#16a34a" font-weight="700">4 Transport</text>
+<text x="380" y="133" class="lbl" fill="#64748b">TCP (reliable), UDP (fast)</text>
+<rect x="20" y="154" width="200" height="30" rx="5" fill="#e9f7ef" stroke="#16a34a" stroke-width="1.5"/>
+<text x="120" y="169" class="lbl" text-anchor="middle" fill="#16a34a" font-weight="700">3 Network</text>
+<text x="380" y="169" class="lbl" fill="#64748b">IP addresses, routing</text>
+<rect x="20" y="190" width="200" height="30" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="120" y="205" class="lbl" text-anchor="middle" fill="#ea580c" font-weight="700">2 Data Link</text>
+<text x="380" y="205" class="lbl" fill="#64748b">MAC addresses, Ethernet, Wi-Fi</text>
+<rect x="20" y="226" width="200" height="30" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="120" y="241" class="lbl" text-anchor="middle" fill="#ea580c" font-weight="700">1 Physical</text>
+<text x="380" y="241" class="lbl" fill="#64748b">Cables, radio waves, fiber</text>
+<!-- arrows -->
+<line x1="240" y1="25" x2="370" y2="25" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="61" x2="370" y2="61" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="97" x2="370" y2="97" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="133" x2="370" y2="133" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="169" x2="370" y2="169" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="205" x2="370" y2="205" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="241" x2="370" y2="241" stroke="#64748b" stroke-width="1.5"/>
+</svg></div>
+<p class='muted'>Data travels DOWN the layers when sending, UP when receiving. Each layer adds a header (encapsulation).</p></div>
+
+<div class='slide'><h2>What happens when you type a URL?</h2><p class='muted'>DNS to TLS in 5 steps</p>
+<div style="text-align:center">
+<svg viewBox="0 0 720 190" style="width:100%;max-width:700px;height:auto" xmlns="http://www.w3.org/2000/svg">
+<defs><style>.s{font-family:Segoe UI,Arial,sans-serif;font-size:11px;font-weight:700;text-anchor:middle}</style></defs>
+<circle cx="70"  cy="60" r="28" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
+<text x="70" y="57" class="s" fill="#2563eb">1</text><text x="70" y="72" class="s" fill="#2563eb">DNS</text>
+<text x="70" y="105" class="s" fill="#64748b">resolve</text><text x="70" y="120" class="s" fill="#64748b">hostname</text><text x="70" y="135" class="s" fill="#64748b">to IP</text>
+<line x1="98" y1="60" x2="130" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="130,55 140,60 130,65" fill="#64748b"/>
+<circle cx="168" cy="60" r="28" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
+<text x="168" y="57" class="s" fill="#2563eb">2</text><text x="168" y="72" class="s" fill="#2563eb">TCP</text>
+<text x="168" y="105" class="s" fill="#64748b">3-way</text><text x="168" y="120" class="s" fill="#64748b">handshake</text><text x="168" y="135" class="s" fill="#64748b">SYN SYN-ACK ACK</text>
+<line x1="196" y1="60" x2="228" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="228,55 238,60 228,65" fill="#64748b"/>
+<circle cx="266" cy="60" r="28" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/>
+<text x="266" y="57" class="s" fill="#16a34a">3</text><text x="266" y="72" class="s" fill="#16a34a">TLS</text>
+<text x="266" y="105" class="s" fill="#64748b">exchange</text><text x="266" y="120" class="s" fill="#64748b">certificates</text><text x="266" y="135" class="s" fill="#64748b">agree on key</text>
+<line x1="294" y1="60" x2="326" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="326,55 336,60 326,65" fill="#64748b"/>
+<circle cx="364" cy="60" r="28" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="364" y="57" class="s" fill="#ea580c">4</text><text x="364" y="72" class="s" fill="#ea580c">HTTP</text>
+<text x="364" y="105" class="s" fill="#64748b">GET /index</text><text x="364" y="120" class="s" fill="#64748b">.html</text><text x="364" y="135" class="s" fill="#64748b">request</text>
+<line x1="392" y1="60" x2="424" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="424,55 434,60 424,65" fill="#64748b"/>
+<circle cx="462" cy="60" r="28" fill="#fdf2f8" stroke="#7c3aed" stroke-width="2"/>
+<text x="462" y="57" class="s" fill="#7c3aed">5</text><text x="462" y="72" class="s" fill="#7c3aed">HTML</text>
+<text x="462" y="105" class="s" fill="#64748b">server sends</text><text x="462" y="120" class="s" fill="#64748b">200 OK +</text><text x="462" y="135" class="s" fill="#64748b">page content</text>
+<text x="360" y="178" style="font-family:Segoe UI,Arial,sans-serif;font-size:12px;fill:#64748b;text-anchor:middle">All of this takes under 100 milliseconds for a nearby server</text>
+</svg></div>
+<p class='muted'>Step 3 (TLS) only happens for HTTPS. Without it, anyone on the same Wi-Fi can read the data.</p></div>
+
+<div class='slide'><h2>The Linux filesystem tree</h2><p class='muted'>Everything is a file</p>
+<pre>  /              (root, the top of everything)
+  ├── etc/       (configuration files: passwd, hosts)
+  ├── home/      (each user's personal folder)
+  │   └── ada/
+  ├── var/       (logs, changing data)
+  │   └── log/
+  ├── tmp/       (temporary files, wiped on reboot)
+  ├── bin/       (basic programs: ls, cat, cp)
+  └── usr/       (installed software)</pre>
+<table><tr><th>Directory</th><th>Analogy</th></tr>
+<tr><td><code>/etc</code></td><td>Settings drawer</td></tr>
+<tr><td><code>/home</code></td><td>Your bedroom</td></tr>
+<tr><td><code>/var/log</code></td><td>Security camera recordings</td></tr>
+<tr><td><code>/tmp</code></td><td>Sticky notes (erased on restart)</td></tr></table></div>
+
+<div class='slide'><h2>Pipes and redirection</h2><p class='muted'>Connecting commands together</p>
+<p>The pipe <code>|</code> sends one command's output into another. Redirection <code>&gt;</code> sends output to a file.</p>
+<pre># find lines containing "root" in the password database
+cat /etc/passwd | grep root
+
+# save those matches to a file
+cat /etc/passwd | grep root > found.txt
+
+# count how many matches
+cat /etc/passwd | grep -c "bash"</pre>
+<div class='callout'>Pentesters chain commands like this constantly. One line can search thousands of log lines in seconds.</div></div>
+
+<div class='slide'><h2>Numeric: IPv4 address space</h2><p class='muted'>How many addresses exist?</p>
+<p>An IPv4 address is 4 bytes (32 bits). Total unique addresses:</p>
+<pre>2^32 = 4,294,967,296   (about 4.3 billion)</pre>
+<p>A <strong>/24 subnet</strong> (like your home Wi-Fi 192.168.1.x) gives:</p>
+<pre>2^8 = 256 total addresses
+256 - 2 = 254 usable  (subtract network + broadcast)
+</pre>
+<table><tr><th>Subnet</th><th>Host bits</th><th>Usable hosts</th></tr>
+<tr><td>/24</td><td>8</td><td>254</td></tr>
+<tr><td>/16</td><td>16</td><td>65,534</td></tr>
+<tr><td>/8</td><td>24</td><td>16,777,214</td></tr></table>
+<p class='muted'>This is why IPv6 was invented: 4.3 billion addresses ran out with billions of phones and IoT devices online.</p></div>
+
+<div class='slide'><h2>Knowledge check</h2><p>Which OSI layer handles IP addresses and routing?</p>
+<button class='opt' onclick="choose(this,false,'Layer 2 handles MAC addresses on the local network, not routing.')">Layer 2 (Data Link)</button>
+<button class='opt' onclick="choose(this,true,'Layer 3 (Network) is where IP addresses and routers live.')">Layer 3 (Network)</button>
+<button class='opt' onclick="choose(this,false,'Layer 4 handles TCP/UDP ports, not IP routing.')">Layer 4 (Transport)</button>
+<div class='feedback'></div></div>
+<p class='partbadge'>PART 3 OF 6</p><h1 style='margin-top:14px'>Code along</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Run Modules 1 to 4 in the notebook.</p><p class='muted'>This part is 1 slide. Press Next to begin.</p></div><div class='slide'><h2>Code along: open the notebook</h2><div class='do'>Open <code>Day1.ipynb</code> (upload to Google Colab at colab.research.google.com, or open in Jupyter) and run <b>Modules 1 to 4</b> with <b>Shift + Enter</b>.</div><p class='muted'>The main course deck (Interactive_Slides.html) will also tell you exactly when to run each module. After the notebook, return to the main deck.</p></div><div class='slide'><p class='partbadge'>PART 4 OF 6</p><h1 style='margin-top:14px'>Play the free tools</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Practice for real on two free, fun sites.</p><p class='muted'>This part is 3 slides. Press Next to begin.</p></div><div class='slide'><h2>Play the free tools</h2><div class='do'>Today you use <b>CodeCombat</b> and <b>OverTheWire Bandit</b>. Follow the steps on the next slides.</div></div><div class='slide'><h2>Activity 1: CodeCombat (Python through a game)</h2>
 <p>Open https://codecombat.com/ and start <strong>Computer Science 1</strong> (free levels).
 1. Create a free account or play as a guest.
 2. Move your hero with code like <code>hero.moveRight()</code>.
