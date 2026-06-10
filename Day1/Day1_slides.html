@@ -8,7 +8,7 @@
   :root{ --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c; --accent:#2563eb; --accent2:#7c3aed; --good:#16a34a; --bad:#dc2626; }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);color:var(--ink);min-height:100vh}
-  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;display:flex;flex-direction:column}
+  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;height:100dvh;display:flex;flex-direction:column}
   .topbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-bottom:8px}
   .badge{background:var(--accent2);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
   .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12);overflow-y:auto;height:100%;box-sizing:border-box}
@@ -29,10 +29,10 @@
   .opt.correct{background:rgba(22,163,74,.12);border-color:var(--good)}
   .opt.wrong{background:rgba(220,38,38,.12);border-color:var(--bad)}
   .feedback{margin-top:14px;font-size:17px;min-height:26px}
-  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-shrink:0}
   button.nav-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#ffffff;border:none;border-radius:12px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
   button.nav-btn:disabled{opacity:.4;cursor:not-allowed}
-  .dots{display:flex;gap:8px}
+  .dots{display:flex;gap:4px;overflow:hidden;max-width:calc(100% - 200px)}
   .dot{width:10px;height:10px;border-radius:50%;background:#c7d4f0}
   .dot.on{background:var(--accent)}
   .progress{height:6px;background:#e3eaf7;border-radius:6px;overflow:hidden;margin-top:10px}
@@ -49,26 +49,34 @@
     p,li{font-size:16px;line-height:1.5}
     pre{font-size:13px;padding:10px}
     code{font-size:14px}
-    button.nav-btn{padding:10px 14px;font-size:14px}
+    button.nav-btn{padding:14px 0;font-size:15px;flex:1;max-width:48%}
+    .dots{display:none}
     .topbar{font-size:12px}
+    .nav{gap:8px}
   }
+
+  .skip-nav{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .skip-nav:focus{left:8px;top:8px;width:auto;height:auto;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;font-weight:700;text-decoration:none;z-index:9999}
+  button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  @media(prefers-reduced-motion:reduce){.slide.active{animation:none}}
 </style>
 </head>
 <body>
-<div class="stage">
-  <div class="topbar"><span class="badge">CyberQuest</span><span>Day 1 of 5</span><span id="counter"></span></div>
-  <div id="deck"><div class='slide'><h1>Day 1: Python and the Linux Terminal</h1><p class='muted'>CyberQuest Summer Camp - day deck</p><p>This is your hands-on companion to the main course deck. The main deck (<code>Interactive_Slides.html</code>) sends you to specific Parts here and to Modules in the notebook, then back. You can also run this deck on its own, top to bottom, with the Next arrow.</p></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
+<a href="#deck" class="skip-nav">Skip to slides</a>
+<div class="stage" role="main" id="main-content">
+  <div class="topbar"><span class="badge">CyberQuest</span><span>Day 1 of 5</span><span id="counter" aria-live="polite" aria-atomic="true"></span></div>
+  <div id="deck" role="region" aria-label="Slide presentation"><div class='slide'><h1>Day 1: Python and the Linux Terminal</h1><p class='muted'>CyberQuest Summer Camp - day deck</p><p>This is your hands-on companion to the main course deck. The main deck (<code>Interactive_Slides.html</code>) sends you to specific Parts here and to Modules in the notebook, then back. You can also run this deck on its own, top to bottom, with the Next arrow.</p></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
 <ul>
 <li><strong>Case Profile</strong>: The 2014 Sony Pictures Hack. Attackers compromised network architectures using targeted data deletion tools, revealing confidential emails and unreleased files. This illustrates how technical script logic alters international geopolitics.</li>
 </ul></div><div class='slide'><h2>Teaching Session I: Core Lecture (09:15 AM - 11:15 AM)</h2>
 <h3>Introduction to Computer Programming using Python</h3>
-<p>Python is an interpreted, high-level, general-purpose programming language. Because its syntax focuses heavily on readability, it is the primary industry tool used by security professionals to write automated scanners and network exploit modules.
+<p>Python is an interpreted, high-level, general-purpose programming language. Because its syntax focuses heavily on readability, it is a widely used tool among security professionals for writing automated scanners and network exploit modules.
 * <strong>Variables</strong>: Allocated memory addresses holding data values.
 * <strong>Syntax</strong>: The grammar rules regulating code configuration.
 * <strong>Data Types</strong>: Strings (textual data like <code>"admin"</code>), Integers (whole numbers like <code>80</code>), and Booleans (logical evaluations representing <code>True</code> or <code>False</code>).</p>
 <h3>Computer Networking Foundations</h3>
 <ul>
-<li><strong>Internet Protocol Address (IP Address)</strong>: A unique numerical identifier assigned to every hardware component interacting on an internet network framework.</li>
+<li><strong>Internet Protocol Address (IP Address)</strong>: A unique numerical identifier assigned to a device or network interface.</li>
 <li><strong>Data Packet</strong>: A formatted unit of data carried by a packet-switched network. Contains control metadata (headers) and user data payloads.</li>
 <li><strong>Routing</strong>: The functional process of selecting paths across network nodes to guide packets from their source to their destination.</li>
 <li><strong>HTTP vs HTTPS</strong>: Hypertext Transfer Protocol (HTTP) transmits network requests in unencrypted plain text. Hypertext Transfer Protocol Secure (HTTPS) uses Transport Layer Security (TLS) cryptographic protocols to encrypt communication channels, preventing eavesdropping.</li>
@@ -172,8 +180,10 @@ with open("log.txt", "r") as f:
     p,li{font-size:16px;line-height:1.5}
     pre{font-size:13px;padding:10px}
     code{font-size:14px}
-    button.nav-btn{padding:10px 14px;font-size:14px}
+    button.nav-btn{padding:14px 0;font-size:15px;flex:1;max-width:48%}
+    .dots{display:none}
     .topbar{font-size:12px}
+    .nav{gap:8px}
   }
 </style></defs>
 <!-- layers -->
@@ -222,8 +232,10 @@ with open("log.txt", "r") as f:
     p,li{font-size:16px;line-height:1.5}
     pre{font-size:13px;padding:10px}
     code{font-size:14px}
-    button.nav-btn{padding:10px 14px;font-size:14px}
+    button.nav-btn{padding:14px 0;font-size:15px;flex:1;max-width:48%}
+    .dots{display:none}
     .topbar{font-size:12px}
+    .nav{gap:8px}
   }
 </style></defs>
 <circle cx="70"  cy="60" r="28" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
@@ -356,9 +368,9 @@ Write each password you find in a safe note so you can keep climbing.</p></div><
 <p>Write two sentences: what does a loop in code have in common with a maze in CodeCombat? Try one more Bandit level at home if you want a head start.</p></div></div>
   <div class="progress"><div id="bar"></div></div>
   <div class="nav">
-    <button class="nav-btn" id="prev">Back</button>
-    <div class="dots" id="dots"></div>
-    <button class="nav-btn" id="next">Next</button>
+    <button class="nav-btn" id="prev" aria-label="Previous slide">Back</button>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <button class="nav-btn" id="next" aria-label="Next slide">Next</button>
   </div>
 </div>
 <script>
@@ -377,6 +389,9 @@ Write each password you find in a safe note so you can keep climbing.</p></div><
   document.getElementById('prev').onclick=()=>{if(i>0){i--;render();}};
   document.getElementById('next').onclick=()=>{if(i<slides.length-1){i++;render();}};
   document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')document.getElementById('next').click();if(e.key==='ArrowLeft')document.getElementById('prev').click();});
+  let _tx=0,_ty=0;
+  document.getElementById('deck').addEventListener('touchstart',e=>{_tx=e.touches[0].clientX;_ty=e.touches[0].clientY;},{passive:true});
+  document.getElementById('deck').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-_tx,dy=e.changedTouches[0].clientY-_ty;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){if(dx<0)document.getElementById('next').click();else document.getElementById('prev').click();}},{passive:true});
   function choose(btn,correct,explain){
     const parent=btn.parentElement;
     [...parent.querySelectorAll('.opt')].forEach(b=>b.disabled=true);
