@@ -1,17 +1,26 @@
 cff-version: 1.2.0
-message: "If you use this software, course materials, or tools, please cite it as below."
-authors:
-  - family-names: "Trivedi"
-    given-names: "Devharsh"
-    email: "dtrivedi@bowiestate.edu"
-    affiliation: "Bowie State University"
-title: "Cyber Squad Cybersecurity Curriculum and Tooling Repository"
-version: "1.0.0"
-date-released: "2026-06-01"
-url: "https://github.com/your-username/your-repo-name"
+message: "If you use this curriculum, please cite it as below."
+type: software
+title: "CyberQuest Summer Camp 2026: A Five-Day Cybersecurity Curriculum for High School Students"
+version: 1.0.0
+date-released: "2026-06-09"
+license: CC-BY-4.0
+url: "https://camp.com.puter.tips"
+repository-code: "https://github.com/devharsh/cyberquest-camp"
+abstract: >
+  A complete open-access curriculum for a five-day high school cybersecurity camp.
+  Includes lecture slide decks, Python coding notebooks, and a compiled PDF textbook.
+  Topics span networking fundamentals, threat modeling, cryptography, web security,
+  ethical hacking, and Capture the Flag (CTF) competitions.
 keywords:
-  - "cybersecurity"
-  - "education"
-  - "cryptography"
-  - "ethical hacking"
-
+  - cybersecurity
+  - high school education
+  - summer camp
+  - capture the flag
+  - cryptography
+  - ethical hacking
+  - open educational resources
+authors:
+  - family-names: Trivedi
+    given-names: Devharsh
+    email: devharsh.1592@gmail.com
