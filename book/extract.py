@@ -7,7 +7,7 @@ _fig_counter = [0]
 _tab_counter = [0]
 
 _CAPTIONS_FILE = ('/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity'
-                  '/book/figs/captions.json')
+                  '/Bowie/cyberquest-camp/book/figs/captions.json')
 try:
     with open(_CAPTIONS_FILE) as _f:
         _FIG_CAPTIONS = {int(k): v for k, v in json.load(_f).items()}
@@ -15,7 +15,7 @@ except (FileNotFoundError, Exception):
     _FIG_CAPTIONS = {}
 
 _FIGS_DIR = ('/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity'
-             '/book/figs')
+             '/Bowie/cyberquest-camp/book/figs')
 
 def reset_counters():
     """Call once before starting a new build to reset figure/table numbering."""

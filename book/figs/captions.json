@@ -34,14 +34,14 @@
   "33": "Three ideas side by side",
   "34": "The Caesar shift",
   "35": "The avalanche effect",
-  "36": "Symmetric vs public-key",
+  "36": "Symmetric versus public-key encryption",
   "37": "RSA",
   "38": "Digital signatures",
   "39": "The journey of a web request",
   "40": "HTTP methods",
-  "41": "SQL injection vs a parameterized query",
+  "41": "SQL injection versus a parameterized query",
   "42": "Cross-site scripting (XSS)",
-  "43": "Prompt injection vs a guard",
+  "43": "Prompt injection versus a guard",
   "44": "Red team versus blue team",
   "45": "Hidden data in a photo (EXIF)"
 }

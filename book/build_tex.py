@@ -4,7 +4,7 @@ from extract import html_to_tex, extract_s_calls, get_prop, esc, strip_tags, res
 
 # ── Paths ──────────────────────────────────────────────────────────────────
 BASE = '/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity'
-MAIN = '/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity/Interactive_Slides.html'
+MAIN = '/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity/Bowie/cyberquest-camp/Interactive_Slides.html'
 
 DAY_TITLES = {
     1: ("Python and the Linux Terminal",
@@ -99,6 +99,7 @@ def day_deck_section(chunks):
 
 # ── Assemble LaTeX ─────────────────────────────────────────────────────────
 PREAMBLE = r"""\documentclass[12pt,openany]{book}
+\usepackage{cmap}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1in,top=1.1in,bottom=1.1in]{geometry}
@@ -122,7 +123,7 @@ PREAMBLE = r"""\documentclass[12pt,openany]{book}
 \usepackage{url}
 \usepackage{float}
 \usepackage{graphicx}
-\graphicspath{{/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity/book/figs/}}
+\graphicspath{{/sessions/optimistic-dazzling-cerf/mnt/Cybersecurity/Bowie/cyberquest-camp/book/figs/}}
 \usepackage{tcolorbox}
 \usepackage{setspace}
 \usepackage{accsupp}
@@ -410,6 +411,24 @@ def build():
     tex = re.sub(r'[^\n]*Room 221[^\n]*\n', '', tex)
     # Remove any stray devharsh email that leaked from slide content
     tex = re.sub(r'[^\n]*devharsh\.1592@gmail\.com[^\n]*\n', '', tex)
+
+    # Break long monospace strings that overflow margins
+    tex = tex.replace(
+        r'\texttt{Interactive\_Slides.html}',
+        r'\texttt{Interactive\allowbreak\_Slides.html}'
+    )
+    tex = tex.replace(
+        r'\texttt{secrets.token\_bytes()}',
+        r'\texttt{secrets.\allowbreak token\_bytes()}'
+    )
+    tex = tex.replace(
+        r'picoCTF\{osint\_and\_crypto\_master\}',
+        r'picoCTF\{\allowbreak osint\_and\_crypto\_master\}'
+    )
+    tex = tex.replace(
+        r'picoCTF\{x0r\_osint\_pro\}',
+        r'picoCTF\{\allowbreak x0r\_osint\_pro\}'
+    )
 
     # HTTPS: expand to full name on first occurrence only
     tex = tex.replace(
