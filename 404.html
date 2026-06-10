@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page Not Found | CyberQuest Summer Camp</title>
+<style>
+  :root{
+    --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c;
+    --accent:#2563eb; --accent2:#7c3aed;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);
+    color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;
+  }
+  .card{
+    background:var(--card);border:1px solid #dfe6f5;border-radius:24px;
+    padding:48px 40px;max-width:660px;width:100%;
+    box-shadow:0 20px 60px rgba(20,40,90,.12);text-align:center;
+  }
+  .badge{
+    display:inline-block;background:var(--accent2);color:#fff;
+    padding:6px 16px;border-radius:999px;font-weight:700;font-size:14px;
+    letter-spacing:.04em;margin-bottom:20px;
+  }
+  .code{font-size:96px;font-weight:900;line-height:1;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+  }
+  h1{font-size:26px;margin:12px 0 8px}
+  .sub{color:var(--muted);font-size:17px;margin-bottom:36px;line-height:1.5}
+  .grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+    text-align:left;
+  }
+  .tile{
+    display:flex;flex-direction:column;gap:4px;
+    background:#f1f5ff;border:1px solid #c7d4f0;border-radius:16px;
+    padding:16px 18px;text-decoration:none;color:var(--ink);
+    transition:.15s;
+  }
+  .tile:hover{
+    border-color:var(--accent);background:#e8eeff;
+    box-shadow:0 4px 16px rgba(37,99,235,.12);transform:translateY(-2px);
+  }
+  .tile .icon{font-size:26px;margin-bottom:4px}
+  .tile .label{font-weight:700;font-size:15px}
+  .tile .desc{font-size:13px;color:var(--muted);line-height:1.4}
+  @media(max-width:480px){.grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="badge">CyberQuest Summer Camp</div>
+  <div class="code">404</div>
+  <h1>Page not found</h1>
+  <p class="sub">That URL does not exist. Head back to the camp and pick a day.</p>
+  <div class="grid">
+    <a class="tile" href="/">
+      <span class="icon">&#127968;</span>
+      <span class="label">Home</span>
+      <span class="desc">Camp overview and all slides</span>
+    </a>
+    <a class="tile" href="/Day1/Day1_slides.html">
+      <span class="icon">&#128187;</span>
+      <span class="label">Day 1</span>
+      <span class="desc">Python and the Linux terminal</span>
+    </a>
+    <a class="tile" href="/Day2/Day2_slides.html">
+      <span class="icon">&#128272;</span>
+      <span class="label">Day 2</span>
+      <span class="desc">Threats, risk, and the CIA triad</span>
+    </a>
+    <a class="tile" href="/Day3/Day3_slides.html">
+      <span class="icon">&#128274;</span>
+      <span class="label">Day 3</span>
+      <span class="desc">Cryptography and TLS</span>
+    </a>
+    <a class="tile" href="/Day4/Day4_slides.html">
+      <span class="icon">&#127760;</span>
+      <span class="label">Day 4</span>
+      <span class="desc">Web security and AI attacks</span>
+    </a>
+    <a class="tile" href="/Day5/Day5_slides.html">
+      <span class="icon">&#127937;</span>
+      <span class="label">Day 5</span>
+      <span class="desc">CTF and your career roadmap</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
