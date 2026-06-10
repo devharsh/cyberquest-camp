@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Day 1: Python and the Linux Terminal</title>
 <style>
   :root{ --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c; --accent:#2563eb; --accent2:#7c3aed; --good:#16a34a; --bad:#dc2626; }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);color:var(--ink);min-height:100vh}
-  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;height:100dvh;display:flex;flex-direction:column}
+  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;height:100dvh;padding-bottom:max(24px,env(safe-area-inset-bottom));display:flex;flex-direction:column}
   .topbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-bottom:8px}
   .badge{background:var(--accent2);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
-  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12);overflow-y:auto;height:100%;box-sizing:border-box}
+  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12);overflow-y:auto;-webkit-overflow-scrolling:touch;height:100%;box-sizing:border-box}
   
   #deck{flex:1;min-height:0;overflow:hidden;}
   .slide.active{display:block;animation:fade .35s ease}
@@ -67,11 +67,11 @@
   <div class="topbar"><span class="badge">CyberQuest</span><span>Day 1 of 5</span><span id="counter" aria-live="polite" aria-atomic="true"></span></div>
   <div id="deck" role="region" aria-label="Slide presentation"><div class='slide'><h1>Day 1: Python and the Linux Terminal</h1><p class='muted'>CyberQuest Summer Camp - day deck</p><p>This is your hands-on companion to the main course deck. The main deck (<code>Interactive_Slides.html</code>) sends you to specific Parts here and to Modules in the notebook, then back. You can also run this deck on its own, top to bottom, with the Next arrow.</p></div><div class='slide'><h2>Morning Kickoff: Motivation &amp; News (09:00 AM - 09:15 AM)</h2>
 <ul>
-<li><strong>Case Profile</strong>: The 2014 Sony Pictures Hack. Attackers compromised network architectures using targeted data deletion tools, revealing confidential emails and unreleased files. This illustrates how technical script logic alters international geopolitics.</li>
+<li><strong>Case Profile</strong>: The 2014 Sony Pictures Hack. Attackers compromised network architectures using targeted data deletion tools, revealing confidential emails and unreleased files. This demonstrates how cyberattacks can have real-world political consequences.</li>
 </ul></div><div class='slide'><h2>Teaching Session I: Core Lecture (09:15 AM - 11:15 AM)</h2>
 <h3>Introduction to Computer Programming using Python</h3>
-<p>Python is an interpreted, high-level, general-purpose programming language. Because its syntax focuses heavily on readability, it is a widely used tool among security professionals for writing automated scanners and network exploit modules.
-* <strong>Variables</strong>: Allocated memory addresses holding data values.
+<p>Python is an interpreted, high-level, general-purpose programming language. Because its syntax focuses heavily on readability, it is a widely used tool among security professionals for writing automated scanners and security tools.
+* <strong>Variables</strong>: Named containers that store values.
 * <strong>Syntax</strong>: The grammar rules regulating code configuration.
 * <strong>Data Types</strong>: Strings (textual data like <code>"admin"</code>), Integers (whole numbers like <code>80</code>), and Booleans (logical evaluations representing <code>True</code> or <code>False</code>).</p>
 <h3>Computer Networking Foundations</h3>

@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Day 5: Capstone - Capture The Flag and OSINT</title>
 <style>
   :root{ --bg:#eef2fb; --card:#ffffff; --ink:#16203a; --muted:#5a6b8c; --accent:#2563eb; --accent2:#7c3aed; --good:#16a34a; --bad:#dc2626; }
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);color:var(--ink);min-height:100vh}
-  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;height:100dvh;display:flex;flex-direction:column}
+  .stage{max-width:960px;margin:0 auto;padding:24px;height:100vh;height:100dvh;padding-bottom:max(24px,env(safe-area-inset-bottom));display:flex;flex-direction:column}
   .topbar{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-bottom:8px}
   .badge{background:var(--accent2);color:#fff;padding:4px 10px;border-radius:999px;font-weight:600}
-  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12);overflow-y:auto;height:100%;box-sizing:border-box}
+  .slide{background:var(--card);border:1px solid #dfe6f5;border-radius:18px;padding:32px;display:none;box-shadow:0 20px 60px rgba(20,40,90,.12);overflow-y:auto;-webkit-overflow-scrolling:touch;height:100%;box-sizing:border-box}
   
   #deck{flex:1;min-height:0;overflow:hidden;}
   .slide.active{display:block;animation:fade .35s ease}
