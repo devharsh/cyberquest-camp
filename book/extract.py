@@ -242,7 +242,7 @@ def html_to_tex(html):
                 tex_rows.append(' & '.join(ct) + r' \\')
         if not ncols:
             return ''
-        w = str(round(13.0 / ncols, 1))
+        w = str(round(14.5 / ncols, 1))
         spec = ('p{' + w + 'cm}') * ncols
         _tab_counter[0] += 1
         tn = _tab_counter[0]

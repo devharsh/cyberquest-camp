@@ -43,7 +43,7 @@ except Exception as e:
 # ── Read day decks ─────────────────────────────────────────────────────────
 day_slides = {}
 for day in [1,2,3,4,5]:
-    path = f'{BASE}/Day{day}_slides.html'
+    path = f'{BASE}/Bowie/cyberquest-camp/Day{day}/Day{day}_slides.html'
     try:
         with open(path) as f:
             c = f.read()
@@ -252,7 +252,7 @@ DEDICATION = r"""
 \chapter*{Preface}
 \addcontentsline{toc}{chapter}{Preface}
 This curriculum book is the companion document to the CyberQuest Summer Camp interactive
-slide decks, available at \url{https://camp.com.puter.tips}. It is structured in two parts:
+slide decks, available at \href{https://camp.com.puter.tips}{\texttt{camp.com.puter.tips}}. It is structured in two parts:
 
 \textbf{Part~I} reproduces the main course deck (\textit{Interactive Slides}), which is the
 primary teaching vehicle presented to students during each day's opening session.
