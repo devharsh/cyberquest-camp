@@ -175,17 +175,17 @@ If a security control costs less than $40,000/yr, it is worth buying.
 </div></div>
 
 <div class='slide'><h2>Password entropy: a numeric view</h2><p class="muted">Ch 1 §1.8 — authentication and access control</p><p class='muted'>Why longer passwords win</p>
-<p>Entropy = log2(alphabet size ^ length) = length × log2(alphabet size)</p>
+<p>Entropy = log2(alphabet size <sup>length</sup>) = length × log2(alphabet size)</p>
 <table><tr><th>Password</th><th>Alphabet</th><th>Combinations</th><th>At 10B guesses/sec</th></tr>
-<tr><td>8 lowercase</td><td>26</td><td>26^8 ≈ 2×10^11</td><td>~20 seconds</td></tr>
-<tr><td>8 mixed + digits</td><td>62</td><td>62^8 ≈ 2×10^14</td><td>~6 hours</td></tr>
-<tr><td>12 mixed + symbols</td><td>94</td><td>94^12 ≈ 4×10^23</td><td>~1.3 million years</td></tr></table>
+<tr><td>8 lowercase</td><td>26</td><td>26<sup>8</sup> ≈ 2×10<sup>11</sup></td><td>~20 seconds</td></tr>
+<tr><td>8 mixed + digits</td><td>62</td><td>62<sup>8</sup> ≈ 2×10<sup>14</sup></td><td>~6 hours</td></tr>
+<tr><td>12 mixed + symbols</td><td>95</td><td>95<sup>12</sup> ≈ 5×10<sup>23</sup></td><td>~1.7 million years</td></tr></table>
 <pre>import math
-alphabet = 94          # all printable ASCII
+alphabet = 95          # all printable ASCII (including space)
 length   = 12
 combos   = alphabet ** length
-print(f"combinations: {combos:.2e}")   # 4.02e+23</pre>
-<p class='muted'>A GPU cracker runs ~10 billion (10^10) SHA-256 guesses per second. Against 4×10^23 combinations, time ≈ 4×10^13 seconds ≈ 1.3 million years.</p></div>
+print(f"combinations: {combos:.2e}")   # 5.40e+23</pre>
+<p class='muted'>A GPU cracker runs ~10 billion (10<sup>10</sup>) SHA-256 guesses per second. Against ~5×10<sup>23</sup> combinations, time ≈ ~5×10<sup>13</sup> seconds ≈ 1.7 million years.</p></div>
 
 <div class='slide'><h2>CFAA: legal vs. illegal</h2><p class='muted'>The Computer Fraud and Abuse Act (1986, updated 2008)</p>
 <table><tr><th>Action</th><th>Legal?</th><th>Why</th></tr>
@@ -248,7 +248,7 @@ print(f"combinations: {combos:.2e}")   # 4.02e+23</pre>
     * <span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:2px 8px;display:inline-block;margin:3px 0">SLE = Asset Value x Exposure Factor = \<span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:1px 6px">200,000 x 0.40 = \</span>80,000</span>
     * <span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:2px 8px;display:inline-block;margin:3px 0">ALE = SLE x Annual Rate of Occurrence = \<span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:1px 6px">80,000 x 0.5 = \</span>40,000 loss per year</span></p>
 <hr /></div><div class='slide'><h2>Answer key</h2>
-<p><strong>Answer key.</strong> Numericals: 1) 10,000 PINs, 2) 208,827,064,576 (about 2.09 x 10^11), 3) see notebook (about 70 days at 1 billion guesses per second, which is why 8 chars is no longer safe). MCQ: 1-b, 2-b, 3-b.</p>
+<p><strong>Answer key.</strong> Numericals: 1) 10,000 PINs, 2) 208,827,064,576 (about 2.09 x 10<sup>11</sup>), 3) see notebook (about 70 days at 1 billion guesses per second, which is why 8 chars is no longer safe). MCQ: 1-b, 2-b, 3-b.</p>
 <hr /></div><div class='slide'><p class='partbadge'>PART 6 OF 6</p><h1 style='margin-top:14px'>Wrap up</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Recap what you learned and reflect.</p><p class='muted'>This part is 1 slide. Press Next to begin.</p></div><div class='slide'><h2>Reflection and homework</h2>
 <p>Turn on MFA on one of your own accounts with a parent or guardian. Write one sentence on why a passphrase of four random words can beat a short symbol password.</p></div></div>
   <div class="progress"><div id="bar"></div></div>
