@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 190" style="width:100%;max-width:700px;height:auto" xmlns="http://www.w3.org/2000/svg">
+<defs><style>.s{font-family:Segoe UI,Arial,sans-serif;font-size:11px;font-weight:700;text-anchor:middle}
+  svg{max-width:100%;height:auto}
+  @media(max-width:640px){
+    .stage{padding:12px}
+    .slide{padding:20px 16px}
+    h1{font-size:24px}
+    h2{font-size:20px}
+    p,li{font-size:16px;line-height:1.5}
+    pre{font-size:13px;padding:10px}
+    code{font-size:14px}
+    button.nav-btn{padding:10px 14px;font-size:14px}
+    .topbar{font-size:12px}
+  }
+</style></defs>
+<circle cx="70"  cy="60" r="28" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
+<text x="70" y="57" class="s" fill="#2563eb">1</text><text x="70" y="72" class="s" fill="#2563eb">DNS</text>
+<text x="70" y="105" class="s" fill="#64748b">resolve</text><text x="70" y="120" class="s" fill="#64748b">hostname</text><text x="70" y="135" class="s" fill="#64748b">to IP</text>
+<line x1="98" y1="60" x2="130" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="130,55 140,60 130,65" fill="#64748b"/>
+<circle cx="168" cy="60" r="28" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
+<text x="168" y="57" class="s" fill="#2563eb">2</text><text x="168" y="72" class="s" fill="#2563eb">TCP</text>
+<text x="168" y="105" class="s" fill="#64748b">3-way</text><text x="168" y="120" class="s" fill="#64748b">handshake</text><text x="168" y="135" class="s" fill="#64748b">SYN SYN-ACK ACK</text>
+<line x1="196" y1="60" x2="228" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="228,55 238,60 228,65" fill="#64748b"/>
+<circle cx="266" cy="60" r="28" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/>
+<text x="266" y="57" class="s" fill="#16a34a">3</text><text x="266" y="72" class="s" fill="#16a34a">TLS</text>
+<text x="266" y="105" class="s" fill="#64748b">exchange</text><text x="266" y="120" class="s" fill="#64748b">certificates</text><text x="266" y="135" class="s" fill="#64748b">agree on key</text>
+<line x1="294" y1="60" x2="326" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="326,55 336,60 326,65" fill="#64748b"/>
+<circle cx="364" cy="60" r="28" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+<text x="364" y="57" class="s" fill="#ea580c">4</text><text x="364" y="72" class="s" fill="#ea580c">HTTP</text>
+<text x="364" y="105" class="s" fill="#64748b">GET /index</text><text x="364" y="120" class="s" fill="#64748b">.html</text><text x="364" y="135" class="s" fill="#64748b">request</text>
+<line x1="392" y1="60" x2="424" y2="60" stroke="#64748b" stroke-width="2"/>
+<polygon points="424,55 434,60 424,65" fill="#64748b"/>
+<circle cx="462" cy="60" r="28" fill="#fdf2f8" stroke="#7c3aed" stroke-width="2"/>
+<text x="462" y="57" class="s" fill="#7c3aed">5</text><text x="462" y="72" class="s" fill="#7c3aed">HTML</text>
+<text x="462" y="105" class="s" fill="#64748b">server sends</text><text x="462" y="120" class="s" fill="#64748b">200 OK +</text><text x="462" y="135" class="s" fill="#64748b">page content</text>
+<text x="360" y="178" style="font-family:Segoe UI,Arial,sans-serif;font-size:12px;fill:#64748b;text-anchor:middle">All of this takes under 100 milliseconds for a nearby server</text>
+</svg>

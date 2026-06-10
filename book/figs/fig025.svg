@@ -1,0 +1,46 @@
+<svg viewBox="0 0 640 260" style="width:100%;max-width:620px;height:auto" xmlns="http://www.w3.org/2000/svg">
+<defs><style>.lbl{font-family:Segoe UI,Arial,sans-serif;font-size:12px;dominant-baseline:middle}
+  svg{max-width:100%;height:auto}
+  @media(max-width:640px){
+    .stage{padding:12px}
+    .slide{padding:20px 16px}
+    h1{font-size:24px}
+    h2{font-size:20px}
+    p,li{font-size:16px;line-height:1.5}
+    pre{font-size:13px;padding:10px}
+    code{font-size:14px}
+    button.nav-btn{padding:10px 14px;font-size:14px}
+    .topbar{font-size:12px}
+  }
+</style></defs>
+<!-- layers -->
+<rect x="20" y="10"  width="200" height="30" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="120" y="25" class="lbl" text-anchor="middle" fill="#7c3aed" font-weight="700">7 Application</text>
+<text x="380" y="25" class="lbl" fill="#64748b">HTTP, DNS, SMTP, FTP</text>
+<rect x="20" y="46"  width="200" height="30" rx="5" fill="#eef3fb" stroke="#2563eb" stroke-width="1.5"/>
+<text x="120" y="61" class="lbl" text-anchor="middle" fill="#2563eb" font-weight="700">6 Presentation</text>
+<text x="380" y="61" class="lbl" fill="#64748b">TLS/SSL, JPEG, ASCII</text>
+<rect x="20" y="82"  width="200" height="30" rx="5" fill="#eef3fb" stroke="#2563eb" stroke-width="1.5"/>
+<text x="120" y="97" class="lbl" text-anchor="middle" fill="#2563eb" font-weight="700">5 Session</text>
+<text x="380" y="97" class="lbl" fill="#64748b">NetBIOS, RPC, SQL sessions</text>
+<rect x="20" y="118" width="200" height="30" rx="5" fill="#e9f7ef" stroke="#16a34a" stroke-width="1.5"/>
+<text x="120" y="133" class="lbl" text-anchor="middle" fill="#16a34a" font-weight="700">4 Transport</text>
+<text x="380" y="133" class="lbl" fill="#64748b">TCP (reliable), UDP (fast)</text>
+<rect x="20" y="154" width="200" height="30" rx="5" fill="#e9f7ef" stroke="#16a34a" stroke-width="1.5"/>
+<text x="120" y="169" class="lbl" text-anchor="middle" fill="#16a34a" font-weight="700">3 Network</text>
+<text x="380" y="169" class="lbl" fill="#64748b">IP addresses, routing</text>
+<rect x="20" y="190" width="200" height="30" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="120" y="205" class="lbl" text-anchor="middle" fill="#ea580c" font-weight="700">2 Data Link</text>
+<text x="380" y="205" class="lbl" fill="#64748b">MAC addresses, Ethernet, Wi-Fi</text>
+<rect x="20" y="226" width="200" height="30" rx="5" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+<text x="120" y="241" class="lbl" text-anchor="middle" fill="#ea580c" font-weight="700">1 Physical</text>
+<text x="380" y="241" class="lbl" fill="#64748b">Cables, radio waves, fiber</text>
+<!-- arrows -->
+<line x1="240" y1="25" x2="370" y2="25" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="61" x2="370" y2="61" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="97" x2="370" y2="97" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="133" x2="370" y2="133" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="169" x2="370" y2="169" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="205" x2="370" y2="205" stroke="#64748b" stroke-width="1.5"/>
+<line x1="240" y1="241" x2="370" y2="241" stroke="#64748b" stroke-width="1.5"/>
+</svg>

@@ -1,5 +1,7 @@
 # CyberQuest Summer Camp (Free Edition)
 
+**Live site: https://camp.com.puter.tips**
+
 A free, five-day, hands-on introduction to cybersecurity for middle and high school students. Every tool used here is free and runs in a web browser. No paid range or special hardware required.
 
 

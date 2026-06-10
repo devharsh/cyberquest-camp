@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 190" style="width:100%;max-width:700px;height:auto" xmlns="http://www.w3.org/2000/svg">
+<defs><style>.lb{font-family:Segoe UI,Arial,sans-serif;font-size:11px;text-anchor:middle}
+  svg{max-width:100%;height:auto}
+  @media(max-width:640px){
+    .stage{padding:12px}
+    .slide{padding:20px 16px}
+    h1{font-size:24px}
+    h2{font-size:20px}
+    p,li{font-size:16px;line-height:1.5}
+    pre{font-size:13px;padding:10px}
+    code{font-size:14px}
+    button.nav-btn{padding:10px 14px;font-size:14px}
+    .topbar{font-size:12px}
+  }
+</style></defs>
+<!-- sender -->
+<rect x="20" y="60" width="130" height="70" rx="8" fill="#eef3fb" stroke="#2563eb" stroke-width="2"/>
+<text x="85" y="85"  class="lb" fill="#2563eb" font-weight="700">Sender</text>
+<text x="85" y="102" class="lb" fill="#64748b">hash(msg)</text>
+<text x="85" y="118" class="lb" fill="#64748b">sign w/ private key</text>
+<!-- arrow -->
+<line x1="150" y1="95" x2="260" y2="95" stroke="#64748b" stroke-width="2"/>
+<polygon points="260,89 270,95 260,101" fill="#64748b"/>
+<text x="210" y="83" class="lb" fill="#64748b">msg + signature</text>
+<!-- receiver -->
+<rect x="270" y="60" width="140" height="70" rx="8" fill="#e9f7ef" stroke="#16a34a" stroke-width="2"/>
+<text x="340" y="85"  class="lb" fill="#16a34a" font-weight="700">Receiver</text>
+<text x="340" y="102" class="lb" fill="#64748b">verify w/ public key</text>
+<text x="340" y="118" class="lb" fill="#64748b">hash(msg) == expected?</text>
+<!-- yes/no -->
+<line x1="410" y1="80" x2="480" y2="55" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="480" y="38" width="90" height="30" rx="6" fill="#e9f7ef" stroke="#16a34a" stroke-width="1.5"/>
+<text x="525" y="57" class="lb" fill="#16a34a" font-weight="700">VALID</text>
+<line x1="410" y1="110" x2="480" y2="135" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="480" y="122" width="120" height="30" rx="6" fill="#fdecec" stroke="#dc2626" stroke-width="1.5"/>
+<text x="540" y="141" class="lb" fill="#dc2626" font-weight="700">TAMPERED</text>
+<text x="370" y="175" class="lb" fill="#64748b">If one byte of the message changes, the hash changes and verification fails</text>
+</svg>
