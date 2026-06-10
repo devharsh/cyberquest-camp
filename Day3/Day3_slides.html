@@ -188,9 +188,9 @@ No patterns visible.
 <div class='slide'><h2>The birthday paradox and hash collisions</h2><p class='muted'>Ch 2 §2.7 — why MD5 is broken</p>
 <p>In a group of 23 people, there is a 50% chance two share a birthday. With hashes the same math applies: you do not need to find a specific collision, just any two inputs with the same output.</p>
 <table><tr><th>Hash</th><th>Output bits</th><th>Collision resistance</th><th>Status</th></tr>
-<tr><td>MD5</td><td>128</td><td>2^64 operations</td><td>Broken (2004)</td></tr>
-<tr><td>SHA-1</td><td>160</td><td>2^80 operations</td><td>Broken (2017)</td></tr>
-<tr><td>SHA-256</td><td>256</td><td>2^128 operations</td><td>Secure</td></tr></table>
+<tr><td>MD5</td><td>128</td><td>2<sup>64</sup> operations</td><td>Broken (2004)</td></tr>
+<tr><td>SHA-1</td><td>160</td><td>2<sup>80</sup> operations</td><td>Broken (2017)</td></tr>
+<tr><td>SHA-256</td><td>256</td><td>2<sup>128</sup> operations</td><td>Secure</td></tr></table>
 <div class='callout'>In 2004, Xiaoyun Wang found two different 128-byte messages with the same MD5 hash. In practice, do not use MD5 for security — use SHA-256 or SHA-3.</div></div>
 
 <div class='slide'><h2>RSA step by step</h2><p class='muted'>Ch 2 §2.10 — numeric worked example</p>
@@ -200,8 +200,8 @@ No patterns visible.
 <tr><td>Totient</td><td>phi = (p-1)(q-1)</td><td>phi = 352</td></tr>
 <tr><td>Public exponent</td><td>e: gcd(e, phi) = 1</td><td>e = 3</td></tr>
 <tr><td>Private exponent</td><td>d: e×d ≡ 1 (mod phi)</td><td>d = 235</td></tr>
-<tr><td>Encrypt m=5</td><td>c = m^e mod n</td><td>c = 5^3 mod 391 = <b>125</b></td></tr>
-<tr><td>Decrypt</td><td>m = c^d mod n</td><td>m = 125^235 mod 391 = <b>5</b></td></tr></table>
+<tr><td>Encrypt m=5</td><td>c = m<sup>e</sup> mod n</td><td>c = 5<sup>3</sup> mod 391 = <b>125</b></td></tr>
+<tr><td>Decrypt</td><td>m = c<sup>d</sup> mod n</td><td>m = 125<sup>235</sup> mod 391 = <b>5</b></td></tr></table>
 <pre>m, e, d, n = 5, 3, 235, 391
 c = pow(m, e, n)    # encrypt: 125
 m2 = pow(c, d, n)   # decrypt: 5
