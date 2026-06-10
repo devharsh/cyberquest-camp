@@ -132,7 +132,7 @@ text = "KHOOR ZRUOG"
 freq = Counter(c for c in text if c.isalpha())
 most_common, _ = freq.most_common(1)[0]
 key = (ord(most_common) - ord('E')) % 26
-print("Guessed key:", key)   # 7... try all 26 to be sure</pre>
+print("Guessed key:", key)   # 10... try all 26 to be sure</pre>
 <div class='callout'>This is why modern ciphers are designed to produce uniform-looking output regardless of the plaintext pattern.</div></div>
 
 <div class='slide'><h2>One-time pad: perfect secrecy</h2><p class="muted">Ch 2 §2.3 — perfect secrecy and XOR</p><p class='muted'>The unbreakable cipher — and its catch</p>
