@@ -177,7 +177,7 @@ If a security control costs less than $40,000/yr, it is worth buying.
 </div></div>
 
 <div class='slide'><h2>Password entropy: a numeric view</h2><p class="muted">Ch 1 §1.8 — authentication and access control</p><p class='muted'>Why longer passwords win</p>
-<p>Entropy = log2(alphabet size <sup>length</sup>) = length × log2(alphabet size)</p>
+<p>Entropy (bits) = length × log2(alphabet size)</p>
 <table><tr><th>Password</th><th>Alphabet</th><th>Combinations</th><th>At 10B guesses/sec</th></tr>
 <tr><td>8 lowercase</td><td>26</td><td>26<sup>8</sup> ≈ 2×10<sup>11</sup></td><td>~20 seconds</td></tr>
 <tr><td>8 mixed + digits</td><td>62</td><td>62<sup>8</sup> ≈ 2×10<sup>14</sup></td><td>~6 hours</td></tr>
