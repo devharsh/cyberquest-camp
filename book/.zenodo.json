@@ -1,0 +1,47 @@
+{
+  "title": "CyberQuest Summer Camp 2026: A Five-Day Cybersecurity Curriculum for High School Students",
+  "description": "A complete open-access curriculum for a five-day high school cybersecurity camp. Includes lecture slide decks for all five days (291 companion slides), the main course deck (100 slides), Python coding notebooks, and this compiled PDF textbook. Topics span networking fundamentals, threat modeling, cryptography, web security, ethical hacking, and Capture the Flag (CTF) competitions. Aligned with industry certifications (CompTIA Security+, CEH) and NIST frameworks.",
+  "creators": [
+    {
+      "name": "Trivedi, Devharsh",
+      "affiliation": "Bowie State University",
+      "orcid": "0000-0001-6374-7249"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "upload_type": "publication",
+  "publication_type": "other",
+  "language": "eng",
+  "keywords": [
+    "cybersecurity",
+    "high school education",
+    "summer camp",
+    "capture the flag",
+    "CTF",
+    "networking",
+    "cryptography",
+    "ethical hacking",
+    "Python",
+    "OWASP",
+    "open educational resources"
+  ],
+  "version": "1.0.0",
+  "publication_date": "2026-06-09",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/devharsh/cyberquest-camp",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://camp.com.puter.tips",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "notes": "This curriculum is designed for instructors running a five-day cybersecurity camp for high school students with no prior background. All slide decks are available interactively at https://camp.com.puter.tips. Source code and HTML slides are at https://github.com/devharsh/cyberquest-camp."
+}
