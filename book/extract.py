@@ -243,6 +243,12 @@ def html_to_tex(html):
         r"<p[^>]*class=['\"]muted['\"][^>]*>[^<]*Press Next[^<]*</p>",
         '', html, flags=re.DOTALL | re.IGNORECASE)
 
+    # ── Strip keyword chip/pill divs (PDF-irrelevant UI decorations) ──────────
+    # e.g. <div class="chips"><span class="pill">Encoding</span>...</div>
+    # These produce stray lines like "Encoding Caesar Hashing RSA CyberChef"
+    html = re.sub(r'<div[^>]*class=["\']chips["\'][^>]*>.*?</div>', '', html,
+                  flags=re.DOTALL | re.IGNORECASE)
+
     # ── Special paragraph classes ─────────────────────────────────────────────
     html = re.sub(r"<p[^>]*class=['\"]partbadge['\"][^>]*>(.*?)</p>",
         lambda m: '\n' + r'\vspace{4pt}\noindent\textsc{' + strip_tags(m.group(1)) + '}\n\n',
