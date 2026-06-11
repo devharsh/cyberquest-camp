@@ -185,7 +185,7 @@ PREAMBLE = r"""\documentclass[12pt,openany]{book}
 \onehalfspacing
 """
 
-# ── TikZ cover page (1 page, colorful, ORCID, version 1.0.0, no email/room) ─
+# ── TikZ cover page (1 page, colorful, ORCID, version 1.1.0, no email/room) ─
 TITLE_PAGE = r"""
 \begin{titlepage}
 \begin{tikzpicture}[remember picture, overlay]
@@ -245,7 +245,7 @@ TITLE_PAGE = r"""
   \href{https://github.com/devharsh/cyberquest-camp}{\textcolor{accentlt}{github.com/devharsh/cyberquest-camp}}
 }\\[0.65cm]
 
-{\small Version 1.0.0 \quad\textbullet\quad \today}
+{\small Version 1.1.0 \quad\textbullet\quad \today}
 \end{titlepage}
 """
 
