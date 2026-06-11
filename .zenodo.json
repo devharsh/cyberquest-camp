@@ -1,11 +1,11 @@
 {
   "title": "CyberQuest Summer Camp 2026: A Five-Day Cybersecurity Curriculum for High School Students",
-  "description": "A complete open-access curriculum for a five-day high school cybersecurity camp. Includes lecture slide decks for all five days (291 companion slides), the main course deck (100 slides), Python coding notebooks, and this compiled PDF textbook. Topics span networking fundamentals, threat modeling, cryptography, web security, ethical hacking, and Capture the Flag (CTF) competitions. Aligned with industry certifications (CompTIA Security+, CEH) and NIST frameworks.",
+  "description": "CyberQuest Summer Camp 2026 is a complete open-access curriculum for a five-day high school cybersecurity camp. This release (v1.1.0) incorporates copy-edit corrections and precision improvements across the companion slide decks, including fixed packet-fragmentation math (IPv4 header overhead), corrected digital-signature wording, and minor editorial fixes.\n\nThe curriculum includes a 119-page compiled PDF textbook, interactive HTML slide decks for all five days (291 companion slides plus a 100-slide main course deck), Python coding notebooks, and integrations with free tools: CodeCombat, OverTheWire Bandit, Google Interland, Security.org password tester, dcode.fr, CyberChef, CTFLearn, Lakera Gandalf, picoCTF, and the OSINT Framework.\n\nTopics covered: networking fundamentals (OSI model, TCP/IP, packet analysis, subnetting), threat modeling (CIA triad, DAD triad, Parkerian Hexad, risk quantification, ALE), cryptography (classical ciphers, frequency analysis, RSA, AES, TLS handshake, digital signatures), web security (OWASP Top 10, XSS, SQL injection, session management), ethical hacking (reconnaissance, responsible disclosure, bug bounties), AI security (prompt injection, LLM attacks, model inversion), and Capture the Flag competitions (binary exploitation, forensics, OSINT methodology).\n\nAligned with CompTIA Security+, CEH, and NIST frameworks. Designed for students with no prior cybersecurity background. All interactive slides are available at https://camp.com.puter.tips. Source code and HTML slides are at https://github.com/devharsh/cyberquest-camp.",
   "creators": [
     {
       "name": "Trivedi, Devharsh",
       "affiliation": "",
-      "orcid": ""
+      "orcid": "0000-0001-6374-7249"
     }
   ],
   "access_right": "open",
@@ -24,10 +24,14 @@
     "ethical hacking",
     "Python",
     "OWASP",
-    "open educational resources"
+    "open educational resources",
+    "NIST",
+    "CompTIA Security+",
+    "AI security",
+    "prompt injection"
   ],
-  "version": "1.0.0",
-  "publication_date": "2026-06-09",
+  "version": "1.1.0",
+  "publication_date": "2026-06-10",
   "related_identifiers": [
     {
       "identifier": "https://github.com/devharsh/cyberquest-camp",
@@ -43,5 +47,5 @@
   "communities": [
     {"identifier": "zenodo"}
   ],
-  "notes": "This curriculum is designed for instructors running a five-day cybersecurity camp for high school students with no prior background. All slide decks are available interactively at https://camp.com.puter.tips. Source code and HTML slides are at https://github.com/devharsh/cyberquest-camp."
+  "notes": "This curriculum is designed for instructors running a five-day cybersecurity camp for high school students with no prior background. All slide decks are available interactively at https://camp.com.puter.tips. Source code and HTML slides are at https://github.com/devharsh/cyberquest-camp. v1.1.0 fixes: packet-fragmentation math (4 fragments with 20-byte IPv4 header), digital-signature wording precision, breach-stat softening, copy-edit corrections in Day 2 and Day 4 companion decks."
 }
