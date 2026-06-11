@@ -103,6 +103,19 @@
     th,td{padding:5px 7px}
     .g2,.g3,.g2a,.g2b{grid-template-columns:1fr}
   }
+  /* ── Mobile scroll fix: let slides grow and scroll on iPhone ── */
+  @media(max-width:640px){
+    html,body{height:auto}
+    #deck{height:auto;min-height:100dvh;overflow:visible}
+    .slide{position:relative;inset:auto;height:auto;overflow:visible}
+    .inner{min-height:unset}
+    .inner.center{min-height:unset;justify-content:flex-start;padding-top:28px}
+    /* Full-width sticky nav bar so thumbs can reach it */
+    .ctrl{position:fixed;bottom:0;left:0;right:0;width:100%;display:flex;justify-content:stretch;padding:8px 12px 12px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -2px 8px rgba(0,0,0,.10);gap:8px;top:auto}
+    .ctrl button{flex:1;padding:12px 0;font-size:14px}
+    /* Extra bottom padding so last content line isn't hidden under nav */
+    .inner{padding-bottom:80px}
+  }
   @media print{.slide{display:block!important;position:relative;height:auto;page-break-after:always}.inner{transform:none!important;zoom:1!important}.ctrl,.menub,.pbar{display:none}}
 
   .skip-nav{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
