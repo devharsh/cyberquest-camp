@@ -360,8 +360,8 @@ Write each password you find in a safe note so you can keep climbing.</p></div><
 </li>
 </ol>
 <h3>Numerical Exercise</h3>
-<p>A network router receives an unfragmented data packet file with a total payload size of 4,500 bytes. If the local network limits the maximum packet transmission size to 1,500 bytes per transmission unit, calculate the exact minimum number of individual packet segments the router must generate to transmit the complete payload data across the network.
-* <em>Solution Step</em>: <span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:1px 6px">Segments = (4500 bytes) / (1500 bytes/packet) = 3 packets</span>.</p>
+<p>A network router receives an unfragmented IP packet with a total payload of 4,500 bytes. The path MTU is 1,500 bytes, but each IPv4 fragment must carry a 20-byte IP header, leaving 1,480 bytes of usable data per fragment. Calculate the minimum number of fragments the router must produce.
+* <em>Solution Step</em>: <span style="font-family:ui-monospace,Consolas,monospace;background:#f1f5ff;border:1px solid #dbe6f5;border-radius:6px;padding:1px 6px">Usable payload = 1,500 - 20 = 1,480 bytes/fragment. Fragments = 4,500 / 1,480 = 3.04, rounded up = 4 fragments</span>.</p>
 <hr /></div><div class='slide'><h2>Answer key</h2>
 <p><strong>Answer key.</strong> Numericals: 1) 7 times, 2) 1024, 3) 1. MCQ: 1-b, 2-a, 3-b.</p>
 <hr /></div><div class='slide'><p class='partbadge'>PART 6 OF 6</p><h1 style='margin-top:14px'>Wrap up</h1><p style='font-size:20px;color:var(--muted);line-height:1.45'>Recap what you learned and reflect.</p><p class='muted'>This part is 1 slide. Press Next to begin.</p></div><div class='slide'><h2>Reflection and homework</h2>

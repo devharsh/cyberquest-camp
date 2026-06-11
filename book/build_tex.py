@@ -447,17 +447,6 @@ def build():
         count=1
     )
 
-    # MTU: the HTML says 4500/1500 = 3 packets, but with a 20-byte IPv4 header
-    # the usable payload per fragment is 1480 bytes, giving 4500/1480 = 3.04,
-    # which rounds up to 4 packets.  Fix the Solution Step to show correct math.
-    OLD_MTU = (r'* \textit{Solution Step}: Segments = (4500 bytes) / '
-               r'(1500 bytes/packet) = 3 packets.')
-    NEW_MTU = (r'* \textit{Solution Step}: With a 1{,}500-byte MTU and a 20-byte '
-               r'IPv4 header, the usable payload per fragment $= 1{,}500 - 20 = 1{,}480$ bytes. '
-               r'Minimum fragments required $= \lceil 4{,}500 / 1{,}480 \rceil = \lceil 3.04 \rceil'
-               r' = \mathbf{4}$ packets.')
-    tex = tex.replace(OLD_MTU, NEW_MTU, 1)
-
     return tex
 
 tex = build()
