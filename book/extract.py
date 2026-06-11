@@ -117,7 +117,6 @@ def html_to_tex(html):
         return ''
     html = clean_js(html)
 
-    html = re.sub(r'<button[^>]*>.*?</button>', '', html, flags=re.DOTALL)
     html = re.sub(r'<div[^>]*class=["\']feedback[^>]*>.*?</div>', '', html, flags=re.DOTALL)
 
     # ── Placeholder pools ────────────────────────────────────────────────────
@@ -176,6 +175,40 @@ def html_to_tex(html):
         )
     html = re.sub(r'<svg[^>]*>.*?</svg>', _svg_to_figure, html, flags=re.DOTALL)
 
+    # ── MCQ: convert knowledge-check buttons into a formatted answer list ─────
+    # Must run after save_latex is defined so the LaTeX output is protected from
+    # _esc_text_nodes.  Correct answer = onclick contains choose(this,true,...).
+    def _convert_mcq_block(m):
+        block = m.group(0)
+        buttons = re.findall(
+            r'<button[^>]*onclick=["\']choose\(this,(true|false),\'([^\']*)\'[^>]*>(.*?)</button>',
+            block, re.DOTALL)
+        if not buttons:
+            return ''
+        lines = []
+        labels = ['A', 'B', 'C', 'D', 'E']
+        correct_explanation = ''
+        for i, (correct, explanation, text) in enumerate(buttons):
+            label = labels[i] if i < len(labels) else str(i + 1)
+            text_clean = strip_tags(text).strip()
+            if correct == 'true':
+                lines.append(
+                    r'\item[\textbf{' + label + r'.}] \textbf{' +
+                    esc(text_clean) + r'} $\checkmark$')
+                correct_explanation = strip_tags(explanation).strip()
+            else:
+                lines.append(r'\item[' + label + r'.] ' + esc(text_clean))
+        result = ('\n\\begin{itemize}[leftmargin=2em,label={}]\n' +
+                  '\n'.join(lines) + '\n\\end{itemize}\n')
+        if correct_explanation:
+            result += (r'{\small\itshape\color{gray}' +
+                       esc(correct_explanation) + '}\n\n')
+        return save_latex(result)
+
+    html = re.sub(
+        r'(?:<button[^>]*class=["\']opt["\'][^>]*>.*?</button>\s*)+',
+        _convert_mcq_block, html, flags=re.DOTALL)
+
     # ── Save code blocks BEFORE _esc_text_nodes ──────────────────────────────
     html = re.sub(r'<pre[^>]*><code[^>]*>(.*?)</code></pre>', save_code, html, flags=re.DOTALL)
     html = re.sub(r'<pre[^>]*>(.*?)</pre>',                  save_code, html, flags=re.DOTALL)
@@ -202,6 +235,13 @@ def html_to_tex(html):
     html = re.sub(r'<h1[^>]*>(.*?)</h1>', _sec(r'\section*'),       html, flags=re.DOTALL)
     html = re.sub(r'<h2[^>]*>(.*?)</h2>', _sec(r'\subsection*'),    html, flags=re.DOTALL)
     html = re.sub(r'<h3[^>]*>(.*?)</h3>', _sec(r'\subsubsection*'), html, flags=re.DOTALL)
+
+    # ── Strip slide-navigation-only muted paragraphs (PDF-irrelevant) ────────
+    # e.g. "This part is 4 slides. Press Next to begin."
+    #      "6 parts. Press Next to move in order."
+    html = re.sub(
+        r"<p[^>]*class=['\"]muted['\"][^>]*>[^<]*Press Next[^<]*</p>",
+        '', html, flags=re.DOTALL | re.IGNORECASE)
 
     # ── Special paragraph classes ─────────────────────────────────────────────
     html = re.sub(r"<p[^>]*class=['\"]partbadge['\"][^>]*>(.*?)</p>",
