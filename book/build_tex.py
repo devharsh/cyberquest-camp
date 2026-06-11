@@ -113,6 +113,7 @@ PREAMBLE = r"""\documentclass[12pt,openany]{book}
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{listings}
+\usepackage{upquote}
 \usepackage{enumitem}
 \usepackage{parskip}
 \usepackage{titlesec}
