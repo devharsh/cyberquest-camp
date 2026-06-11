@@ -16,7 +16,7 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;height:100%;background:#5566;font-family:var(--sans);color:var(--ink)}
   #deck{height:100vh;height:100dvh;width:100vw;overflow:hidden;position:relative;background:var(--bg)}
-  .slide{position:absolute;inset:0;display:none;background:var(--bg);overflow:hidden}
+  .slide{position:absolute;inset:0;display:none;background:var(--bg);overflow-x:hidden;overflow-y:auto}
   .slide.active{display:block}
   .inner{padding:40px 56px 58px;min-height:100%;transform-origin:top left}
   .inner.center{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:calc(100vh - 0px)}
@@ -103,12 +103,8 @@
     th,td{padding:5px 7px}
     .g2,.g3,.g2a,.g2b{grid-template-columns:1fr}
   }
-  /* ── Mobile scroll fix: let slides grow and scroll on iPhone ── */
+  /* ── Mobile layout: full-width nav bar, adjusted typography ── */
   @media(max-width:640px){
-    html,body{height:auto}
-    #deck{height:auto;min-height:100dvh;overflow:visible}
-    .slide{position:relative;inset:auto;height:auto;overflow:visible}
-    .inner{min-height:unset}
     .inner.center{min-height:unset;justify-content:flex-start;padding-top:28px}
     /* Full-width sticky nav bar so thumbs can reach it */
     .ctrl{position:fixed;bottom:0;left:0;right:0;width:100%;display:flex;justify-content:stretch;padding:8px 12px 12px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -2px 8px rgba(0,0,0,.10);gap:8px;top:auto}
@@ -748,7 +744,9 @@ function go(dir) {
   if (slides.length === 0) return;
   
   slides[currentSlide].classList.remove('active');
+  slides[currentSlide].scrollTop = 0;
   currentSlide = (currentSlide + dir + slides.length) % slides.length;
+  slides[currentSlide].scrollTop = 0;
   slides[currentSlide].classList.add('active');
   updateProgress();
 }
@@ -756,9 +754,11 @@ function go(dir) {
 function jumpTo(idx) {
   const slides = document.querySelectorAll('.slide');
   if (idx < 0 || idx >= slides.length) return;
-  
+
   slides[currentSlide].classList.remove('active');
+  slides[currentSlide].scrollTop = 0;
   currentSlide = idx;
+  slides[currentSlide].scrollTop = 0;
   slides[currentSlide].classList.add('active');
   toggleTOC(false);
   updateProgress();
