@@ -2,17 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="0; url=Interactive_Slides.html">
-<title>CyberQuest Summer Camp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CyberQuest Summer Camp - free five-day cybersecurity camp for students</title>
+<meta name="description" content="CyberQuest is a free, five-day, hands-on cybersecurity summer camp for middle and high school students. Learn Python, cryptography, web and AI security, and Capture The Flag in the browser. No paid tools or installs.">
+<meta name="author" content="Devharsh Trivedi">
+<meta name="keywords" content="cybersecurity summer camp, free cybersecurity course, Python for kids, cryptography, web security, AI security, prompt injection, Capture The Flag, CTF, OSINT, middle school, high school, STEM, ethical hacking">
+<link rel="canonical" href="https://camp.com.puter.tips/">
+<meta property="og:title" content="CyberQuest Summer Camp">
+<meta property="og:description" content="A free five-day cybersecurity camp for middle and high school students: Python, cryptography, web and AI security, and Capture The Flag.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://camp.com.puter.tips/">
+<meta property="og:site_name" content="CyberQuest Summer Camp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CyberQuest Summer Camp">
+<meta name="twitter:description" content="Free five-day cybersecurity camp: Python, cryptography, web and AI security, and Capture The Flag.">
 <style>
-  body { margin: 0; font-family: -apple-system, Segoe UI, sans-serif;
-         background: #eef2fb; display: flex; align-items: center;
-         justify-content: center; height: 100vh; }
-  a { color: #2563eb; font-size: 18px; }
+ :root{--bg:#eef2fb;--card:#fff;--ink:#16203a;--muted:#5a6b8c;--accent:#2563eb;--accent2:#7c3aed;--line:#dfe6f5}
+ *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(1200px 600px at 70% -10%,#dbe6ff,transparent),var(--bg);min-height:100vh}
+ a.skip{position:absolute;left:-999px}a.skip:focus{left:8px;top:8px;background:#fff;padding:8px;border-radius:8px;z-index:100}
+ .wrap{max-width:900px;margin:0 auto;padding:32px 18px 60px}
+ .badge{display:inline-block;background:var(--accent2);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700;letter-spacing:.04em}
+ h1{font-size:clamp(28px,6vw,44px);margin:12px 0 6px;line-height:1.1}
+ .sub{color:var(--muted);font-size:clamp(15px,3.5vw,19px);max-width:62ch}
+ .cta{display:inline-block;margin:18px 0 4px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:12px;min-height:44px;font-size:17px}
+ h2{font-size:21px;margin:30px 0 10px}
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 10px 30px rgba(20,40,90,.06)}
+ .card h3{margin:0 0 4px;font-size:18px} .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+ .links a{display:inline-block;margin:4px 8px 0 0;padding:9px 12px;border-radius:9px;text-decoration:none;font-size:14px;font-weight:600;min-height:40px}
+ .deck{background:#eef3ff;color:#1d4ed8;border:1px solid #c7d4f0} .nb{background:#fff7ed;color:#b45309;border:1px solid #fed7aa}
+ .faq dt{font-weight:700;margin-top:12px} .faq dd{margin:4px 0 0;color:var(--muted)}
+ .muted{color:var(--muted)} a{color:var(--accent)}
+ footer{margin-top:34px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Course","name":"CyberQuest Summer Camp",
+"description":"A free five-day cybersecurity summer camp for middle and high school students: Python, cryptography, web and AI security, and Capture The Flag.",
+"inLanguage":"en","isAccessibleForFree":true,"educationalLevel":"Middle school and high school",
+"about":["Cybersecurity","Python programming","Cryptography","Web security","Capture The Flag"],
+"provider":{"@type":"CollegeOrUniversity","name":"Bowie State University, Department of Computer Science"},
+"author":{"@type":"Person","name":"Devharsh Trivedi","url":"https://orcid.org/0000-0001-6374-7249"},
+"url":"https://camp.com.puter.tips/","license":"https://opensource.org/licenses/MIT",
+"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online","courseWorkload":"P5D"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is CyberQuest?","acceptedAnswer":{"@type":"Answer","text":"CyberQuest is a free, five-day, hands-on cybersecurity summer camp for middle and high school students covering Python, cryptography, web and AI security, and Capture The Flag."}},
+{"@type":"Question","name":"Is CyberQuest free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tool used is free and runs in a web browser, and the curriculum is released under the MIT license."}},
+{"@type":"Question","name":"What will students learn?","acceptedAnswer":{"@type":"Answer","text":"Python and the Linux command line, the CIA triad and strong passwords, cryptography from Caesar ciphers to RSA, web and AI security including SQL injection and prompt injection, and Capture The Flag with OSINT."}},
+{"@type":"Question","name":"Do I need to install anything?","acceptedAnswer":{"@type":"Answer","text":"No. The slide decks open in any browser and the Python notebooks run free in Google Colab with one click."}}]}
+</script>
 </head>
 <body>
-<a href="Interactive_Slides.html">Opening CyberQuest slides...</a>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap" id="main">
+ <span class="badge">BOWIE STATE UNIVERSITY</span>
+ <h1>CyberQuest Summer Camp</h1>
+ <p class="sub">A free, five-day, hands-on cybersecurity camp for middle and high school students. Each day pairs a Python exercise with a free, fun security game. Everything runs in the browser, no installs and no paid tools.</p>
+ <a class="cta" href="Interactive_Slides.html">Open the main course deck</a>
+ <p class="muted" style="font-size:13px">Tip: swipe on a phone, or use the arrow keys and on-screen buttons on a computer.</p>
+
+ <h2>Day decks and notebooks</h2>
+ <div class="grid" id="grid"></div>
+
+ <h2>Frequently asked questions</h2>
+ <dl class="faq">
+  <dt>Is CyberQuest free?</dt><dd>Yes. Every tool is free and browser-based, and the curriculum is MIT-licensed.</dd>
+  <dt>Who is it for?</dt><dd>Middle and high school students, complete beginners welcome, plus teachers and club leaders.</dd>
+  <dt>What will I learn?</dt><dd>Python and Linux, passwords and the CIA triad, cryptography, web and AI security, and Capture The Flag with OSINT.</dd>
+  <dt>Do I need to install anything?</dt><dd>No. Decks open in any browser; notebooks open free in Google Colab.</dd>
+ </dl>
+
+ <h2>More</h2>
+ <div class="links">
+  <a class="deck" href="https://github.com/devharsh/cyberquest-camp">Source on GitHub</a>
+  <a class="deck" href="resources/case-studies/README.md">Breach case studies</a>
+  <a class="deck" href="README.md">README</a>
+ </div>
+
+ <footer>Devharsh Trivedi, Ph.D., CISSP - Department of Computer Science, Bowie State University - Washington D.C., 20003. ORCID 0000-0001-6374-7249. Free for educational use (MIT).</footer>
+</div>
+<script>
+ var days=[[1,"Python and the Linux command line"],[2,"Foundations and strong passwords"],[3,"Cryptography: codes and ciphers"],[4,"Web security and AI security"],[5,"Capstone: Capture The Flag and OSINT"]];
+ var repo="devharsh/cyberquest-camp", g=document.getElementById('grid');
+ days.forEach(function(d){var n=d[0],el=document.createElement('div');el.className='card';
+  el.innerHTML='<h3>Day '+n+'</h3><p>'+d[1]+'</p><div class="links">'+
+   '<a class="deck" href="Day'+n+'/Day'+n+'_slides.html">Slides</a>'+
+   '<a class="nb" target="_blank" rel="noopener" href="https://colab.research.google.com/github/'+repo+'/blob/main/Day'+n+'/Day'+n+'.ipynb">Notebook in Colab</a></div>';
+  g.appendChild(el);});
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+# CyberQuest Summer Camp
+
+> A free, five-day cybersecurity summer camp for middle and high school students by Devharsh Trivedi (Bowie State University). Hands-on Python, cryptography, web and AI security, and Capture The Flag, taught with interactive browser slide decks and Jupyter notebooks. No paid tools required.
+
+## What it covers
+- Day 1: Python and the Linux command line (CodeCombat, OverTheWire Bandit)
+- Day 2: Security foundations and strong passwords; the CIA triad (Google Interland, Security.org)
+- Day 3: Cryptography - encoding, ciphers, hashing, RSA (dcode.fr, CyberChef)
+- Day 4: Web security and AI security - SQL injection, XSS, prompt injection (CTFLearn, Lakera Gandalf)
+- Day 5: Capstone - Capture The Flag and OSINT (picoCTF, OSINT Framework)
+
+## Format
+- Main course deck: Interactive_Slides.html (responsive, swipe on mobile, arrow keys on desktop)
+- Five day decks: DayN/DayN_slides.html
+- Five notebooks: DayN/DayN.ipynb (open free in Google Colab)
+
+## Links
+- Live site: https://camp.com.puter.tips/
+- Source: https://github.com/devharsh/cyberquest-camp
+- Author: Devharsh Trivedi, Ph.D., CISSP, ORCID 0000-0001-6374-7249
+
+## Use
+Free for educational use under the MIT license. Suitable for classrooms, clubs, and self-study.
