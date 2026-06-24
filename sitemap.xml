@@ -9,7 +9,11 @@
   <url><loc>https://camp.com.puter.tips/Day5/Day5_slides.html</loc><priority>0.8</priority></url>
   <url><loc>https://camp.com.puter.tips/resources/case-studies/</loc><priority>0.5</priority></url>
   <url><loc>https://camp.com.puter.tips/pogil/index.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/day1-reading-code.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/day2-passwords.html</loc><priority>0.6</priority></url>
   <url><loc>https://camp.com.puter.tips/pogil/symmetric-encryption.html</loc><priority>0.6</priority></url>
   <url><loc>https://camp.com.puter.tips/pogil/perfect-secrecy.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/day4-trusting-input.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/day5-ctf-osint.html</loc><priority>0.6</priority></url>
   <url><loc>https://camp.com.puter.tips/pogil/template.html</loc><priority>0.4</priority></url>
 </urlset>

@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Capture the Flag and OSINT Ethics - CyberQuest POGIL</title>
+<meta name="description" content="Original POGIL activity for Day 5: reverse a multi-step encoded flag, learn what photo metadata reveals, and apply the ethics rule that governs all security work.">
+<meta name="author" content="Devharsh Trivedi">
+<link rel="canonical" href="https://camp.com.puter.tips/pogil/day5-ctf-osint.html">
+<meta property="og:title" content="Capture the Flag and OSINT Ethics - CyberQuest"><meta property="og:type" content="article"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Capture the Flag and OSINT Ethics","learningResourceType":"POGIL guided-inquiry activity","educationalLevel":"Middle school and high school","inLanguage":"en","isAccessibleForFree":true,"author":{"@type":"Person","name":"Devharsh Trivedi"},"isPartOf":{"@type":"Course","name":"CyberQuest Summer Camp","url":"https://camp.com.puter.tips/"}}</script>
+<style>
+ :root{--ink:#16203a;--muted:#5a6b8c;--accent:#2563eb;--line:#dfe6f5;--soft:#f1f5ff;--good:#16a34a}
+ *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+ a.skip{position:absolute;left:-999px}a.skip:focus{left:8px;top:8px;background:#fff;padding:8px;border-radius:8px;z-index:50}
+ main{max-width:820px;margin:0 auto;padding:24px 18px 64px}
+ .top{border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:8px}
+ .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;letter-spacing:.04em}
+ h1{font-size:clamp(24px,5vw,34px);margin:10px 0 4px} h2{font-size:21px;margin:26px 0 8px;color:#0b3a8f;border-left:4px solid var(--accent);padding-left:10px}
+ h3{font-size:17px;margin:16px 0 6px} p,li{font-size:16px}
+ .muted{color:var(--muted)} code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-family:ui-monospace,Consolas,monospace}
+ .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+ .role{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+ .model{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:16px;margin:10px 0}
+ table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px} th,td{border:1px solid var(--line);padding:6px 9px;text-align:center} th{background:var(--soft)}
+ ol.ctq>li{margin:14px 0} details{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:8px 12px;margin-top:6px}
+ details summary{cursor:pointer;font-weight:600;color:#15803d} .obj li{margin:4px 0}
+ svg{max-width:100%;height:auto} .nav{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+ .doit{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #ea7a17;border-radius:10px;padding:12px 14px;margin:10px 0}
+ @media print{details[open] summary~*{display:block} a.skip,.nav{display:none} details{border:none;background:none}}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a><main id="main">
+<div class="top"><span class="badge">CyberQuest - POGIL Activity</span></div>
+<h1>Capture the Flag and OSINT Ethics</h1>
+<p class="muted">A guided-inquiry activity. Work in a team of 3 to 4, or on your own. Read each Model, then answer the Critical Thinking Questions in order before revealing a hint.</p>
+<h2>Learning objectives</h2><ul class="obj">
+<li>Reverse a flag that was hidden in two steps, in the correct order.</li>
+<li>State what EXIF photo metadata can reveal and how to remove it.</li>
+<li>State and apply the permission rule that separates a white hat from a criminal.</li></ul>
+<p><b>Prerequisites:</b> Base64 and XOR (Day 3).</p><h2>Team roles</h2><div class="roles">
+<div class="role"><b>Manager</b> - keeps time, makes sure everyone participates, keeps the team on task.</div>
+<div class="role"><b>Recorder</b> - writes the team's agreed answers and questions to ask.</div>
+<div class="role"><b>Presenter</b> - speaks for the team and shares answers.</div>
+<div class="role"><b>Reflector</b> - watches teamwork and suggests one improvement.</div></div>
+<h2>Model 1: A two-step flag</h2><div class="model">
+<p>A flag was hidden by first XOR-ing with a key, then Base64 encoding the result.</p>
+<pre>make:    flag  ->  XOR with key  ->  Base64 encode  ->  given to you
+recover: given  ->  Base64 decode ->  XOR with key  ->  flag</pre></div><ol class="ctq"><li>To recover the flag, which step do you undo first, and why?<details><summary>Check your thinking</summary><p>Undo the last step that was applied first: Base64 decode first, then XOR. You reverse the steps in the opposite order.</p></details></li><li>If you XOR-decoded before Base64-decoding, what would happen?<details><summary>Check your thinking</summary><p>It would fail or give garbage, because the data is still Base64 text at that point, not the XORed bytes.</p></details></li></ol>
+<h2>Model 2: Hidden data in a photo (EXIF)</h2><div class="model"><pre>Camera:       Pixel 8
+DateTaken:    2026-06-05 14:32
+GPSLocation:  38.8895, -77.0353</pre></div><ol class="ctq"><li>List two things this metadata reveals that a person might not want public.<details><summary>Check your thinking</summary><p>When and where the photo was taken (date/time and GPS location), and the device model.</p></details></li><li>How could you protect yourself before posting a photo?<details><summary>Check your thinking</summary><p>Turn off location tagging on the camera, or strip the metadata before sharing.</p></details></li></ol>
+<h2>Model 3: Is it allowed?</h2><div class="model"><table><tr><th>action</th><th>allowed?</th></tr>
+<tr><td>Solve a picoCTF challenge in picoGym</td><td>yes (built for practice)</td></tr>
+<tr><td>Look up a public company profile for OSINT practice</td><td>yes (public information)</td></tr>
+<tr><td>Log into a stranger account you guessed</td><td>no (no permission)</td></tr>
+<tr><td>Scan a website you do not own</td><td>no (no permission)</td></tr></table></div><ol class="ctq"><li>What single rule decides every row in Model 3?<details><summary>Check your thinking</summary><p>Permission and using only public data: you may only test or access systems you own or are explicitly allowed to test.</p></details></li><li>In one sentence, what makes someone a white hat rather than a criminal?<details><summary>Check your thinking</summary><p>A white hat uses the same skills only with permission, to protect people and systems rather than to harm them.</p></details></li></ol>
+<h2>Do it now</h2><div class="doit">Open <b>Day5.ipynb</b> and recover the two-step flag, then read the EXIF example. Practice on <b>picoCTF</b> picoGym and explore the <b>OSINT Framework</b>, public targets only.</div>
+<h2>Application</h2><p>A teammate wants to test a flaw on a real store website. Using Model 3, explain in two sentences why that is not allowed and what to do instead.</p>
+<h2>Reflection (process skills)</h2><p>How did your team make sure everyone understood the reverse-the-steps idea before moving on?</p><div class="nav"><a href="index.html">All POGIL activities</a> &middot; <a href="../Interactive_Slides.html">Main course deck</a> &middot; <a href="https://camp.com.puter.tips/">Camp home</a></div></main></body></html>

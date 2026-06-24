@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Reading Code and the Terminal - CyberQuest POGIL</title>
+<meta name="description" content="Original POGIL activity for Day 1: trace Python variables and loops, and practice the information-processing skill of reading a terminal session and extracting key facts.">
+<meta name="author" content="Devharsh Trivedi">
+<link rel="canonical" href="https://camp.com.puter.tips/pogil/day1-reading-code.html">
+<meta property="og:title" content="Reading Code and the Terminal - CyberQuest"><meta property="og:type" content="article"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Reading Code and the Terminal","learningResourceType":"POGIL guided-inquiry activity","educationalLevel":"Middle school and high school","inLanguage":"en","isAccessibleForFree":true,"author":{"@type":"Person","name":"Devharsh Trivedi"},"isPartOf":{"@type":"Course","name":"CyberQuest Summer Camp","url":"https://camp.com.puter.tips/"}}</script>
+<style>
+ :root{--ink:#16203a;--muted:#5a6b8c;--accent:#2563eb;--line:#dfe6f5;--soft:#f1f5ff;--good:#16a34a}
+ *{box-sizing:border-box} body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+ a.skip{position:absolute;left:-999px}a.skip:focus{left:8px;top:8px;background:#fff;padding:8px;border-radius:8px;z-index:50}
+ main{max-width:820px;margin:0 auto;padding:24px 18px 64px}
+ .top{border-bottom:3px solid var(--accent);padding-bottom:10px;margin-bottom:8px}
+ .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;letter-spacing:.04em}
+ h1{font-size:clamp(24px,5vw,34px);margin:10px 0 4px} h2{font-size:21px;margin:26px 0 8px;color:#0b3a8f;border-left:4px solid var(--accent);padding-left:10px}
+ h3{font-size:17px;margin:16px 0 6px} p,li{font-size:16px}
+ .muted{color:var(--muted)} code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-family:ui-monospace,Consolas,monospace}
+ .roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+ .role{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+ .model{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:16px;margin:10px 0}
+ table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px} th,td{border:1px solid var(--line);padding:6px 9px;text-align:center} th{background:var(--soft)}
+ ol.ctq>li{margin:14px 0} details{background:#ecfdf3;border:1px solid #bbf7d0;border-radius:8px;padding:8px 12px;margin-top:6px}
+ details summary{cursor:pointer;font-weight:600;color:#15803d} .obj li{margin:4px 0}
+ svg{max-width:100%;height:auto} .nav{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+ .doit{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #ea7a17;border-radius:10px;padding:12px 14px;margin:10px 0}
+ @media print{details[open] summary~*{display:block} a.skip,.nav{display:none} details{border:none;background:none}}
+</style></head>
+<body><a class="skip" href="#main">Skip to content</a><main id="main">
+<div class="top"><span class="badge">CyberQuest - POGIL Activity</span></div>
+<h1>Reading Code and the Terminal</h1>
+<p class="muted">A guided-inquiry activity. Work in a team of 3 to 4, or on your own. Read each Model, then answer the Critical Thinking Questions in order before revealing a hint.</p>
+<h2>Learning objectives</h2><ul class="obj">
+<li>Trace a short Python program and predict its output.</li>
+<li>Explain in your own words what a variable and a loop do.</li>
+<li>Read a command-line session and extract the key facts (who, what, result).</li></ul>
+<p><b>Prerequisites:</b> none. This is a Day 1 starting activity.</p><h2>Team roles</h2><div class="roles">
+<div class="role"><b>Manager</b> - keeps time, makes sure everyone participates, keeps the team on task.</div>
+<div class="role"><b>Recorder</b> - writes the team's agreed answers and questions to ask.</div>
+<div class="role"><b>Presenter</b> - speaks for the team and shares answers.</div>
+<div class="role"><b>Reflector</b> - watches teamwork and suggests one improvement.</div></div>
+<h2>Model 1: Code and its output</h2><div class="model"><pre>agent = "Ada"
+tries = 3
+print(agent, "has", tries, "tries left")</pre><p><b>Output:</b> <code>Ada has 3 tries left</code></p></div><ol class="ctq"><li>Which two names in Model 1 store values, and what does each hold?<details><summary>Check your thinking</summary><p>agent holds the text Ada (a string); tries holds the number 3 (an integer).</p></details></li><li>Why does the output show Ada and 3 instead of the words agent and tries?<details><summary>Check your thinking</summary><p>print shows the values stored in the variables, not the variable names.</p></details></li><li>Predict the output if tries were changed to 1.<details><summary>Check your thinking</summary><p>Ada has 1 tries left (the program does not fix grammar; it just prints the value).</p></details></li></ol>
+<h2>Model 2: A loop, traced</h2><div class="model"><pre>for n in range(1, 4):
+    print("step", n)</pre>
+<table><tr><th>pass</th><th>n</th><th>prints</th></tr><tr><td>1</td><td>1</td><td>step 1</td></tr><tr><td>2</td><td>2</td><td>step 2</td></tr><tr><td>3</td><td>3</td><td>step 3</td></tr></table></div><ol class="ctq"><li>How many times does the loop body run, and why does it stop?<details><summary>Check your thinking</summary><p>Three times. range(1, 4) gives 1, 2, 3 and stops before 4.</p></details></li><li>What changes on each pass through the loop?<details><summary>Check your thinking</summary><p>The value of n increases by 1 each pass.</p></details></li><li>In one sentence, what does a loop let you avoid?<details><summary>Check your thinking</summary><p>Writing the same line many times by hand; the computer repeats it for you.</p></details></li></ol>
+<h2>Model 3: Reading a terminal session</h2><div class="model"><pre>bob@lab:~$ whoami
+bob
+bob@lab:~$ cat readme.txt
+The next password is: rABbit2</pre></div><ol class="ctq"><li>Who is logged in, and which command showed that?<details><summary>Check your thinking</summary><p>The user bob; the whoami command showed it.</p></details></li><li>Which command displayed the file contents, and what fact did it reveal?<details><summary>Check your thinking</summary><p>cat readme.txt displayed the file; it revealed the next password, rABbit2.</p></details></li><li>Reading carefully and extracting the key fact is a security skill. List the three facts a defender could record from this session.<details><summary>Check your thinking</summary><p>The user (bob), the actions taken (whoami, cat readme.txt), and the sensitive item exposed (a password in a readable file).</p></details></li></ol>
+<h2>Do it now</h2><div class="doit">Open <b>Day1.ipynb</b> and run the variable and loop cells. Then play <b>OverTheWire Bandit</b> Level 0 and read the password from a file, just like Model 3.</div>
+<h2>Application</h2><p>You are handed an unfamiliar log line: <code>09:06 admin login FAILED from 10.0.0.9</code>. List three facts you can extract from it.</p>
+<h2>Reflection (process skills)</h2><p>What helped your team agree on the output predictions? What is one thing you will do differently on the next Model?</p><div class="nav"><a href="index.html">All POGIL activities</a> &middot; <a href="../Interactive_Slides.html">Main course deck</a> &middot; <a href="https://camp.com.puter.tips/">Camp home</a></div></main></body></html>
