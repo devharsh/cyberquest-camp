@@ -8,4 +8,7 @@
   <url><loc>https://camp.com.puter.tips/Day4/Day4_slides.html</loc><priority>0.8</priority></url>
   <url><loc>https://camp.com.puter.tips/Day5/Day5_slides.html</loc><priority>0.8</priority></url>
   <url><loc>https://camp.com.puter.tips/resources/case-studies/</loc><priority>0.5</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/index.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/symmetric-encryption.html</loc><priority>0.6</priority></url>
+  <url><loc>https://camp.com.puter.tips/pogil/perfect-secrecy.html</loc><priority>0.6</priority></url>
 </urlset>
